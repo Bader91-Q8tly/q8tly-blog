@@ -15,7 +15,7 @@ Status legend: `idea` → `drafting` → `EN staged` → `AR staged` → `live`
 
 | Slot | Guide | Slug | Status |
 |------|-------|------|--------|
-| 1    | _TBD_ | —    | idea   |
+| 1    | Anosha Beauty Salon — Sabah Al-Salem (editorial of the week) | `anosha-beauty-salon-sabah-al-salem` | EN draft (AR staged) |
 | 2    | _TBD_ | —    | idea   |
 | 3    | _TBD_ | —    | idea   |
 
@@ -25,6 +25,7 @@ Status legend: `idea` → `drafting` → `EN staged` → `AR staged` → `live`
 
 | Title | Type (best-of / area guide) | District / Category | EN | AR | Target | Notes |
 |-------|-----------------------------|---------------------|----|----|--------|-------|
+| Anosha Beauty Salon | editorial spotlight (place) | Sabah Al-Salem / Beauty | drafting | AR staged | this week | First-party visit; verified listing (post 2147) exists. Photos pending (Bader's manual lane). AR gated on WPML (S2-19). |
 | _TBD_ | —                           | —                   | —  | —  | —      | Seed the pipeline. |
 
 ---
