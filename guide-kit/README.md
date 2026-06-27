@@ -10,6 +10,11 @@ create it** (only posts/pages), so publishing goes through **WP-CLI over SSH**
 you ship a Page (wrong type, no template chrome) — which is exactly what happened
 on the first Anosha attempt before this kit.
 
+> **This README ships the English guide.** For the **Arabic twin** (how it's
+> created through WPML, human translation, `/ar/` routing, the
+> fenced→reviewed→unfenced lifecycle), see **`GUIDE_AR_WORKFLOW.md`** — read it
+> first for any AR work.
+
 ---
 
 ## 1. The drop (input contract)

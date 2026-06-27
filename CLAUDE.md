@@ -25,6 +25,17 @@ area/district guides, and single-place spotlights.
 
 Full contract + runbook + the publishing gotchas: **`guide-kit/README.md`**.
 
+## To add a guide's Arabic (AR) twin: use the AR workflow runbook
+
+**Read `guide-kit/GUIDE_AR_WORKFLOW.md` FIRST** whenever Bader hands over a new
+guide or says "add Arabic." It is the standing EN→AR procedure: how the Arabic
+twin is created **through WPML** (never by hand — that orphans `/ar/`), human
+translation only (D-145), `/ar/` routing, the fenced→reviewed→unfenced lifecycle,
+and the open flags. **Ground-truth note (verified 2026-06-28):** WPML 4.9.5 *is*
+live on staging (EN no-prefix, AR `/ar/`), but `guide_article` is **not yet set
+Translatable in WPML** — so AR twins are blocked on that one config flag (a
+cross-module change to route to Advisor). See the runbook §3.
+
 ## Hard rules (the kit enforces these; you should too)
 
 - **Guides are the `guide_article` CPT** at `/guide/{slug}/` (REST base
