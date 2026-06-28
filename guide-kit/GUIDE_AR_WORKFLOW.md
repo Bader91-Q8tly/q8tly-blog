@@ -145,6 +145,34 @@ Advisor / Builder (Module 6)** — do **not** flip it silently from Module 8.
 
 ---
 
+## 3.5. AR Surface Mechanism Map (cross-lane briefing — where guides fit)
+
+> **Shared briefing across all Q8tly lanes; the #1 cause of duplicate/broken AR
+> pages is using the wrong mechanism for a surface.** Verified read-only in WPML
+> **2026-06-28** (WPML active, EN default + AR, *"different languages in
+> directories"* → Arabic under the `/ar/` prefix). Recorded here so Module 8 never
+> improvises Arabic on a non-guide surface. **Only listings and (later) guides
+> become twin pages — everything else becomes Arabic by translating strings or
+> terms, never a second page.**
+
+| # | Surface | Mechanism | Makes a second page? |
+|---|---|---|---|
+| 1 | **Listings** (`gd_place`) | **A — twin page**, created *only* via WPML (shared `trid`). Never write `icl_translations`/`trid` by hand → orphans `/ar/`. Bulk AR run = this. | **Yes** |
+| 2 | **Search page + GD template pages** (`/ar/search/`, GD Archive/Location) | **C — routing, no twin.** Same page served under `/ar/`; labels come from String Translation. 🚫 Never twin a GD-template page (this is the "3 pages" failure). | **No** |
+| 3 | **Filter labels + UI chrome** (Price Range, Amenities, Payment, Indoor/Outdoor…) | **B — String Translation** (domains `geodirectory` / `q8tly-core`). Translate the strings; one page, translated copy. | **No** |
+| 4 | **Category / taxonomy archives** (`/ar/…/المطاعم/`) | **C — translated term, no twin.** `gd_placecategory` is Translatable; translate the term (D-161 mapping) and WPML/GD generates the archive. 🚫 Never twin an archive. | **No** |
+| 5 | **Guides** (`guide_article`) — **our lane** | **No mechanism yet (blocked).** `guide_article` is **Not Translatable** in WPML → no twin button. After Builder flips it Translatable, guides use **mechanism A (twin)** but with **human translation (D-145)** — no DeepL, none of the listings controlled-term machinery. WPML creates the twin; never write `icl_translations` directly. | Yes (after the flip) |
+
+**Module 8 takeaway:** our only twin surface is guides, and it's parked behind
+Builder's Translatable flip (§3, §9-A). When it lands, follow §4–§8 (WPML twin,
+human-only). For *any* non-guide surface, **do not create a page** — if it shows
+only "+ add translation" in WPML and it's a GD-template page or archive, that's
+*correct*; translate its strings (mechanism B) or its term (mechanism C) instead.
+We don't author AR vocab — that's Pipeline's approved mapping (D-161), and it
+doesn't apply to guide prose anyway.
+
+---
+
 ## 4. Lifecycle of one guide, EN then AR (imperative — execute in order)
 
 ### Phase A — EN original (supported today; this is `guide-kit/README.md`)
@@ -361,3 +389,8 @@ runbook does not import listings complexity.
   - `anosha` 2189 has no WPML language record.
   - 6 guides live (4 in calendar + `keif-…`, `vibes-…`).
   - **Re-verify these before acting — WPML settings drift.**
+- **2026-06-28** — Added §3.5 (AR Surface Mechanism Map): the cross-lane rule for
+  which mechanism makes Arabic on each surface (listings/guides = twin via WPML;
+  search/GD pages + filters/chrome = String Translation; archives = translated
+  term). Recorded so Module 8 never twins a non-guide surface. Verified read-only
+  in WPML 2026-06-28 (consistent with the §3/§10 staging audit).
