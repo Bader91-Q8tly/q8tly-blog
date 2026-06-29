@@ -45,6 +45,9 @@ fenced/noindex human translations (D-145). Twin-building is paused only until
 Builder's `[q8tly_place]`/`[q8tly_map]` AR-URL check returns. AR goes *public*
 only after the full gate clears (S2-19/WPML-on-prod is necessary-but-not-sufficient;
 also AR-perfect D-160 + owner track + D-157 cutover + 7-G flip).
+**First AR twin LIVE (fenced) 2026-06-29:** Anosha → `guide_article` **2600** at
+`/ar/guide/anosha-beauty-salon-sabah-al-salem/`, publish + noindex, **D-145 ✓ (PASS)**
+— content-complete, parked fenced, rides the site-wide flip (not unfenced per-guide).
 
 | Title | URL (`/{lang}/guide/…`) | guide_article | Live date | Internal links placed |
 |-------|--------------------------|---------------|-----------|------------------------|

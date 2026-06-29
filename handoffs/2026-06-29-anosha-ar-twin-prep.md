@@ -73,7 +73,14 @@ The page has 153 bare `/places/` links — **all in the global mega-menu/footer 
 isn't translated yet, so they fall back to EN under `/ar/`. That's the term-translation
 backlog (D-161 / Chrome), outside Module 8. My guide body is clean.
 
-### Still pending (unchanged)
-Human review (D-145) → owner sign-off → unfence (flip `rank_math_robots` off noindex).
-AR-public still behind the full gate (D-160 + owner track + D-157 cutover + 7-G).
-naranj/south/mizu need human AR before they can be twinned.
+### ✅ CLOSED — D-145 PASS, parked fenced (2026-06-29)
+Bader reviewed 2600 on the fenced page: **PASS** — Arabic reads clean; **content gate
+cleared.** Content accepted as rendered (the two decisions — "Best for" kept as prose,
+deck kept as the reused kicker). **2600 stays `noindex`** — D-145 is a quality gate, not
+go-live; it rides the **site-wide AR-public flip** (D-160 + owner track + D-157 cutover
++ 7-G). `rank_math_robots` was **NOT** flipped; Bader gives the unfence signal at the
+site-wide launch, not per-guide.
+
+**First guide twin is end-to-end complete: mechanism proven, content approved,
+correctly held.** Next: naranj/south/mizu each need **human AR authored first** (only
+Anosha had one) — the mechanism (+ → `populate_ar_twin.py`) is now proven.

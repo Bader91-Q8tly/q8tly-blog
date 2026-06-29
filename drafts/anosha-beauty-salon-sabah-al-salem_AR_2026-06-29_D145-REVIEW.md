@@ -10,7 +10,9 @@
 - **Compare against EN source:** `/guide/anosha-beauty-salon-sabah-al-salem/` (guide_article 2189)
 - **AR source of prose:** human translation `drafts/…_AR_2026-06-20.md` (reused verbatim; the
   2026-06-29 file is its plain-body conversion). **No machine translation was used.**
-- Reviewer: Bader (human Arabic) · Date: ________ · Outcome: ☐ Approved (ready) ☐ Edits needed
+- Reviewer: **Bader** · Date: **2026-06-29** · Outcome: **☑ APPROVED — PASS** (Arabic reads clean & clear on the fenced page; content gate cleared).
+  - Owner decisions resolved: **#1 "Best for" → kept as prose** · **#2 deck → kept (reused kicker)** (content accepted as rendered).
+  - **Stays `noindex`.** D-145 = quality gate, not go-live; 2600 rides the site-wide flip (D-160 + owner track + D-157 cutover + 7-G). `rank_math_robots` NOT flipped.
 
 ---
 
