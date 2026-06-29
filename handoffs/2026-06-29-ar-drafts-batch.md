@@ -41,8 +41,11 @@ Media to reuse on injection (no re-upload, text-only repo):
 
 ## Corpus status (all 6 guides)
 - **anosha** — AR twin LIVE: `guide_article` 2600, publish+noindex, D-145 PASS, parked fenced.
-- **naranj / south-avenue / mizumesa / vibes / keif** — AR drafts staged on Desktop, awaiting
-  Bader's rewrite → approval. No twins created (correct — twin creation waits for approved AR + "+").
+- **naranj** — AR twin LIVE: `guide_article` **2612**, publish+noindex, Bader-authored Kuwaiti
+  Arabic (`drafts/naranj-salmiya_AR_2026-06-29.md`) injected + verified (place-card →
+  `/ar/places/السالمية/نارنج/`), parked fenced. (Approved AR came from `~/Downloads/naranj_AR_kuwaiti_clean.md`.)
+- **south-avenue / mizumesa / vibes / keif** — AR drafts staged on Desktop, awaiting
+  Bader's rewrite → approval. No twins created (twin creation waits for approved AR + "+").
 
 ## Next (per guide, once Bader approves its AR)
 approved AR MD → Bader does "+" on the EN guide (editable WP-editor shell) →
