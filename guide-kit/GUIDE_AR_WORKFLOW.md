@@ -403,6 +403,22 @@ Publishing it as-is **double-renders**.
   in `calendar/editorial-calendar.md`'s Published table. Not AR-related; noted for
   housekeeping.
 
+- **G. BLOCKER (cross-module) — site WPML editor is ATE, not the WordPress editor.**
+  Verified 2026-06-29: `icl_sitepress_settings['translation-management']['doc_translation_method'] = ATE`.
+  So clicking the WPML "+" on a guide routes into the **Advanced Translation Editor**:
+  it reserves an empty `ar` slot in the trid but creates **no editable `guide_article`
+  post** until an ATE translation is "completed" — and ATE owns the content via
+  translation memory, which fights this lane's **human-AR-via-SSH populate** (and is
+  the DeepL path we must not use for guides, D-145). **But ATE is global and the
+  listings lane needs it for DeepL bulk AR**, so Blog must NOT flip
+  `doc_translation_method`. **Need from Advisor/Builder:** a way for `guide_article`
+  to be translated in the **native WordPress editor** (so "+" makes a real,
+  SSH-editable AR draft) **while listings keep ATE/DeepL** — e.g. WPML's
+  "translate some content with the WordPress editor" option, scoped to guides.
+  Until resolved, **no guide AR twin can be created the rail-#1 way.** First "+"
+  attempt on EN 2189 left a dangling empty `ar` slot in trid 4656 — cancel it via
+  the WPML UI (Translation Management / the post's Language box), never by hand.
+
 **Consistency note vs the listings model (for Advisor's check):** the listings
 lane uses DeepL MT for bodies + controlled-term/area/name machinery; this lane
 uses **human translation (D-145) and none of that machinery** — just an item and
@@ -435,3 +451,10 @@ runbook does not import listings complexity.
   D-157 cutover + 7-G) → §3/§9-B, also patched in role-brief/README/calendar.
   Display-mode (§6): leaning Option A, ratified value to be set at project level —
   not by Blog, not per-guide. **No AR twins built this pass (correctly held).**
+- **2026-06-29 (later)** — **First "+" attempt surfaced a cross-module BLOCKER (§9-G):**
+  site WPML editor is **ATE** (`doc_translation_method=ATE`), so "+" routes to the
+  Advanced Translation Editor and makes no editable AR post (only an empty trid slot
+  on 2189/trid 4656; no DeepL fired). Can't flip ATE — listings need it. Routed to
+  Advisor/Builder: enable WordPress-editor translation for `guide_article` only.
+  Built+validated the charset-safe update-only populator `guide-kit/populate_ar_twin.py`
+  (uncommitted, pending a clean run) — it correctly refuses while no real twin exists.
