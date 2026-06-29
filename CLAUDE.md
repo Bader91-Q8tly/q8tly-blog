@@ -59,6 +59,9 @@ cross-module change to route to Advisor). See the runbook §3.
 - `guide-kit/` — the publishing kit (start here for any guide).
 - `drafts/` — markdown drafts (EN + AR). `handoffs/` — session handoffs (write one
   each session). `calendar/editorial-calendar.md` — pipeline + weekly rotation.
-- `assets/` — optimized guide images.
+- `assets/` — **(legacy, now empty)**. The repo is **text-only** (binary policy,
+  2026-06-29): guide images do NOT live in git. They sit in a per-guide folder on
+  the owner's desktop and the kit reads them from the local drop folder at publish
+  time. Images are gitignored.
 
 First guide shipped this way: Anosha Beauty Salon (`/guide/anosha-beauty-salon-sabah-al-salem/`, guide_article 2189). See `handoffs/2026-06-20-anosha-spotlight.md`.
