@@ -19,7 +19,7 @@ replaces_page_slug: ""
 status: publish
 ---
 
-Some salons sell the buzz — the crowd at the door, the music up, the sense that something is always happening. **Anosha Beauty Salon** sells the opposite, and does it well. Tucked on the third floor in **Sabah Al-Salem**, this **women-only** salon runs entirely **by appointment**, and that one decision quietly shapes everything else: no waiting around, no crowd, no rush. You book a time, you arrive, and the place is yours.
+Some [salons](/places/category/salons/) sell the buzz — the crowd at the door, the music up, the sense that something is always happening. **Anosha Beauty Salon** sells the opposite, and does it well. Tucked on the third floor in **[Sabah Al-Salem](/places/sabah-al-salem/)**, this **women-only** salon runs entirely **by appointment**, and that one decision quietly shapes everything else: no waiting around, no crowd, no rush. You book a time, you arrive, and the place is yours.
 
 It is, simply, calm — and spotless.
 

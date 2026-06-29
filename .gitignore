@@ -34,3 +34,21 @@ Desktop.ini
 *.log
 .tmp/
 tmp/
+
+# --- Images / binaries: repo is TEXT-ONLY (binary policy, 2026-06-29) ---
+# Guide photos live in a per-guide folder on the owner's desktop, never in the
+# repo. The publish kit reads images from the local drop folder at publish time.
+# Keeps drop folders (e.g. guide-kit/guides/<slug>/images/) out of git.
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.heic
+*.heif
+*.avif
+*.tif
+*.tiff
+*.bmp
+*.ico
+*.psd
