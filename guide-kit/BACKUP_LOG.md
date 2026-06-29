@@ -16,3 +16,4 @@ is the same write-class as production, so the discipline applies now.
 | 20260623-203957 | publish guide `south-avenue-salon-sabah-al-salem` | `staging-20260623-203957-guide-south-avenue-salon-sabah-al-salem.sql.gz` | 1725240 B | staging |
 | 20260624-165707 | internal-link guides 2189/2251/2339 (district+category) | `staging-20260624-165707-internal-links-guides.sql.gz` | 1683164 B | staging |
 | 20260624-182816 | publish guide `mizumesa-sharq` | `staging-20260624-182816-guide-mizumesa-sharq.sql.gz` | 1706283 B | staging |
+| 20260629-141843 | populate AR twin `anosha-beauty-salon-sabah-al-salem` (post 2600) | `staging-20260629-141843-ar-twin-anosha-beauty-salon-sabah-al-salem.sql.gz` | 2330238 B | staging |

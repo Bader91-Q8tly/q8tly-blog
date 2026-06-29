@@ -403,7 +403,12 @@ Publishing it as-is **double-renders**.
   in `calendar/editorial-calendar.md`'s Published table. Not AR-related; noted for
   housekeeping.
 
-- **G. BLOCKER (cross-module) — site WPML editor is ATE, not the WordPress editor.**
+- **G. RESOLVED-IN-PRACTICE 2026-06-29 (was a cross-module BLOCKER) — site WPML editor is ATE, not the WordPress editor.**
+  First twin (2600) was created as a real editable WP draft via the WordPress-editor
+  path while global `doc_translation_method` stayed **ATE** (listings keep DeepL).
+  → guide twins ARE creatable now. **Open:** confirm with Builder the exact
+  per-document/per-type mechanism so each guide repeats it (global is still ATE), or
+  default `guide_article` to the WP editor. Original blocker writeup retained below.
   Verified 2026-06-29: `icl_sitepress_settings['translation-management']['doc_translation_method'] = ATE`.
   So clicking the WPML "+" on a guide routes into the **Advanced Translation Editor**:
   it reserves an empty `ar` slot in the trid but creates **no editable `guide_article`
@@ -458,3 +463,13 @@ runbook does not import listings complexity.
   Advisor/Builder: enable WordPress-editor translation for `guide_article` only.
   Built+validated the charset-safe update-only populator `guide-kit/populate_ar_twin.py`
   (uncommitted, pending a clean run) — it correctly refuses while no real twin exists.
+- **2026-06-29 (FIRST TWIN LIVE)** — §9-G resolved in practice: shell created
+  editable via the WP-editor path (global stays ATE → listings keep DeepL). Populated
+  **`guide_article` 2600** (twin of 2189) at `/ar/guide/anosha-beauty-salon-sabah-al-salem/`,
+  **publish + noindex (fenced)**, via `populate_ar_twin.py` (now committed — proven
+  clean). **First-twin proof PASSED:** guide body = 4 `/ar/places/`, 0 bare `/places/`
+  → Builder's shortcode fix v1.14.175 confirmed on real AR content; 0 raw shortcodes;
+  zero mojibake; hero+inline media reused (2190/2192/2193/2194); noindex present.
+  (§9-D populator gap now filled, update-only.) Bare `/places/` seen only in global
+  mega-menu chrome = untranslated category terms (Pipeline/Chrome backlog, not Blog).
+  Pending: D-145 human review → owner sign-off → unfence.
