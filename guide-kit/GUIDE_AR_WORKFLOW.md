@@ -78,6 +78,41 @@ AR twin-building is paused on step 5 (Builder's shortcode-URL check).
 
 ---
 
+## 1.5. The two standing cases + the D-145 & sequencing rules (READ FIRST)
+
+Guide AR work is always one of two cases. **Bader provides the human Arabic; the
+tool injects it — the tool NEVER translates** (D-145).
+
+**Case A — NEW guide (doesn't exist yet).** Bader hands **two MD files (EN + AR)**
++ the images. You build **BOTH**: publish the EN guide via the kit, then build the
+AR twin. The AR MD is **Bader-authored human Arabic** (D-145-clean — Bader is a
+native Kuwaiti, the human author).
+  → EN: kit publish (`guide-kit/README.md`). → AR: Bader does WPML "+" on the new
+  EN guide → `populate_ar_twin.py` injects the AR MD → fence noindex.
+
+**Case B — EXISTING EN guide needs AR** (e.g. naranj 2251 / south-avenue 2339 /
+mizumesa 2362 / keif 2132 / vibes 2131). The EN guide is **already published — do
+NOT recreate it.** Build the **AR twin ONLY**; the EN side is untouched.
+  → Bader hands the **approved AR MD** → Bader does WPML "+" on the existing EN
+  guide → `populate_ar_twin.py` injects → fence noindex.
+
+**D-145 rule (non-negotiable):** guide Arabic is **always human-authored** — by
+Bader (native Kuwaiti) or an AR blogger — **never machine-translated for
+publication**. The tool injects human Arabic; it never translates. (Listings use
+DeepL; **guides never do.**) Machine/working Arabic is allowed **only as a draft
+scaffold** for Bader to rewrite (e.g. `*_AR_draft.md` on his Desktop) — not
+publishable until Bader rewrites + approves it. The approved rewrite is the
+D-145-clean AR we inject.
+
+**Sequencing rule (critical — avoids stale/empty WPML slots):** the WPML "+" comes
+**right before injection, NOT before the AR content exists.** Order per guide:
+**approved AR MD ready → Bader does "+" (clean native shell) → tool injects →
+fence.** Never "+" first — an early "+" (esp. under ATE) leaves a stale/empty trid
+slot (we hit exactly this on 2189's first attempt). See §9-G for the ATE caveat
+(the "+" must create an *editable* WP-editor shell, not an ATE job).
+
+---
+
 ## 2. The four hard rails (non-negotiable — bake these into every action)
 
 1. **WPML owns the Arabic twin. You NEVER write the linkage yourself.** The
