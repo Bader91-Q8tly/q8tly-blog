@@ -7,7 +7,7 @@ dir: rtl
 type: editorial-spotlight
 publish_path: /ar/guide/anosha-beauty-salon-sabah-al-salem
 canonical: https://q8tly.com/ar/guide/anosha-beauty-salon-sabah-al-salem   # أكّد دومين الإنتاج
-status: "AR STAGED — DO NOT PUBLISH (WPML gate S2-19) · needs human translation review"
+status: "SUPERSEDED 2026-06-29 → see anosha-beauty-salon-sabah-al-salem_AR_2026-06-29.md (plain-body conversion for the WPML twin). This file is the old HTML-chrome format; kept only as the human-translation source. DO NOT publish this file."
 date: 2026-06-20
 author: Q8tly Editorial
 area: صباح السالم
