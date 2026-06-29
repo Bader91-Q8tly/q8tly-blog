@@ -57,7 +57,10 @@ injected + verified (place-card → `/ar/places/شرق/2405/`). Parked fenced.
 **Keif AR twin LIVE (fenced) 2026-06-29:** `guide_article` **2630** at
 `/ar/guide/keif-restaurant-al-kout-mall/`, publish + noindex, Bader-authored Kuwaiti
 Arabic injected + verified (place-card → `/ar/places/الفحيحيل/مطعم-كيف/`). Parked fenced.
-**Remaining AR: south-avenue + vibes** — still MT drafts (need Bader's Kuwaiti rewrite).
+**Vibes AR twin LIVE (fenced) 2026-06-29:** `guide_article` **2634** at
+`/ar/guide/vibes-coffee-roastery-al-kout-mall/`, publish + noindex, Kuwaiti AR injected +
+verified (place-card → `/ar/places/الفحيحيل/vibes-coffee-roastery/`). Parked fenced.
+**Remaining AR: south-avenue only** (Bader prepping the Kuwaiti version; shell 2619 up).
 
 | Title | URL (`/{lang}/guide/…`) | guide_article | Live date | Internal links placed |
 |-------|--------------------------|---------------|-----------|------------------------|

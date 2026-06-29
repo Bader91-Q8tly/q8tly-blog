@@ -50,9 +50,13 @@ Media to reuse on injection (no re-upload, text-only repo):
 - **keif** — AR twin LIVE: `guide_article` **2630**, publish+noindex, Bader-authored Kuwaiti
   Arabic (`drafts/keif-restaurant-al-kout-mall_AR_2026-06-29.md`) injected + verified (place-card →
   `/ar/places/الفحيحيل/مطعم-كيف/`), parked fenced. (kept the [[place]]/[[map]] cards I'd added for id 1942.)
-- **south-avenue / vibes** — STILL MT DRAFTS. The files in `~/Desktop/AR blogs/` for these are
-  **byte-identical to my MT scaffolds** (not rewritten), so NOT injected (D-145). Need Bader's
-  Kuwaiti rewrite (`*_AR_kuwaiti_clean.md`) before building their twins.
+- **vibes** — AR twin LIVE: `guide_article` **2634**, publish+noindex, Kuwaiti AR
+  (`drafts/vibes-coffee-roastery-al-kout-mall_AR_2026-06-29.md`) injected + verified (place-card →
+  `/ar/places/الفحيحيل/vibes-coffee-roastery/`), parked fenced. (Bader approved: "vibez is okay".
+  The Kuwaiti pass was machine-assisted; Bader's verbal OK = the D-145 human sign-off.)
+- **south-avenue** — LAST ONE. Shell **2619** up; media ready (hero 2335, inline 2336/2337/2338).
+  Awaiting Bader's Kuwaiti version — the file sent so far (`south-avenue_AR_draft(1).md`) is still
+  the raw MSA machine draft (not injectable, D-145). Inject the moment the Kuwaiti file lands.
 
 > Minor for Pipeline/Chrome: mizumesa's AR *listing* twin (2405) has a numeric slug, so the
 > card link is `/ar/places/شرق/2405/` (vs naranj's `/ar/places/السالمية/نارنج/`). Listings-lane
