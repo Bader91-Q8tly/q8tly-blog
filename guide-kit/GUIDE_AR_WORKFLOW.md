@@ -96,12 +96,15 @@ AR twin-building is paused on step 5 (Builder's shortcode-URL check).
    listings machinery applies — no controlled-term mapping, no area-binding, no
    business-name COPY. The model is just: a `guide_article` and its translated
    twin. (See §0 for the one correction to this rail's wording.)
-4. **Arabic stays fenced (noindex) until signed off, then unfenced on owner
-   review.** An AR twin does not go public the moment it exists. It is created
-   noindex/draft → human review → **owner sign-off flips it to indexable**. The
-   site-wide fence (prod `blog_public=0` / noindex) is a separate, higher launch
-   gate owned by Advisor; the per-twin fence (Rank Math robots on the AR post) is
-   ours.
+4. **Arabic stays fenced (noindex) — and a per-guide sign-off does NOT unfence it.**
+   An AR twin is created noindex and **stays noindex**. The D-145 human review +
+   owner sign-off is a **quality gate** (confirm the human Arabic renders right),
+   **NOT a go-live** (clarified by Bader 2026-06-29): we do **not** flip individual
+   twins to indexable ahead of the **site-wide AR-public flip** — unfencing one guide
+   ahead of the site gains nothing and creates inconsistency. All AR twins unfence
+   **together** at the site-wide flip (**D-160 + owner track + D-157 cutover + 7-G**),
+   Advisor-owned. Setting the per-twin noindex (Rank Math robots) is ours; flipping it
+   off happens only as part of that site-wide flip.
 
 ---
 
@@ -242,19 +245,24 @@ doesn't apply to guide prose anyway.
    `rocket_clean_domain()`), or the WordPress.com edge cache serves stale — the
    same gotcha as EN (see `guide-kit/README.md` §3).
 
-### Phase C — review → unfence (owner-gated)
+### Phase C — review (quality gate; the twin STAYS noindex)
 
-1. **Human review** of the Arabic (accuracy, tone, RTL, links). D-145 means a
-   human signs the translation off — not a machine, not us asserting it.
-2. **Owner sign-off** (Bader). Only then:
-3. **Unfence:** flip the AR twin's Rank Math robots from noindex to **index**,
-   set `post_status=publish`, touch + flush.
-4. **Update** `calendar/editorial-calendar.md` (AR column → live) and write a
-   `/handoffs` note.
+1. **Human review** of the Arabic (accuracy, tone, RTL, links) **on the live fenced
+   page**. D-145 means a human signs the translation off — not a machine, not us
+   asserting it. Use the per-guide checklist (e.g. `drafts/<slug>_AR_<date>_D145-REVIEW.md`;
+   first one: `…anosha…_AR_2026-06-29_D145-REVIEW.md`).
+2. **Owner sign-off** (Bader) means *"the Arabic is correct and ready"* — a **quality
+   gate, NOT a go-live** (clarified 2026-06-29). The twin **stays `noindex`**. Do
+   **not** flip an individual twin to index ahead of the site-wide flip.
+3. **Unfence happens later, site-wide, for ALL twins together** — at the AR-public
+   flip (**D-160 + owner track + D-157 cutover + 7-G**), Advisor-owned. Only then do
+   the Rank Math robots come off noindex.
+4. **Update** `calendar/editorial-calendar.md` (AR column → "ready · fenced") and write
+   a `/handoffs` note.
 
-> Reminder: the **site-wide** public flip (prod `blog_public`/noindex off,
-> production WPML) is Advisor/launch territory and is a *higher* gate than this
-> per-twin unfence. Don't conflate them.
+> Reminder: never conflate the **quality gate** (D-145, per guide) with the
+> **go-live** (site-wide AR-public flip). A guide can be D-145-approved and still
+> correctly sit noindex until the site flips.
 
 ---
 
@@ -473,3 +481,9 @@ runbook does not import listings complexity.
   (§9-D populator gap now filled, update-only.) Bare `/places/` seen only in global
   mega-menu chrome = untranslated category terms (Pipeline/Chrome backlog, not Blog).
   Pending: D-145 human review → owner sign-off → unfence.
+- **2026-06-29 (policy + review)** — Bader clarified the unfence model: **per-guide
+  unfence does NOT happen.** D-145 review is a **quality gate** (Arabic renders right);
+  the twin stays `noindex` and unfences only at the **site-wide flip** (D-160 + owner
+  track + D-157 cutover + 7-G). Rail #4 + Phase C corrected accordingly. D-145
+  checklist for 2600 staged: `drafts/anosha-…_AR_2026-06-29_D145-REVIEW.md`. Two owner
+  decisions pending: AR "Best for" list (prose vs bullets) + the deck line.
