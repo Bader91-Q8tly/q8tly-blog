@@ -4,20 +4,27 @@ Single source for what's planned, in progress, and live, plus the **weekly
 rotation** the homepage editorial block pulls from. Publish under `/{lang}/guide/`.
 
 Status legend: `idea` → `drafting` → `EN staged` → `AR staged` → `live`
-(AR publishing GATED on WPML in production — S2-19).
+(AR twins now buildable on staging as fenced drafts — 2026-06-29; AR goes *public*
+only after the full gate clears — see Published note below).
 
 ---
 
 ## This Week — Homepage Rotation
 
-> The core Builder's homepage editorial widget (Module 6) reads from this list.
-> We curate WHICH editorial shows here; we do not build/restyle the widget.
+> ⚠ **Observed on staging (2026-06-24):** the Module 6 homepage editorial block
+> **auto-pulls live guides newest-first and features the newest as "editorial of
+> the week."** It does NOT read this markdown list — curation here is effectively
+> by *publish recency*. To pin a non-newest guide as the feature you'd need a
+> Builder/Module 6 "featured" flag → **route to the Advisor** (don't touch the widget).
 
-| Slot | Guide | Slug | Status |
-|------|-------|------|--------|
-| 1    | Anosha Beauty Salon — Sabah Al-Salem (editorial of the week) | `anosha-beauty-salon-sabah-al-salem` | EN draft (AR staged) |
-| 2    | _TBD_ | —    | idea   |
-| 3    | _TBD_ | —    | idea   |
+**Live order on the homepage now (newest-first, verified):**
+
+| Position | Guide | Slug | Note |
+|----------|-------|------|------|
+| **Featured** (editorial of the week) | MizuMesa (Nikkei) — Sharq / KIPCO | `mizumesa-sharq` | newest → auto-featured ✓ — and the strongest candidate |
+| 2 | South Avenue Salon & Spa — Sabah Al-Salem | `south-avenue-salon-sabah-al-salem` | live EN (AR parked) |
+| 3 | Naranj — Salmiya | `naranj-salmiya` | live EN (AR parked) |
+| 4 | Anosha Beauty Salon — Sabah Al-Salem | `anosha-beauty-salon-sabah-al-salem` | flagship; live EN (AR parked) |
 
 ---
 
@@ -25,13 +32,23 @@ Status legend: `idea` → `drafting` → `EN staged` → `AR staged` → `live`
 
 | Title | Type (best-of / area guide) | District / Category | EN | AR | Target | Notes |
 |-------|-----------------------------|---------------------|----|----|--------|-------|
-| Anosha Beauty Salon | editorial spotlight (place) | Sabah Al-Salem / Beauty | drafting | AR staged | this week | First-party visit; verified listing (post 2147) exists. Photos pending (Bader's manual lane). AR gated on WPML (S2-19). |
-| _TBD_ | —                           | —                   | —  | —  | —      | Seed the pipeline. |
+| _empty — all spotlights shipped (see Published)_ | — | — | — | — | — | Anosha (2189), Naranj (2251), South Avenue (2339), MizuMesa (2362) are live EN. Pipeline needs seeding: next idea + a best-of/area guide. |
 
 ---
 
 ## Published
 
-| Title | URL (`/{lang}/guide/…`) | Live date | Internal links placed |
-|-------|--------------------------|-----------|------------------------|
-| —     | —                        | —         | —                      |
+All live on STAGING (English) via the Guide Ingestion Kit. Production frozen.
+**AR (2026-06-29):** mechanism unblocked — Builder set `guide_article`/`topic`/
+`guide_tag` WPML-Translatable, so AR twins can now be built on staging as
+fenced/noindex human translations (D-145). Twin-building is paused only until
+Builder's `[q8tly_place]`/`[q8tly_map]` AR-URL check returns. AR goes *public*
+only after the full gate clears (S2-19/WPML-on-prod is necessary-but-not-sufficient;
+also AR-perfect D-160 + owner track + D-157 cutover + 7-G flip).
+
+| Title | URL (`/{lang}/guide/…`) | guide_article | Live date | Internal links placed |
+|-------|--------------------------|---------------|-----------|------------------------|
+| Anosha Beauty Salon — Sabah Al-Salem | `/guide/anosha-beauty-salon-sabah-al-salem/` | 2189 | 2026-06-20 | ✓ `/places/sabah-al-salem/` + `/places/category/salons/` (2026-06-24) |
+| Naranj — Salmiya | `/guide/naranj-salmiya/` | 2251 | 2026-06-22 | ✓ `/places/salmiya/` + `/places/category/restaurants/` (2026-06-24) |
+| South Avenue Salon & Spa — Sabah Al-Salem | `/guide/south-avenue-salon-sabah-al-salem/` | 2339 | 2026-06-23 | ✓ `/places/sabah-al-salem/` + `/places/category/salons/` + `/places/category/spas-massage/` (2026-06-24) |
+| MizuMesa (Nikkei) — Sharq / KIPCO Tower | `/guide/mizumesa-sharq/` | 2362 | 2026-06-24 | ✓ `/places/sharq/` + `/places/category/restaurants/` (at publish) · ext: mizumesa.com reservations |

@@ -7,8 +7,12 @@
 > lifecycle and how the Arabic twin is made.
 >
 > Source of truth for the AR side. Last verified against live staging:
-> **2026-06-28** (see §10). When you act, re-verify the WPML state — settings
-> drift.
+> **2026-06-28** (see §10). **Update 2026-06-29: the WPML translatable flip is
+> LIVE** — `guide_article` + `topic` + `guide_tag` are now Translatable (Builder,
+> confirmed via Advisor), so the AR-twin mechanism is unblocked and the "+ add
+> translation" button renders on guides. **Twin-building is HELD** pending one
+> read-only check — shortcode AR-URL emission (§7 / §9-C). When you act, re-verify
+> the WPML state over SSH — settings drift.
 
 ---
 
@@ -55,17 +59,21 @@ EN (do today, fully supported):
      -> live at /guide/<slug>/   (record the guide_article ID)
 
 AR (the twin — see §3 GATE before executing):
-  4. PREREQUISITE (one-time, currently MISSING): guide_article + topic must be
-     WPML-Translatable.  -> NOT set yet. Route to Advisor (§3, §9-A). Until done,
-     there is no "+" twin button and AR cannot be created the sanctioned way.
-  5. Stage the human Arabic in drafts/<slug>_AR_<date>.md, converted to the
+  4. PREREQUISITE (one-time): guide_article + topic [+ guide_tag] WPML-Translatable.
+     -> DONE 2026-06-29 (Builder; confirmed via Advisor). The WPML "+" twin button
+     now renders on guides. Re-confirm over SSH before your first twin (re-verify).
+  5. CURRENT GATE before building ANY twin: Builder's read-only check that
+     [q8tly_place]/[q8tly_map] emit /ar/place/... on AR pages (not /place/... and
+     not /ar/en/...). HOLD twin-building until Advisor relays that finding (§7,§9-C).
+  6. Stage the human Arabic in drafts/<slug>_AR_<date>.md, converted to the
      kit's PLAIN-body + markers format (§8 — current AR drafts are old HTML chrome).
-  6. In wp-admin, on the EN guide, click WPML "+" next to Arabic to create the
+  7. In wp-admin, on the EN guide, click WPML "+" next to Arabic to create the
      LINKED AR twin (§5). NEVER `wp post create` an AR guide. NEVER touch icl_*.
-  7. Paste/populate the reviewed AR body + meta into that twin; keep it noindex
+  8. Paste/populate the reviewed AR body + meta into that twin; keep it noindex
      (fenced). Human review (D-145) -> owner sign-off -> unfence (§ Phase C).
 
-If unsure which step you're at: EN is unblocked; AR is blocked on step 4.
+If unsure which step you're at: EN is unblocked; the flip (step 4) is DONE;
+AR twin-building is paused on step 5 (Builder's shortcode-URL check).
 ```
 
 ---
@@ -112,16 +120,21 @@ GATED on WPML being on production (S2-19)."*
 | WPML active on staging | **YES — v4.9.5** (`sitepress-multilingual-cms`, `wpml-string-translation`, `geodir-multilingual`) |
 | Languages | default **`en`**, active **`ar, en`** |
 | URL format | **directories** (`language_negotiation_type=1`); EN = no prefix, AR = `/ar/`; `/ar/` returns **HTTP 200** |
-| `guide_article` translatable in WPML | **NO — `guide_article_sync = NOT SET`** ⛔ |
-| `topic` taxonomy translatable | **NO — `NOT SET`** |
+| `guide_article` translatable in WPML | **YES (flipped 2026-06-29)** — was `NOT SET` on 2026-06-28; Builder set it Translatable, confirmed via Advisor. Re-confirm over SSH at first-twin build. |
+| `topic` taxonomy translatable | **YES (flipped 2026-06-29)** — flipped with `guide_article`. |
+| `guide_tag` taxonomy translatable | **YES (flipped 2026-06-29)** — included proactively by Builder so tags don't need a second flip later. |
 | `post` / `page` translatable | yes, both = `1` ("only show translated items") |
 | `anosha` (2189) language record | **none** — WPML doesn't track it (because the CPT isn't translatable) |
 
-**The real blocker is NOT "WPML isn't installed." It is: the `guide_article` CPT
-(and the `topic` taxonomy) are not set Translatable in WPML.** Until that flag is
-flipped, **the WPML "+" twin button does not appear on guides** and there is no
-rail-#1-honoring way to create an AR guide. Enabling EN→AR on `post` does nothing
-for us — translatability is per post type (§0).
+**RESOLVED 2026-06-29.** The former blocker — `guide_article` (and `topic`) not set
+Translatable — is cleared: Builder flipped `guide_article` + `topic` + `guide_tag`
+Translatable (D-145 guard confirmed intact: WPML Translate-Everything **OFF**, 0
+guide twins, 0 DeepL jobs — mechanism *enabled*, **not** MT-enrolled), confirmed via
+Advisor. The WPML "+" twin button now renders on guides; the rail-#1 sanctioned
+creation path exists. **New active gate before building any twin:** Builder's
+read-only check that the body shortcodes emit correct `/ar/` URLs (§7, §9-C) — Blog
+**holds twin-building** until Advisor relays that finding. (Translatability is per
+post type — enabling EN→AR on `post` never helped us; §0.)
 
 **Who flips it:** Setting a CPT/taxonomy translatable is a **WPML / global-site
 config change** (WPML → Settings → *Post Types Translation* and *Taxonomies
@@ -139,9 +152,17 @@ Advisor / Builder (Module 6)** — do **not** flip it silently from Module 8.
   human-reviewed **and** the owner signs off to unfence. Staging twins stay
   fenced meanwhile.
 
-> Note for Advisor: because WPML *is* on staging (contradicting the handoff), the
-> exact current scope of S2-19 should be reconciled centrally — is the gate
-> "WPML on prod" only, or also "guide_article made translatable"? See §9.
+> **S2-19 reconciled (2026-06-29, per Advisor canon):** the AR-public gate is
+> **NOT** "WPML on prod" alone. WPML-on-prod is **necessary-but-not-sufficient**;
+> current canon gates AR-public on **AR-perfect (D-160) + owner track + the D-157
+> cutover + the 7-G flip.** This lane's older S2-19 wording ("AR publishing GATED on
+> WPML being on production") is **pre-D-160 drift — incomplete, not a direct
+> contradiction**: it under-specifies the gate (implies WPML-on-prod ⇒ publish)
+> rather than asserting the opposite of D-160. Patched to canon in role-brief,
+> README, calendar, and here. Residual flag to Advisor: this lane holds no S2-19
+> *source text*, only the paraphrase — if the central spec literally says
+> WPML-on-prod is the *whole* gate, that contradicts D-160 and needs a central
+> patch (§9-B).
 
 ---
 
@@ -276,18 +297,20 @@ choices map **directly** onto the held owner decision below:
 | **"Only show translated items"** (current house value for `post`/`page` = `1`) | Guide is **hidden** from `/ar/` archives and its `/ar/guide/<slug>` does not resolve to an AR page. No wrong-language content, but no AR entry at all until a twin exists. | **AR-complete gates launch** (Option A) |
 | **"Use translation if available, or fall back to default language"** (`2`) | `/ar/guide/<slug>` **shows the EN original** in the AR shell. No broken/empty page — but it is EN content under an AR URL, so it **must be kept noindex (fenced)** to avoid wrong-language indexing. | **EN-fallback behind the fence** (Option B) |
 
-> 🔓 **HELD — OWNER DECISION PENDING (do not decide here; Advisor/Bader rule).**
-> *Must guides be Arabic-complete to gate the public launch, or may they ship
-> EN-fallback behind the fence at launch?*
-> **→ When the owner rules, implement it by setting the `guide_article`
-> translation option above (Option A = "only show translated", Option B =
-> "fallback to default + keep fenced/noindex").** Record the ruling in the
-> central Decision Log and update this row.
+> 🔓 **HELD — RATIFIED VALUE INCOMING (2026-06-29; do NOT set it yourself).**
+> *Must guides be Arabic-complete to gate the public launch (Option A), or may they
+> ship EN-fallback behind the fence (Option B)?*
+> **Per Advisor (2026-06-29): leaning Option A ("only show translated"), consistent
+> with D-160 (AR-perfect).** This is a **global WPML display setting affecting ALL
+> AR surfaces, not just guides**, so **Bader sets it at the project level** (handed
+> to Builder or Blog as a ratified value) — **Blog must NOT set the WPML display
+> option itself, and it is NOT a per-guide setting.** Record the ruling in the
+> central Decision Log and update this row when it lands.
 >
-> Until the ruling lands, the safe default that cannot leak wrong-language
-> content is **Option A** (hide untranslated) — matching the current `post`/`page`
-> house setting (`1`). Whatever is chosen, rail #4 (fenced until sign-off) still
-> applies to every individual AR twin.
+> **This decision does not block twin creation — only fallback behavior.** Until it
+> lands, build every AR twin **noindex-fenced** as planned (rail #4); the safe
+> default that cannot leak wrong-language content is **Option A** (matches the
+> current `post`/`page` house setting `1`).
 
 ---
 
@@ -311,12 +334,15 @@ prefix** (`/ar/guide/<slug>/`); WPML negotiation = **directories**; `/ar/` = 200
   switcher or hardcode canonical/hreflang in the body — WPML emits them from the
   `trid` link. (This is also why the twin must be WPML-linked, not orphaned.)
 
-> ⚠ **Cross-module flag (§9-C):** the body shortcodes `[q8tly_place]` /
-> `[q8tly_map]` resolve listing URLs **server-side at render**. On an `/ar/` page
-> they must emit `/ar/place/…` — not `/place/…` (English under an AR page) and
-> not a malformed `/ar/en/place/…`. Whether they are WPML-language-aware is a
-> **Builder / Module 2** property, not Module 8's to fix. **Verify on the first
-> real AR twin** and route any malformation to Advisor.
+> ⚠ **ACTIVE GATE — cross-module check in flight (§9-C, 2026-06-29):** the body
+> shortcodes `[q8tly_place]` / `[q8tly_map]` resolve listing URLs **server-side at
+> render**. On an `/ar/` page they must emit `/ar/place/…` — not `/place/…` (drops
+> the AR prefix) and not `/ar/en/place/…` (double-prefix). Whether they are
+> WPML-language-aware is a **Builder / Module 2** property, not Module 8's to fix.
+> **Builder is running a read-only check now** (per Advisor); **Blog HOLDS
+> twin-building until the finding is relayed.** If already AR-correct → Blog
+> verifies on the first twin and closes it; if it drops/doubles the prefix → it's a
+> real fix to scope *before* any twins are built.
 
 ---
 
@@ -345,20 +371,26 @@ Publishing it as-is **double-renders**.
 
 ## 9. Open flags routed to Advisor (for the consistency check vs the listings model)
 
-- **A. PREREQUISITE / global-state — `guide_article` + `topic` are not WPML
-  Translatable.** This is the one hard blocker for AR guide twins. Flipping it is
-  a WPML/site-config change (cross-module). **Decision/owner needed:** who flips
-  it and when (Builder/Module 6?). Nothing AR can proceed until then.
-- **B. Stale docs reconcile.** The role-brief / calendar / Anosha handoff say
-  "WPML not active on staging" / "gated on WPML in production." **Reality: WPML
-  4.9.5 is live on staging** (EN no-prefix, AR `/ar/` = 200). Please reconcile
-  **S2-19's exact current meaning** centrally (is the gate "WPML on prod," or
-  also "guide_article made translatable," or "+ human review + unfence"?). I have
-  written this runbook to ground truth and flagged, not silently rewritten, the
-  decision IDs.
-- **C. Shortcode language-awareness (Module 2 / Builder).** Confirm
-  `[q8tly_place]` / `[q8tly_map]` emit `/ar/place/…` on AR pages and never
-  `/ar/en/…`. Verify on the first AR twin (§7).
+- **A. PREREQUISITE / global-state — RESOLVED 2026-06-29.** `guide_article` +
+  `topic` + `guide_tag` are now WPML-Translatable (Builder flipped them via
+  `wpml-config.xml` in the plugin root; D-145 guard intact — Translate-Everything
+  OFF, no DeepL enrolment; confirmed via Advisor). The "+" twin button renders.
+  Was "the one hard blocker"; now cleared — the active gate moved to flag C.
+- **B. Stale docs reconcile — DONE 2026-06-29 (per Advisor canon).** S2-19's
+  "AR publishing gated on WPML in production" is **pre-D-160 drift: incomplete, not
+  a direct contradiction.** Current canon: WPML-on-prod is **necessary-but-not-
+  sufficient**; AR-public also needs **AR-perfect (D-160) + owner track + D-157
+  cutover + 7-G flip.** Patched in this lane (role-brief, README, calendar, runbook
+  §3/§6). **Residual flag to Advisor:** my lane holds no S2-19 *source text* — only
+  the paraphrase — so I can't confirm the spec literally says "WPML-on-prod = whole
+  gate." If the central S2-19 text does say that, it contradicts D-160 and needs a
+  central patch; otherwise this is just lane-doc drift, now fixed.
+- **C. Shortcode language-awareness (Module 2 / Builder) — ACTIVE GATE.** Confirm
+  `[q8tly_place]` / `[q8tly_map]` emit `/ar/place/…` on AR pages — never `/place/…`
+  (dropped prefix) or `/ar/en/…` (doubled). **Builder is running a read-only check
+  now (2026-06-29, per Advisor); Blog holds all twin-building until it returns.**
+  Was "verify on the first twin"; promoted to a pre-build gate so we never build
+  twins against a broken URL emitter (§7).
 - **D. Kit gap.** `publish_guide.py` only *creates* (`wp post create`). For AR it
   must instead *populate an existing WPML-created twin* (`--into <ar_id>`,
   update-only). Until built, AR population is manual wp-admin. Worth building once
@@ -394,3 +426,12 @@ runbook does not import listings complexity.
   search/GD pages + filters/chrome = String Translation; archives = translated
   term). Recorded so Module 8 never twins a non-guide surface. Verified read-only
   in WPML 2026-06-28 (consistent with the §3/§10 staging audit).
+- **2026-06-29** — **Flip landed.** Builder set `guide_article` + `topic` +
+  `guide_tag` WPML-Translatable (D-145 guard intact), confirmed via Advisor → the
+  AR-twin mechanism is UNBLOCKED and the "+" button renders. Updated §1/§3/§9-A.
+  **New active gate = shortcode AR-URL emission check** (Builder, read-only) →
+  §7/§9-C; **twin-building HELD until Advisor relays the finding.** S2-19 reconciled
+  to current canon (necessary-but-not-sufficient; AR-public = D-160 + owner track +
+  D-157 cutover + 7-G) → §3/§9-B, also patched in role-brief/README/calendar.
+  Display-mode (§6): leaning Option A, ratified value to be set at project level —
+  not by Blog, not per-guide. **No AR twins built this pass (correctly held).**

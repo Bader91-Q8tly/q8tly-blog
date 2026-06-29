@@ -33,8 +33,13 @@ internal-linking as the priority.
 ## RULES
 
 - **Bilingual:** every guide ships EN + AR; a page isn't launched until both exist.
-  AR publishing is GATED on WPML being on production (S2-19). Until then: author
-  EN, stage AR drafts, do not publish AR.
+  AR mechanism is now UNBLOCKED on staging (2026-06-29 — Builder set `guide_article`
+  + `topic` + `guide_tag` WPML-Translatable). But **S2-19 ("WPML on production") is
+  necessary-but-not-sufficient** for going public: current canon gates AR-public on
+  AR-perfect (D-160) + owner track + D-157 cutover + 7-G flip. So: author EN, build
+  AR twins on staging as fenced/noindex human translations (D-145), do not unfence
+  to the public until that full gate clears. (Twin-building is paused only pending
+  Builder's `[q8tly_place]`/`[q8tly_map]` AR-URL check — see runbook §7/§9-C.)
 - **Environment:** STAGING only. Production is frozen until cutover.
 - **Build hierarchy** if any template/CSS is ever needed: toolkit guides first,
   CSS overrides next, custom code last.

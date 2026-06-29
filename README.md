@@ -22,8 +22,12 @@ This repo holds the markdown drafts, editorial calendar, and session handoffs fo
 
 - **Publish under `/{lang}/guide/`** — never `/blog/`.
 - **Bilingual:** every guide ships EN + AR; not launched until both exist.
-  AR publishing is GATED on WPML being on production (S2-19). Until then: author
-  EN, stage AR drafts, do not publish AR.
+  AR twin mechanism is UNBLOCKED on staging (2026-06-29 — `guide_article` + `topic`
+  + `guide_tag` now WPML-Translatable). Going *public* stays gated: S2-19 ("WPML on
+  production") is necessary-but-not-sufficient — public AR also needs AR-perfect
+  (D-160) + owner track + D-157 cutover + 7-G flip. Until then: author EN, build AR
+  twins as fenced/noindex human translations (D-145); don't publish AR. See
+  `guide-kit/GUIDE_AR_WORKFLOW.md`.
 - **Staging only.** Production is frozen until cutover.
 - **Internal-link** each guide into the relevant district + category money pages.
 - **Out of scope:** the data model, listing template, combo/archive pages, and
