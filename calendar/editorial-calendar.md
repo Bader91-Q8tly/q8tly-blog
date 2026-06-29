@@ -60,7 +60,13 @@ Arabic injected + verified (place-card → `/ar/places/الفحيحيل/مطعم
 **Vibes AR twin LIVE (fenced) 2026-06-29:** `guide_article` **2634** at
 `/ar/guide/vibes-coffee-roastery-al-kout-mall/`, publish + noindex, Kuwaiti AR injected +
 verified (place-card → `/ar/places/الفحيحيل/vibes-coffee-roastery/`). Parked fenced.
-**Remaining AR: south-avenue only** (Bader prepping the Kuwaiti version; shell 2619 up).
+**South Avenue AR twin LIVE (fenced) 2026-06-29:** `guide_article` **2619** at
+`/ar/guide/south-avenue-salon-sabah-al-salem/`, publish + noindex, Kuwaiti AR injected +
+verified (place-card → `/ar/places/صباح-السالم/صالون-ساوث-أفينيو/`). Parked fenced.
+
+**✅ AR CORPUS COMPLETE (2026-06-29): all 6 guides have fenced AR twins** — anosha 2600,
+naranj 2612, mizumesa 2618, keif 2630, vibes 2634, south-avenue 2619. All publish+noindex;
+they ride the site-wide AR-public flip together (no per-guide unfence). EN sides untouched.
 
 | Title | URL (`/{lang}/guide/…`) | guide_article | Live date | Internal links placed |
 |-------|--------------------------|---------------|-----------|------------------------|

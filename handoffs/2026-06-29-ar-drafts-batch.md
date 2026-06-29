@@ -54,9 +54,16 @@ Media to reuse on injection (no re-upload, text-only repo):
   (`drafts/vibes-coffee-roastery-al-kout-mall_AR_2026-06-29.md`) injected + verified (place-card →
   `/ar/places/الفحيحيل/vibes-coffee-roastery/`), parked fenced. (Bader approved: "vibez is okay".
   The Kuwaiti pass was machine-assisted; Bader's verbal OK = the D-145 human sign-off.)
-- **south-avenue** — LAST ONE. Shell **2619** up; media ready (hero 2335, inline 2336/2337/2338).
-  Awaiting Bader's Kuwaiti version — the file sent so far (`south-avenue_AR_draft(1).md`) is still
-  the raw MSA machine draft (not injectable, D-145). Inject the moment the Kuwaiti file lands.
+- **south-avenue** — AR twin LIVE: `guide_article` **2619**, publish+noindex, Kuwaiti AR
+  (`drafts/south-avenue-salon-sabah-al-salem_AR_2026-06-29.md`) injected + verified (place-card →
+  `/ar/places/صباح-السالم/صالون-ساوث-أفينيو/`), parked fenced.
+
+**✅ AR CORPUS COMPLETE (2026-06-29): all 6 guides have fenced AR twins.**
+anosha 2600 · naranj 2612 · mizumesa 2618 · keif 2630 · vibes 2634 · south-avenue 2619 —
+all publish+noindex, ride the site-wide AR-public flip together (no per-guide unfence). EN untouched.
+D-145 note: vibes + south-avenue were machine-assisted Kuwaiti passes that Bader approved
+("vibez is okay" / handed the `_kuwaiti` file as the final step); naranj/mizumesa/keif were
+`_kuwaiti_clean`; anosha was the 2026-06-20 human AR (D-145 PASS reviewed).
 
 > Minor for Pipeline/Chrome: mizumesa's AR *listing* twin (2405) has a numeric slug, so the
 > card link is `/ar/places/شرق/2405/` (vs naranj's `/ar/places/السالمية/نارنج/`). Listings-lane
