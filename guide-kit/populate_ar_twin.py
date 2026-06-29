@@ -54,8 +54,9 @@ def main():
         k, v = pair.split("="); media[k.strip()] = v.strip()
 
     raw = open(args.draft, encoding="utf-8").read()
+    raw = re.sub(r"^﻿?\s*<!--.*?-->\s*", "", raw, count=1, flags=re.S)  # allow a leading HTML comment before the frontmatter
     fm, body = kit.parse_frontmatter(raw)
-    body = re.sub(r"<!--.*?-->", "", body, flags=re.S).strip()  # drop population-notes comment
+    body = re.sub(r"<!--.*?-->", "", body, flags=re.S).strip()  # drop any remaining comments
     if fm.get("lang") != "ar":
         die("draft lang is not 'ar'")
     for bad in kit.CHROME_FORBIDDEN:
