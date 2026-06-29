@@ -44,8 +44,15 @@ Media to reuse on injection (no re-upload, text-only repo):
 - **naranj** — AR twin LIVE: `guide_article` **2612**, publish+noindex, Bader-authored Kuwaiti
   Arabic (`drafts/naranj-salmiya_AR_2026-06-29.md`) injected + verified (place-card →
   `/ar/places/السالمية/نارنج/`), parked fenced. (Approved AR came from `~/Downloads/naranj_AR_kuwaiti_clean.md`.)
-- **south-avenue / mizumesa / vibes / keif** — AR drafts staged on Desktop, awaiting
-  Bader's rewrite → approval. No twins created (twin creation waits for approved AR + "+").
+- **mizumesa** — AR twin LIVE: `guide_article` **2618**, publish+noindex, Bader-authored
+  Kuwaiti Arabic (`drafts/mizumesa-sharq_AR_2026-06-29.md`) injected + verified (place-card →
+  `/ar/places/شرق/2405/`), parked fenced. (Approved AR from `~/Desktop/AR blogs /mizumesa_AR_kuwaiti_clean.md`.)
+- **south-avenue / vibes / keif** — AR drafts staged on Desktop, awaiting Bader's rewrite →
+  approval. No twins created (twin creation waits for approved AR + "+").
+
+> Minor for Pipeline/Chrome: mizumesa's AR *listing* twin (2405) has a numeric slug, so the
+> card link is `/ar/places/شرق/2405/` (vs naranj's `/ar/places/السالمية/نارنج/`). Listings-lane
+> slug detail; the guide twin is correct.
 
 ## Next (per guide, once Bader approves its AR)
 approved AR MD → Bader does "+" on the EN guide (editable WP-editor shell) →

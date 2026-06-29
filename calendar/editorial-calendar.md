@@ -51,6 +51,9 @@ also AR-perfect D-160 + owner track + D-157 cutover + 7-G flip).
 **Naranj AR twin LIVE (fenced) 2026-06-29:** `guide_article` **2612** at
 `/ar/guide/naranj-salmiya/`, publish + noindex, Bader-authored Kuwaiti Arabic
 injected + verified (place-card → `/ar/places/السالمية/نارنج/`). Parked fenced.
+**MizuMesa AR twin LIVE (fenced) 2026-06-29:** `guide_article` **2618** at
+`/ar/guide/mizumesa-sharq/`, publish + noindex, Bader-authored Kuwaiti Arabic
+injected + verified (place-card → `/ar/places/شرق/2405/`). Parked fenced.
 
 | Title | URL (`/{lang}/guide/…`) | guide_article | Live date | Internal links placed |
 |-------|--------------------------|---------------|-----------|------------------------|
