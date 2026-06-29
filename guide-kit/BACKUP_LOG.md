@@ -19,3 +19,4 @@ is the same write-class as production, so the discipline applies now.
 | 20260629-141843 | populate AR twin `anosha-beauty-salon-sabah-al-salem` (post 2600) | `staging-20260629-141843-ar-twin-anosha-beauty-salon-sabah-al-salem.sql.gz` | 2330238 B | staging |
 | 20260629-160503 | populate AR twin `naranj-salmiya` (post 2612) | `staging-20260629-160503-ar-twin-naranj-salmiya.sql.gz` | 2387278 B | staging |
 | 20260629-161150 | populate AR twin `mizumesa-sharq` (post 2618) | `staging-20260629-161150-ar-twin-mizumesa-sharq.sql.gz` | 2399728 B | staging |
+| 20260629-161624 | populate AR twin `keif-restaurant-al-kout-mall` (post 2630) | `staging-20260629-161624-ar-twin-keif-restaurant-al-kout-mall.sql.gz` | 2406675 B | staging |

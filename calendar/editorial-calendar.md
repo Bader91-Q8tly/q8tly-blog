@@ -54,6 +54,10 @@ injected + verified (place-card → `/ar/places/السالمية/نارنج/`). 
 **MizuMesa AR twin LIVE (fenced) 2026-06-29:** `guide_article` **2618** at
 `/ar/guide/mizumesa-sharq/`, publish + noindex, Bader-authored Kuwaiti Arabic
 injected + verified (place-card → `/ar/places/شرق/2405/`). Parked fenced.
+**Keif AR twin LIVE (fenced) 2026-06-29:** `guide_article` **2630** at
+`/ar/guide/keif-restaurant-al-kout-mall/`, publish + noindex, Bader-authored Kuwaiti
+Arabic injected + verified (place-card → `/ar/places/الفحيحيل/مطعم-كيف/`). Parked fenced.
+**Remaining AR: south-avenue + vibes** — still MT drafts (need Bader's Kuwaiti rewrite).
 
 | Title | URL (`/{lang}/guide/…`) | guide_article | Live date | Internal links placed |
 |-------|--------------------------|---------------|-----------|------------------------|
