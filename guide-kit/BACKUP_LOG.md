@@ -24,3 +24,5 @@ is the same write-class as production, so the discipline applies now.
 | 20260629-195856 | populate AR twin `south-avenue-salon-sabah-al-salem` (post 2619) | `staging-20260629-195856-ar-twin-south-avenue-salon-sabah-al-salem.sql.gz` | 2405034 B | staging |
 | 20260630-144914 | populate AR twin `mizumesa-sharq` (post 2618) | `staging-20260630-144914-ar-twin-mizumesa-sharq.sql.gz` | 2418855 B | staging |
 | 20260630-152141 | populate AR twin `mizumesa-sharq` (post 2618) | `staging-20260630-152141-ar-twin-mizumesa-sharq.sql.gz` | 2419189 B | staging |
+| 20260630-174154 | mizumesa tower fix (KIPCO→Al-Shaheed) PRE-write, EN 2362 + AR 2618 | `staging-20260630-174154-mizumesa-tower-fix-pre.sql.gz` | 2413440 B | staging |
+| 20260630-174441 | populate AR twin `mizumesa-sharq` (post 2618) | `staging-20260630-174441-ar-twin-mizumesa-sharq.sql.gz` | 2414762 B | staging |
