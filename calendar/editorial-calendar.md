@@ -54,6 +54,12 @@ injected + verified (place-card → `/ar/places/السالمية/نارنج/`). 
 **MizuMesa AR twin LIVE (fenced) 2026-06-29:** `guide_article` **2618** at
 `/ar/guide/mizumesa-sharq/`, publish + noindex, Bader-authored Kuwaiti Arabic
 injected + verified (place-card → `/ar/places/شرق/2405/`). Parked fenced.
+**MizuMesa NEUTRAL re-author 2026-06-30:** EN **2362** + AR **2618** bodies replaced with
+the new short/neutral model (D-168) — About + Key facts + place card only; no data-table,
+no FAQ. Faithful inject of Bader's locked MD (`drafts/mizumesa-sharq_{EN,AR}_2026-06-30.md`).
+EN published (indexable), AR stays noindex-fenced. Open flags: inline photos 2359/2360/2361
+orphaned (new MD has no inline images → hero 2358 only); SEO meta still old (EN rank_math
+title+desc, AR desc); deck = auto-excerpt of the about; AR listing-card slug numeric (2405).
 **Keif AR twin LIVE (fenced) 2026-06-29:** `guide_article` **2630** at
 `/ar/guide/keif-restaurant-al-kout-mall/`, publish + noindex, Bader-authored Kuwaiti
 Arabic injected + verified (place-card → `/ar/places/الفحيحيل/مطعم-كيف/`). Parked fenced.
