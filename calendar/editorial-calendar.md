@@ -60,6 +60,13 @@ no FAQ. Faithful inject of Bader's locked MD (`drafts/mizumesa-sharq_{EN,AR}_202
 EN published (indexable), AR stays noindex-fenced. Open flags: inline photos 2359/2360/2361
 orphaned (new MD has no inline images → hero 2358 only); SEO meta still old (EN rank_math
 title+desc, AR desc); deck = auto-excerpt of the about; AR listing-card slug numeric (2405).
+**Refined 2026-06-30 (v2, per Bader):** photos restored with short neutral captions
+(hero 2358 "Outside MizuMesa" + inline 2359/2360/2361 = "Inside MizuMesa" / "One of the
+rolls" / "A beef dish"; AR mirrors); key facts now render as the **TABLE** (the old
+"before you go" look — content-only, no facts-card CSS exists, no Builder), 5 clean rows.
+Final = About → 3 captioned photos → key-facts table → listing card. AR fenced. EN via
+new `guide-kit/reinject_en.py` (EN counterpart to populate_ar_twin.py; no fence).
+Photo-orphan flag RESOLVED. Remaining flags: SEO meta still old; AR listing slug numeric.
 **Keif AR twin LIVE (fenced) 2026-06-29:** `guide_article` **2630** at
 `/ar/guide/keif-restaurant-al-kout-mall/`, publish + noindex, Bader-authored Kuwaiti
 Arabic injected + verified (place-card → `/ar/places/الفحيحيل/مطعم-كيف/`). Parked fenced.
