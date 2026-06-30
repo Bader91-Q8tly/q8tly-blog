@@ -16,6 +16,48 @@
 
 ---
 
+## 0a. Cross-lane sync — Blog within the six-lane squad (q8tly-core = shared canon) · added 2026-06-30
+
+Canonical six-lane workflow: **`q8tly-core/docs/WORKFLOW.md`** (Builder's repo / shared
+GitHub `git@github.com:Bader91-Q8tly/q8tly-core.git`; cloned at `~/Desktop/q8tly-core`).
+This runbook is Blog's **operational** lane; the rules below keep it in sync. **Augment,
+never contradict.**
+
+- **Source of truth.** q8tly-core is canonical for **shared truth** — the code +
+  `docs/DECISIONS.md`, `docs/STATE.md`, `docs/BUILD_LOG.md`, `docs/WORKFLOW.md`. On any
+  conflict about what was decided or the project's shared state, **q8tly-core wins.**
+  Blog stays authoritative for its **own operational scope** — the guide-build process,
+  the AR-twin injection workflow (`populate_ar_twin.py`), and its own repo's state.
+- **Code/config caveat.** The guide system's **code** lives in q8tly-core: the
+  `guide_article` CPT config, `[q8tly_place]`/`[q8tly_map]` shortcode resolution, the WPML
+  Translatable + per-type-editor flags (`post_translation_editor_native_for_post_type['guide_article']=true`).
+  Those are **q8tly-core-authoritative and Builder owns the edits.** **Blog owns the
+  content + the injection; Builder owns the guide-system code.**
+- **Sync direction (one-way).** Blog **READS** shared canon and **DEFERS** on shared
+  decisions — esp. **D-145** (editorial = human AR, never machine), **D-163** (AR
+  surface→mechanism map; only listings + guides twin; never hand-write `icl_translations`/
+  `trid`), **D-161** (AR controlled terms = Pipeline's mapping, not Blog's), **D-167**
+  (fragile zones). Blog **does NOT write to q8tly-core** (only Builder commits there); its
+  own repo (`q8tly-blog`) stays its own.
+- **Blog's hard rules ARE canon** (authoritative home = q8tly-core DECISIONS/WORKFLOW; this
+  runbook reflects them): D-145 human AR; never `wp post create` an AR guide; never
+  hand-write `icl_translations`/`trid` (D-163); "+" right-before-injection-never-before;
+  per-type WP-editor for guides — **never flip the global `doc_translation_method`** (breaks
+  listings DeepL); twins stay noindex until the site-wide AR-public flip.
+- **Cross-lane changes route through the Advisor.** A decision affecting shared canon — a
+  guide-system rule, a new D-number, anything touching Builder's code or another lane —
+  goes **Advisor → ratified → Builder commits.** Blog proposes/flags; never self-ratifies
+  or edits q8tly-core.
+- **Advisor is the connector.** Handoffs go **through the Advisor**, who verifies the prior
+  lane's done-signal before relaying. Blog does **not** coordinate directly with Pipeline /
+  Builder / Chrome.
+- **If this runbook ever diverges from canon, canon wins** — update the local reflection
+  here (§3.5 mirrors D-163; §1.5/§2 mirror D-145 + WORKFLOW safety rules), never the
+  reverse. *(Resolved in canon: WORKFLOW "per-type editor" + STATE confirm `guide_article`
+  is on the WP-editor path — the §9-G ATE concern is closed; global stays ATE for listings.)*
+
+---
+
 ## 0. Classification — what "blog" means here (answer to Advisor's first question)
 
 **"Blogs" = the EXISTING guide / editorial system. There is no separate "blog"
