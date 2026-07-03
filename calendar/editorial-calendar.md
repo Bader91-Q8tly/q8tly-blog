@@ -67,6 +67,33 @@ rolls" / "A beef dish"; AR mirrors); key facts now render as the **TABLE** (the 
 Final = About → 3 captioned photos → key-facts table → listing card. AR fenced. EN via
 new `guide-kit/reinject_en.py` (EN counterpart to populate_ar_twin.py; no fence).
 Photo-orphan flag RESOLVED. Remaining flags: SEO meta still old; AR listing slug numeric.
+**Naranj NEUTRAL re-author 2026-07-01:** EN **2251** + AR **2612** bodies replaced with the
+same short/neutral model (D-168) — About + 3 captioned photos (hero 2247 "Outside Naranj" +
+inline 2248/2249/2250 = "Inside Naranj" / "Mezze and meat arayes" / "Dessert at the end of
+the meal"; AR mirrors) + key-facts **table** (6 rows) + place card; no `[[map]]`. Faithful
+inject of Bader's approved MD (`drafts/naranj-salmiya_{EN,AR}_2026-07-01.md`). EN published
+(indexable), AR stays noindex-fenced (content-only update, fence untouched). `rank_math_description`
+set to match (EN only, via SSH — the AR precedent leaves AR's blank on a fenced twin).
+**Anosha NEUTRAL re-author 2026-07-01:** EN **2189** + AR **2600** bodies replaced with the
+same model — About + 3 captioned photos (hero 2190 "Outside Anosha Beauty Salon" + inline
+2192/2194/2193 = "Hair-wash lounge" / "Welcome coffee on arrival" / "The nail bar"; AR
+mirrors) + key-facts table (6 rows) + place card; old 12-row service/price menu, FAQ, and
+"Know before you go" table all dropped (price menu is listing-pipeline scope, not guide
+prose). Faithful inject of Bader's approved MD (`drafts/anosha-beauty-salon-sabah-al-salem_{EN,AR}_2026-07-01.md`).
+Price tier ($$) confirmed by Bader (intake had left it an open call). EN published, AR stays
+noindex-fenced.
+**Tool: `reinject_en.py` FORMALIZED 2026-07-01** — the EN counterpart to `populate_ar_twin.py`
+is no longer a one-off: auto-backup before every write (self-logged to `BACKUP_LOG.md`), a
+hard target guard (refuses unless the post is a `guide_article` with WPML lang `en`/untranslated
+— never touches the AR twin or `icl_translations`), a built-in idempotency diff against the
+live body, and conditional SEO-meta sync. No-op verified against MizuMesa (post 2362) —
+generated body byte-identical to live, full backup→update→verify pipeline clean, AR twin
+(2618) confirmed untouched. Documented in `guide-kit/README.md` §6.
+**NEUTRAL ROLLOUT STATUS (2026-07-02): 3 of 6 done** — mizumesa, naranj, anosha. **3 remain**
+on the old persuasive body: south-avenue-salon-sabah-al-salem (2339/2619), keif-restaurant-al-kout-mall
+(2132/2630), vibes-coffee-roastery-al-kout-mall (2131/2634) — same flow, gated on their
+approved MDs landing from the Content Writer. (Corrects the "5 remaining" figure carried in
+the 2026-06-30 checkpoint and in shared STATE.md — 2 of those 5 are now done.)
 **Keif AR twin LIVE (fenced) 2026-06-29:** `guide_article` **2630** at
 `/ar/guide/keif-restaurant-al-kout-mall/`, publish + noindex, Bader-authored Kuwaiti
 Arabic injected + verified (place-card → `/ar/places/الفحيحيل/مطعم-كيف/`). Parked fenced.

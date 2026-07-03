@@ -26,3 +26,26 @@ is the same write-class as production, so the discipline applies now.
 | 20260630-152141 | populate AR twin `mizumesa-sharq` (post 2618) | `staging-20260630-152141-ar-twin-mizumesa-sharq.sql.gz` | 2419189 B | staging |
 | 20260630-174154 | mizumesa tower fix (KIPCO→Al-Shaheed) PRE-write, EN 2362 + AR 2618 | `staging-20260630-174154-mizumesa-tower-fix-pre.sql.gz` | 2413440 B | staging |
 | 20260630-174441 | populate AR twin `mizumesa-sharq` (post 2618) | `staging-20260630-174441-ar-twin-mizumesa-sharq.sql.gz` | 2414762 B | staging |
+| 20260701-200653 | EN neutral re-author `naranj-salmiya` (post 2251) — **snapshot taken POST-write** | `staging-20260701-200653-guide-naranj-salmiya-en-reinject-post.sql.gz` | 2412054 B | staging |
+
+> Note: `reinject_en.py` has no built-in pre-write backup step (unlike
+> `publish_guide.py` / `populate_ar_twin.py`, which both snapshot automatically).
+> The 2026-07-01 Naranj EN reinject ran before this was caught — snapshot above
+> was taken immediately after, capturing the resulting state (process gap,
+> logged honestly, same pattern as the original Anosha gap above). Restore point
+> for pre-reinject state is the prior row (`20260624-165707`, internal-link
+> guides snapshot) if a rollback is ever needed. Flagging `reinject_en.py`'s
+> missing backup step as a kit gap worth closing.
+>
+> **CLOSED 2026-07-01.** `reinject_en.py` formalized: it now snapshots
+> automatically before every write (`staging-<ts>-en-guide-<slug>.sql.gz`,
+> logged here just like `populate_ar_twin.py`), same backup → update → verify
+> discipline as the AR tool. No more manual pre-write snapshots needed for EN
+> re-authors going forward — see the `20260701-2032xx` row below (auto-logged
+> by the tool itself, no manual step).
+| 20260701-200804 | populate AR twin `naranj-salmiya` (post 2612) | `staging-20260701-200804-ar-twin-naranj-salmiya.sql.gz` | 2412932 B | staging |
+| 20260701-201848 | EN neutral re-author `anosha-beauty-salon-sabah-al-salem` (post 2189) — PRE-write, manual (closes the `reinject_en.py` gap logged above) | `staging-20260701-201848-guide-anosha-en-reinject-pre.sql.gz` | 2416341 B | staging |
+| 20260701-202059 | populate AR twin `anosha-beauty-salon-sabah-al-salem` (post 2600) | `staging-20260701-202059-ar-twin-anosha-beauty-salon-sabah-al-salem.sql.gz` | 2410654 B | staging |
+| 20260701-202945 | EN re-author `mizumesa-sharq` (post 2362) | `staging-20260701-202945-en-guide-mizumesa-sharq.sql.gz` | 2415136 B | staging |
+| 20260701-203207 | EN re-author `mizumesa-sharq` (post 2362) | `staging-20260701-203207-en-guide-mizumesa-sharq.sql.gz` | 2415596 B | staging |
+| 20260703-100324 | pillar-card tagging: `menu_feature=1` on `mizumesa-sharq` (2362, food-drink) + `anosha-beauty-salon-sabah-al-salem` (2189, health-beauty-fitness) — PRE-write | `staging-20260703-100324-menu-feature-tagging-pre.sql.gz` | 2456744 B | staging |
