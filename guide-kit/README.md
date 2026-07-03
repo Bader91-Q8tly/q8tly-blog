@@ -127,3 +127,49 @@ python3 publish_guide.py guides/my-place-area --execute
 Config (SSH host + site URL) lives in `config.sh`; override with `--ssh-host` /
 `--site-url` or env `GUIDEKIT_SSH_HOST` / `GUIDEKIT_SITE_URL`. **Always dry-run
 first.** A worked reference drop is in `guides/_example-anosha/`.
+
+---
+
+## 6. Re-authoring an EXISTING EN guide's body (`reinject_en.py`)
+
+`publish_guide.py` is for a guide that doesn't exist yet. Once a guide is
+already live and you're re-authoring its body — e.g. moving it onto the
+neutral guide model (D-168) — use **`reinject_en.py`**, the formalized EN
+sibling to `GUIDE_AR_WORKFLOW.md`'s `populate_ar_twin.py`. Same discipline,
+mirrored: **backup → update → verify**, every run.
+
+```bash
+# Dry run — verifies the target, builds the body, shows an idempotency diff
+# against what's currently live. No writes.
+python3 reinject_en.py drafts/<slug>_EN_<date>.md <en_post_id> \
+  --media inline-1=<id>,inline-2=<id>,hero=<id>
+
+# Execute — backs up first, writes, touches + flushes cache, verifies the render.
+python3 reinject_en.py drafts/<slug>_EN_<date>.md <en_post_id> \
+  --media inline-1=<id>,inline-2=<id>,hero=<id> --execute
+```
+
+- **Update-only, one explicit post.** It writes to exactly the `post_id` you
+  pass and nothing else. Images are **reused** (`--media stem=attachment_id`),
+  never re-uploaded.
+- **Hard-verifies the target first**: must be a `guide_article`, and its WPML
+  language must be `en` (or untranslated). If the id resolves to anything
+  else — in particular the **AR side of a trid** — it refuses. It never calls
+  any WPML write (no `icl_translations`, no twin creation/mutation) — that
+  boundary belongs to `populate_ar_twin.py` alone.
+- **Built-in idempotency check.** Before writing, it diffs the newly-built
+  body against the post's current live `post_content` and reports `NO CHANGE`
+  or a line-diff preview. Re-running the same approved MD is always safe to
+  check first — a clean `NO CHANGE` on a guide you didn't mean to touch is
+  the signal nothing drifted.
+- **Backup is automatic** (`staging-<ts>-en-guide-<slug>.sql.gz`, logged to
+  `BACKUP_LOG.md` by the tool itself — no manual snapshot needed).
+- **SEO meta:** if the draft's frontmatter sets `meta_description` /
+  `seo_title`, it updates `rank_math_description` / `rank_math_title` too
+  (only when present — it never blanks an existing value the draft doesn't
+  mention).
+- **Verify step** (post-write): confirms the title renders without mojibake,
+  no raw `[q8tly_*]` shortcode literal leaked, the place shortcode resolved to
+  a real `/places/` link, and there's no double title.
+- **Never fences.** EN guides always stay indexable — there is no `--draft`
+  / noindex option here (that's AR-only, per rail #4 in `GUIDE_AR_WORKFLOW.md`).
