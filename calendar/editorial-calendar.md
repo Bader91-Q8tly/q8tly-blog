@@ -21,11 +21,11 @@ only after the full gate clears — see Published note below).
 
 | Position | Guide | Slug | Note |
 |----------|-------|------|------|
-| **Featured** (editorial of the week) | Odachi — Kuwait City / Khaleejia Tower | `odachi-kuwait-city` | newest (2026-07-04) → auto-featured ✓; born-neutral (D-168) |
-| 2 | MizuMesa (Nikkei) — Sharq / KIPCO | `mizumesa-sharq` | live EN · AR fenced |
-| 3 | South Avenue Salon & Spa — Sabah Al-Salem | `south-avenue-salon-sabah-al-salem` | live EN · AR fenced |
-| 4 | Naranj — Salmiya | `naranj-salmiya` | live EN · AR fenced |
-| 5 | Anosha Beauty Salon — Sabah Al-Salem | `anosha-beauty-salon-sabah-al-salem` | flagship; live EN · AR fenced — rotates off if the block caps at 4 |
+| **Featured** (editorial of the week) | B+F — 360 Mall (Solar Garden) / Zahra | `bandf-360-mall` | newest (2026-07-05) → auto-featured ✓; born-neutral (D-168) |
+| 2 | Odachi — Kuwait City / Khaleejia Tower | `odachi-kuwait-city` | live EN · AR fenced |
+| 3 | MizuMesa (Nikkei) — Sharq / KIPCO | `mizumesa-sharq` | live EN · AR fenced |
+| 4 | South Avenue Salon & Spa — Sabah Al-Salem | `south-avenue-salon-sabah-al-salem` | live EN · AR fenced |
+| 5 | Naranj — Salmiya | `naranj-salmiya` | live EN · AR fenced — rotates off if the block caps at 4 |
 
 ---
 
@@ -105,10 +105,22 @@ verified (place-card → `/ar/places/الفحيحيل/vibes-coffee-roastery/`). 
 `/ar/guide/south-avenue-salon-sabah-al-salem/`, publish + noindex, Kuwaiti AR injected +
 verified (place-card → `/ar/places/صباح-السالم/صالون-ساوث-أفينيو/`). Parked fenced.
 
-**✅ AR CORPUS COMPLETE — now 7 of 7 (2026-07-04): all guides have fenced AR twins** —
-anosha 2600, naranj 2612, mizumesa 2618, keif 2630, vibes 2634, south-avenue 2619,
-**odachi 2808**. All publish+noindex; they ride the site-wide AR-public flip together
-(no per-guide unfence). EN sides untouched.
+**✅ AR CORPUS: 7 of 8 fenced twins (2026-07-05)** — anosha 2600, naranj 2612,
+mizumesa 2618, keif 2630, vibes 2634, south-avenue 2619, odachi 2808. All publish+noindex;
+ride the site-wide AR-public flip together. **B+F (2918) is the 8th EN guide — its AR twin
+is pending Bader's WPML "+"** (AR MD staged `drafts/bandf-360-mall_AR_2026-07-05.md`; then
+`populate_ar_twin.py --en-id 2918 --media hero=2914,inline-1=2915,inline-2=2916,inline-3=2917`).
+
+**B+F PUBLISHED (born-neutral) 2026-07-05:** EN `guide_article` **2918** at
+`/guide/bandf-360-mall/` — Bader-locked About verbatim (matches live listing 2664) + 3
+captioned photos (musakhan rolls / beef plate / Solar Garden terrace) + 8-row key-facts
+table + place card. **Two pipeline-live corrections applied over the source doc:** price
+band **$$ → $$$** (KD figure kept), and slug/district settled = **Zahra** (place card →
+`/places/zahra/bf-360-mall/`, listing 2664). Mall services carried as the "Via 360 Mall
+(not venue amenities)" line only; no Burger/Steakhouse/"Restaurant inside Mall" labels in
+guide prose (NEEDS-BADER). Photos pre-cropped landscape (portrait originals would slice —
+the Odachi lesson); hero 2914 + inline 2915/2916/2917. Kit run backup `20260704-215916`.
+AR twin pending the "+".
 
 **Odachi PUBLISHED (born-neutral) 2026-07-04:** EN `guide_article` **2800** at
 `/guide/odachi-kuwait-city/` — **first guide shipped straight onto the D-168 neutral model
@@ -144,3 +156,4 @@ staged AR captions/hero_alt are Blog-drafted, need Bader's D-145 read. Listing-l
 | South Avenue Salon & Spa — Sabah Al-Salem | `/guide/south-avenue-salon-sabah-al-salem/` | 2339 | 2026-06-23 | ✓ `/places/sabah-al-salem/` + `/places/category/salons/` + `/places/category/spas-massage/` (2026-06-24) |
 | MizuMesa (Nikkei) — Sharq / KIPCO Tower | `/guide/mizumesa-sharq/` | 2362 | 2026-06-24 | ✓ `/places/sharq/` + `/places/category/restaurants/` (at publish) · ext: mizumesa.com reservations |
 | Odachi — Kuwait City / Khaleejia Tower | `/guide/odachi-kuwait-city/` | 2800 | 2026-07-04 | — born-neutral body carries no internal links (parity with the other neutral bodies) |
+| B+F — 360 Mall (Solar Garden) / Zahra | `/guide/bandf-360-mall/` | 2918 | 2026-07-05 | place-card → `/places/zahra/bf-360-mall/` (2664); price $$$; born-neutral, no internal links |
