@@ -21,10 +21,11 @@ only after the full gate clears — see Published note below).
 
 | Position | Guide | Slug | Note |
 |----------|-------|------|------|
-| **Featured** (editorial of the week) | MizuMesa (Nikkei) — Sharq / KIPCO | `mizumesa-sharq` | newest → auto-featured ✓ — and the strongest candidate |
-| 2 | South Avenue Salon & Spa — Sabah Al-Salem | `south-avenue-salon-sabah-al-salem` | live EN (AR parked) |
-| 3 | Naranj — Salmiya | `naranj-salmiya` | live EN (AR parked) |
-| 4 | Anosha Beauty Salon — Sabah Al-Salem | `anosha-beauty-salon-sabah-al-salem` | flagship; live EN (AR parked) |
+| **Featured** (editorial of the week) | Odachi — Kuwait City / Khaleejia Tower | `odachi-kuwait-city` | newest (2026-07-04) → auto-featured ✓; born-neutral (D-168) |
+| 2 | MizuMesa (Nikkei) — Sharq / KIPCO | `mizumesa-sharq` | live EN · AR fenced |
+| 3 | South Avenue Salon & Spa — Sabah Al-Salem | `south-avenue-salon-sabah-al-salem` | live EN · AR fenced |
+| 4 | Naranj — Salmiya | `naranj-salmiya` | live EN · AR fenced |
+| 5 | Anosha Beauty Salon — Sabah Al-Salem | `anosha-beauty-salon-sabah-al-salem` | flagship; live EN · AR fenced — rotates off if the block caps at 4 |
 
 ---
 
@@ -107,6 +108,21 @@ verified (place-card → `/ar/places/صباح-السالم/صالون-ساوث-�
 **✅ AR CORPUS COMPLETE (2026-06-29): all 6 guides have fenced AR twins** — anosha 2600,
 naranj 2612, mizumesa 2618, keif 2630, vibes 2634, south-avenue 2619. All publish+noindex;
 they ride the site-wide AR-public flip together (no per-guide unfence). EN sides untouched.
+*(2026-07-04: Odachi makes the corpus 6 of 7 — its twin is pending the WPML "+", see below.)*
+
+**Odachi PUBLISHED (born-neutral) 2026-07-04:** EN `guide_article` **2800** at
+`/guide/odachi-kuwait-city/` — **first guide shipped straight onto the D-168 neutral model
+at publish time** (no spotlight-era body to re-author): Bader-locked About verbatim + 3
+captioned photos + 6-row key-facts table + place card; no `[[map]]`. Kit run clean (backup
+`20260704-183756`; hero 2796 "Outside Odachi" + inline 2797/2798/2799 = "Fried shrimp and a
+salad" / "One of the seating areas" / "A noodle dish" — **first WebP image set**, from
+Bader's pre-optimized drop). Place card resolves `/places/kuwait-city/odachi/` (listing
+2432). **AR twin PENDING the WPML "+"** — Bader-authored Kuwaiti AR staged at
+`drafts/odachi-kuwait-city_AR_2026-07-04.md` (sequencing rule: "+" right before injection →
+`populate_ar_twin.py` → fence noindex). Open flags: one-word twin mismatch (AR "هادي" vs EN
+locked "cozy" — Bader rules); staged AR captions/hero_alt are Blog-drafted, need Bader's
+D-145 read; intake's listing-lane flags (coordinates, WhatsApp?, menu-link durability,
+Sushi tag) belong to Pipeline, not the guide.
 
 | Title | URL (`/{lang}/guide/…`) | guide_article | Live date | Internal links placed |
 |-------|--------------------------|---------------|-----------|------------------------|
@@ -114,3 +130,4 @@ they ride the site-wide AR-public flip together (no per-guide unfence). EN sides
 | Naranj — Salmiya | `/guide/naranj-salmiya/` | 2251 | 2026-06-22 | ✓ `/places/salmiya/` + `/places/category/restaurants/` (2026-06-24) |
 | South Avenue Salon & Spa — Sabah Al-Salem | `/guide/south-avenue-salon-sabah-al-salem/` | 2339 | 2026-06-23 | ✓ `/places/sabah-al-salem/` + `/places/category/salons/` + `/places/category/spas-massage/` (2026-06-24) |
 | MizuMesa (Nikkei) — Sharq / KIPCO Tower | `/guide/mizumesa-sharq/` | 2362 | 2026-06-24 | ✓ `/places/sharq/` + `/places/category/restaurants/` (at publish) · ext: mizumesa.com reservations |
+| Odachi — Kuwait City / Khaleejia Tower | `/guide/odachi-kuwait-city/` | 2800 | 2026-07-04 | — born-neutral body carries no internal links (parity with the other neutral bodies) |
