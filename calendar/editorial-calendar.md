@@ -105,10 +105,10 @@ verified (place-card → `/ar/places/الفحيحيل/vibes-coffee-roastery/`). 
 `/ar/guide/south-avenue-salon-sabah-al-salem/`, publish + noindex, Kuwaiti AR injected +
 verified (place-card → `/ar/places/صباح-السالم/صالون-ساوث-أفينيو/`). Parked fenced.
 
-**✅ AR CORPUS COMPLETE (2026-06-29): all 6 guides have fenced AR twins** — anosha 2600,
-naranj 2612, mizumesa 2618, keif 2630, vibes 2634, south-avenue 2619. All publish+noindex;
-they ride the site-wide AR-public flip together (no per-guide unfence). EN sides untouched.
-*(2026-07-04: Odachi makes the corpus 6 of 7 — its twin is pending the WPML "+", see below.)*
+**✅ AR CORPUS COMPLETE — now 7 of 7 (2026-07-04): all guides have fenced AR twins** —
+anosha 2600, naranj 2612, mizumesa 2618, keif 2630, vibes 2634, south-avenue 2619,
+**odachi 2808**. All publish+noindex; they ride the site-wide AR-public flip together
+(no per-guide unfence). EN sides untouched.
 
 **Odachi PUBLISHED (born-neutral) 2026-07-04:** EN `guide_article` **2800** at
 `/guide/odachi-kuwait-city/` — **first guide shipped straight onto the D-168 neutral model
@@ -117,12 +117,17 @@ captioned photos + 6-row key-facts table + place card; no `[[map]]`. Kit run cle
 `20260704-183756`; hero 2796 "Outside Odachi" + inline 2797/2798/2799 = "Fried shrimp and a
 salad" / "One of the seating areas" / "A noodle dish" — **first WebP image set**, from
 Bader's pre-optimized drop). Place card resolves `/places/kuwait-city/odachi/` (listing
-2432). **AR twin PENDING the WPML "+"** — Bader-authored Kuwaiti AR staged at
-`drafts/odachi-kuwait-city_AR_2026-07-04.md` (sequencing rule: "+" right before injection →
-`populate_ar_twin.py` → fence noindex). Open flags: one-word twin mismatch (AR "هادي" vs EN
-locked "cozy" — Bader rules); staged AR captions/hero_alt are Blog-drafted, need Bader's
-D-145 read; intake's listing-lane flags (coordinates, WhatsApp?, menu-link durability,
-Sushi tag) belong to Pipeline, not the guide.
+2432).
+**Odachi AR twin LIVE (fenced) 2026-07-04:** `guide_article` **2808** (trid 4743) at
+`/ar/guide/odachi-kuwait-city/`, publish + noindex. Bader made the WPML "+" (clean editable
+WP-editor shell, 2808); Blog injected the Bader-authored Kuwaiti AR
+(`drafts/odachi-kuwait-city_AR_2026-07-04.md`) via `populate_ar_twin.py` (backup
+`20260704-190246`; images reused 2796/2797/2798/2799 — no re-upload). Verify PASS: Arabic
+title no mojibake, place-card → `/ar/places/مدينة-الكويت/odachi/`, no bare `/places/`, no
+`/ar/en/` double-prefix, noindex fence present. **Still open (D-145 review while fenced,
+same as every twin):** one-word twin mismatch (AR "هادي" vs EN locked "cozy" — Bader rules);
+staged AR captions/hero_alt are Blog-drafted, need Bader's D-145 read. Listing-lane flags
+(coordinates, WhatsApp?, menu-link durability, Sushi tag) belong to Pipeline, not the guide.
 
 | Title | URL (`/{lang}/guide/…`) | guide_article | Live date | Internal links placed |
 |-------|--------------------------|---------------|-----------|------------------------|

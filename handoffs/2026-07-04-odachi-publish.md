@@ -30,25 +30,34 @@ the intake predicted). Topic `food-drink`, term 1715 assigned.
   divergence, template shows deck under title; flag if house style settles on
   empty.
 
-## AR twin — staged, NOT built (waiting on Bader's "+")
+## AR twin — BUILT + injected (fenced) — later same session
 
-Per `GUIDE_AR_WORKFLOW.md` sequencing (approved AR MD ready → **"+"** → inject →
-fence), the twin is deliberately not created yet:
+Bader made the WPML "+" on 2800; the shell came up as a **clean editable
+WP-editor draft** (post **2808**, lang `ar`, trid 4743, empty body, title "a") —
+the right state, not an ATE-only slot. Blog then injected:
 
-- AR MD staged: **`drafts/odachi-kuwait-city_AR_2026-07-04.md`** — Bader's
-  hand-written Kuwaiti AR from the intake, verbatim (D-145-clean), converted to
-  the kit's plain-body + markers format, neutral-model shape mirroring EN.
-- **Bader's step (cued to him this session):** open EN guide **2800** in
-  wp-admin → Language box → click **"+"** next to العربية (WP-editor path, as
-  with the six existing twins). Then Blog runs `populate_ar_twin.py` to inject +
-  fence noindex.
-- **Two calls for Bader at/before injection:**
-  1. **One-word twin mismatch (from the intake's own flag):** AR says
-     **"هادي"** (quiet), locked EN About says **"cozy"**. Keep as-is, or swap AR
-     to "مريح" — his call as author; the draft carries هادي verbatim.
+- **AR twin LIVE (fenced): `guide_article` 2808** at
+  `/ar/guide/odachi-kuwait-city/`, **publish + noindex**. Injected from
+  `drafts/odachi-kuwait-city_AR_2026-07-04.md` (Bader's verbatim Kuwaiti AR) via
+  `populate_ar_twin.py --en-id 2800 --media hero=2796,inline-1=2797,inline-2=2798,inline-3=2799`
+  (images **reused**, no re-upload). Backup
+  `staging-20260704-190246-ar-twin-odachi-kuwait-city.sql.gz` logged.
+- **Verify PASS:** Arabic title no mojibake; place-card →
+  `/ar/places/مدينة-الكويت/odachi/` (AR-prefixed, listing 2432); no bare
+  `/places/` (no EN-under-AR); no `/ar/en/` double-prefix; noindex fence
+  present. (The one bare `/places/category/casual-dining/` in the page is the
+  global mega-menu chrome = untranslated category term, the known Pipeline/
+  Chrome backlog item — NOT the guide body.)
+
+**Still open — D-145 review while fenced (same track every twin rides):**
+  1. **One-word twin mismatch:** AR says **"هادي"** (quiet), locked EN About
+     says **"cozy"**. Injected верbatim as هادي (Bader's own intake word); his
+     call whether to leave it or move EN/AR into agreement.
   2. **Staged AR captions + hero_alt are Blog-drafted, not Bader-authored**
      (روبيان مقلي مع سلطة / إحدى الجلسات / طبق نودلز / أوداتشي من الخارج) —
-     need his read, same D-145 checklist treatment as the other twins.
+     need his D-145 read, same as the other twins' checklists.
+  The twin stays noindex-fenced regardless; the D-145 review is a quality gate,
+  not a go-live (rail #4). Unfences with the whole corpus at the site-wide flip.
 
 ## Listing-lane flags (Pipeline's, not ours — from the intake's NEEDS-BADER)
 
@@ -67,8 +76,13 @@ menu before shipping. Listing 2432 is live; these ride the Pipeline lane.
 
 ## Next actions
 
-1. **Bader:** the WPML "+" on 2800 (and rule on هادي/cozy + the AR captions).
-2. **Blog (next session):** `populate_ar_twin.py` inject → fence noindex →
-   D-145 checklist → calendar AR column.
-3. Unchanged: neutral re-authors for south-avenue (2339), keif (2132), vibes
+1. **Bader (quality gate, not blocking):** D-145 read of the AR twin 2808 while
+   fenced — rule on هادي vs cozy, and approve/adjust the 4 Blog-drafted AR
+   captions/hero_alt. Twin stays noindex either way.
+2. Unchanged: neutral re-authors for south-avenue (2339), keif (2132), vibes
    (2131) still gated on their approved MDs.
+
+**Corpus status after this session:** 7 EN guides live; **7 of 7 AR twins built
++ fenced** (odachi 2808 joins anosha 2600, naranj 2612, mizumesa 2618, keif
+2630, vibes 2634, south-avenue 2619). All ride the site-wide AR-public flip
+together.
