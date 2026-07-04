@@ -114,10 +114,18 @@ anosha 2600, naranj 2612, mizumesa 2618, keif 2630, vibes 2634, south-avenue 261
 `/guide/odachi-kuwait-city/` — **first guide shipped straight onto the D-168 neutral model
 at publish time** (no spotlight-era body to re-author): Bader-locked About verbatim + 3
 captioned photos + 6-row key-facts table + place card; no `[[map]]`. Kit run clean (backup
-`20260704-183756`; hero 2796 "Outside Odachi" + inline 2797/2798/2799 = "Fried shrimp and a
-salad" / "One of the seating areas" / "A noodle dish" — **first WebP image set**, from
-Bader's pre-optimized drop). Place card resolves `/places/kuwait-city/odachi/` (listing
-2432).
+`20260704-183756`). Place card resolves `/places/kuwait-city/odachi/` (listing 2432).
+**Photos re-cropped 2026-07-04 (post-publish, per Bader — "weird pictures"):** the
+guide-single template center-crops inline photos to a fixed landscape box (~7:5 desktop /
+~1:1 mobile; hero 16:9), so the original **portrait** phone shots lost their tops/bottoms
+(shrimp & noodle bowls cut). Fixed in-lane by pre-cropping each to the template's box,
+centered on the subject: hero swapped to the **bright storefront-sign** shot; shrimp crop
+drops the second salad bowl (caption → "Fried shrimp"). New WebP attachments **hero 2811 +
+inline 2812/2813/2814** (old 2796–2799 trashed); EN 2800 re-injected + AR 2808 re-populated
+(backups `20260704-200746` / `20260704-200917`), verified clean on mobile + desktop.
+**Kit lesson:** compose guide photos **landscape** before publish (hero 16:9, inline 7:5) —
+the template hard-crops. **Sushi tag verified** from the menu PDF (extensive nigiri/sashimi/
+maki section) — but tags are `gd_place` listing tags (Pipeline lane), not guide tags.
 **Odachi AR twin LIVE (fenced) 2026-07-04:** `guide_article` **2808** (trid 4743) at
 `/ar/guide/odachi-kuwait-city/`, publish + noindex. Bader made the WPML "+" (clean editable
 WP-editor shell, 2808); Blog injected the Bader-authored Kuwaiti AR

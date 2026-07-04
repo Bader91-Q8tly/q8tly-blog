@@ -86,3 +86,54 @@ menu before shipping. Listing 2432 is live; these ride the Pipeline lane.
 + fenced** (odachi 2808 joins anosha 2600, naranj 2612, mizumesa 2618, keif
 2630, vibes 2634, south-avenue 2619). All ride the site-wide AR-public flip
 together.
+
+---
+
+## Follow-up (same session): photo re-crop + Sushi tag verified
+
+**Problem Bader flagged:** the guide photos "looked weird — only part of the
+shrimp / noodles showed." **Root cause (confirmed by measuring the live render):**
+the guide-single template **center-crops inline photos to a fixed landscape box**
+(~1.4:1 / 7:5 on desktop, ~1:1 on mobile; the hero is 16:9), with
+`object-fit: cover`. The drop photos were all **tall portrait phone shots**, so
+their tops/bottoms got guillotined — the shrimp bowl and noodle bowl lost their
+bottoms.
+
+**Fix (all in Blog's lane — no Builder dependency):** pre-cropped each photo to
+the template's box, centered on the subject, so nothing important is sliced:
+- **Hero** swapped from the dark glass-reflection shot to the **bright storefront
+  sign** photo (01.03.55), cropped 16:9.
+- **inline-1 (shrimp)** cropped 7:5 to the shrimp plate alone — the cluttering
+  second salad bowl is now out of frame, so the caption changed
+  **"Fried shrimp and a salad" → "Fried shrimp"** (AR: "روبيان مقلي مع سلطة" →
+  "روبيان مقلي").
+- **inline-2 (seating)** and **inline-3 (noodles)** cropped 7:5, centered.
+
+Uploaded 4 new WebP attachments (**hero 2811, inline-1 2812, inline-2 2813,
+inline-3 2814**), re-injected EN 2800 via `reinject_en.py` and re-populated AR
+2808 via `populate_ar_twin.py` (both --media pointed at the new IDs; backups
+`20260704-200746` EN + `20260704-200917` AR logged), then **trashed the 4 old
+sliced attachments (2796–2799)**. Re-screenshotted mobile + desktop — **every
+photo now reads whole and clean.** Kit `images/` folder + `article.md` caption +
+AR draft caption updated to match; hero_alt updated to the storefront-sign shot.
+
+**Workflow lesson (worth baking into the kit):** guide photos should be composed
+/ pre-cropped **landscape** before publish — hero ≈ 16:9, inline ≈ 7:5 — because
+the template hard-crops to those boxes. Portrait phone shots must be cropped
+first or they lose their tops/bottoms. Flagging to add to `guide-kit/README.md`
+(and a possible Advisor note if the template's forced crop should instead be
+portrait-aware — but pre-cropping is the clean fix and needs no cross-lane change).
+
+**Sushi tag — VERIFIED (was the open ⚠).** Pulled the actual menu PDF
+(`storage3.me-qr.com/pdf/eed540ce…pdf`, behind the QR-service JS shell) and
+rendered its embedded images: the menu has an **extensive sushi section** —
+nigiri, sashimi, hand rolls, and a large range of maki/uramaki rolls. So the
+`Sushi` / سوشي tag is accurate and clears to ship.
+
+**Tags are LISTING tags, not guide tags** (all guides carry an empty `guide_tag`;
+the settled Japanese / Omakase / Sushi / Date-Night live on `gd_place` 2432).
+Listing 2432 currently has `gd_place_tags = "Japanese, Reservations Accepted"` —
+so **Omakase, Sushi, Date-Night still need adding, and "Reservations Accepted"
+(not in the settled four) needs reconciling.** That's a **Pipeline data-pass**
+(gd_place), not Blog's lane — flag to Pipeline via Advisor; Blog did not write to
+the listing.

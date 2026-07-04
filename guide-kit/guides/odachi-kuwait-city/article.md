@@ -20,7 +20,7 @@ map_ids: []
 word_count: auto
 seo_title: "Odachi | Japanese Restaurant in Kuwait City"
 meta_description: "Odachi is a contemporary Japanese restaurant inside Khaleejia Tower in Kuwait City, with indoor and outdoor seating and an Omakase Room by reservation."
-hero_alt: "The entrance to Odachi, a contemporary Japanese restaurant inside Khaleejia Tower in Kuwait City, with its backlit sign above outdoor tables."
+hero_alt: "The illuminated storefront of Odachi, a contemporary Japanese restaurant inside Khaleejia Tower in Kuwait City, with its backlit sign above the planted entrance."
 hero_caption: "Outside Odachi"
 replaces_page_slug: ""
 status: publish
@@ -28,7 +28,7 @@ status: publish
 
 Odachi is a contemporary Japanese restaurant inside Khaleejia Tower in Kuwait City. The dining room is small and cozy, with indoor and outdoor seating, and the staff wear traditional Japanese-style uniforms. Mains run around 15 KD per person, and an Omakase Room can be booked by reservation.
 
-[[image:inline-1|Fried shrimp and a salad]]
+[[image:inline-1|Fried shrimp]]
 
 [[image:inline-2|One of the seating areas]]
 

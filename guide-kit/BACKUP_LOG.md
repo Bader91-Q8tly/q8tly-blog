@@ -51,3 +51,5 @@ is the same write-class as production, so the discipline applies now.
 | 20260703-100324 | pillar-card tagging: `menu_feature=1` on `mizumesa-sharq` (2362, food-drink) + `anosha-beauty-salon-sabah-al-salem` (2189, health-beauty-fitness) — PRE-write | `staging-20260703-100324-menu-feature-tagging-pre.sql.gz` | 2456744 B | staging |
 | 20260704-183756 | publish guide `odachi-kuwait-city` | `staging-20260704-183756-guide-odachi-kuwait-city.sql.gz` | 2469188 B | staging |
 | 20260704-190246 | populate AR twin `odachi-kuwait-city` (post 2808) | `staging-20260704-190246-ar-twin-odachi-kuwait-city.sql.gz` | 2482298 B | staging |
+| 20260704-200746 | EN re-author `odachi-kuwait-city` (post 2800) | `staging-20260704-200746-en-guide-odachi-kuwait-city.sql.gz` | 2497965 B | staging |
+| 20260704-200917 | populate AR twin `odachi-kuwait-city` (post 2808) | `staging-20260704-200917-ar-twin-odachi-kuwait-city.sql.gz` | 2497796 B | staging |
