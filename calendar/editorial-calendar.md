@@ -105,11 +105,19 @@ verified (place-card → `/ar/places/الفحيحيل/vibes-coffee-roastery/`). 
 `/ar/guide/south-avenue-salon-sabah-al-salem/`, publish + noindex, Kuwaiti AR injected +
 verified (place-card → `/ar/places/صباح-السالم/صالون-ساوث-أفينيو/`). Parked fenced.
 
-**✅ AR CORPUS: 7 of 8 fenced twins (2026-07-05)** — anosha 2600, naranj 2612,
-mizumesa 2618, keif 2630, vibes 2634, south-avenue 2619, odachi 2808. All publish+noindex;
-ride the site-wide AR-public flip together. **B+F (2918) is the 8th EN guide — its AR twin
-is pending Bader's WPML "+"** (AR MD staged `drafts/bandf-360-mall_AR_2026-07-05.md`; then
-`populate_ar_twin.py --en-id 2918 --media hero=2914,inline-1=2915,inline-2=2916,inline-3=2917`).
+**✅ AR CORPUS COMPLETE — 8 of 8 fenced twins (2026-07-05)** — anosha 2600, naranj 2612,
+mizumesa 2618, keif 2630, vibes 2634, south-avenue 2619, odachi 2808, **B+F 2924**. All
+publish+noindex; ride the site-wide AR-public flip together (no per-guide unfence). EN
+sides untouched.
+
+**B+F AR twin LIVE (fenced) 2026-07-05:** `guide_article` **2924** (trid 4805) at
+`/ar/guide/bandf-360-mall/`, publish + noindex. Bader made the WPML "+" (clean editable
+WP-editor shell 2924); Blog injected the verbatim Kuwaiti AR (`drafts/bandf-360-mall_AR_2026-07-05.md`,
+matches listing twin 2730's About, price $$$) via `populate_ar_twin.py` (backup
+`20260704-223255`; images reused 2914/2915/2916/2917 — no re-upload). Verify PASS: Arabic
+title (Latin brand "B+F"), place-card → `/ar/places/الزهراء/bf-360-mall/` (twin 2730), no
+bare `/places/`, no `/ar/en/`, noindex fence present. **Open (D-145 while fenced):** AR
+brand-name kept Latin "B+F" (confirm); Blog-drafted AR captions need Bader's read.
 
 **B+F PUBLISHED (born-neutral) 2026-07-05:** EN `guide_article` **2918** at
 `/guide/bandf-360-mall/` — Bader-locked About verbatim (matches live listing 2664) + 3

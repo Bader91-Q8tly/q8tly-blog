@@ -43,11 +43,23 @@ Hero = the bright B+F storefront-sign facade. Re-screenshotted mobile — every 
 whole and clean, no slicing. Kit `images/` folder holds the cropped landscape WebPs
 (gitignored; the portrait originals were overwritten in place).
 
-## AR twin — staged, NOT built (waiting on Bader's WPML "+")
+## AR twin — BUILT + injected (fenced) — Bader did the "+"; Blog populated
 
-Per `GUIDE_AR_WORKFLOW.md` sequencing (approved AR MD ready → **"+"** → inject → fence),
-the twin can't be created by Blog (rail #1 — only the WPML "+" makes the linked twin).
-Checked WPML: **trid 4805 has only the EN side (2918); no AR twin yet.**
+Bader clicked the WPML "+" on 2918 → clean editable WP-editor shell **2924** (lang `ar`,
+trid 4805, empty body). Blog injected:
+- **AR twin LIVE (fenced): `guide_article` 2924** at `/ar/guide/bandf-360-mall/`,
+  **publish + noindex**. From `drafts/bandf-360-mall_AR_2026-07-05.md` via
+  `populate_ar_twin.py --en-id 2918 --media hero=2914,inline-1=2915,inline-2=2916,inline-3=2917`
+  (images reused, no re-upload). Backup `staging-20260704-223255-ar-twin-bandf-360-mall.sql.gz`.
+- **Verify PASS:** Arabic title (Latin brand "B+F"); place-card → `/ar/places/الزهراء/bf-360-mall/`
+  (twin 2730); no bare `/places/`; no `/ar/en/`; price `حوالي 15 د.ك` ($$$); noindex fence present.
+- **Still open (D-145 while fenced):** AR brand-name kept Latin "B+F" (confirm); Blog-drafted
+  AR captions (رولات مسخّن / أطباق لحم / جلسات السولار جاردن الخارجية + hero_alt) need his read.
+
+### (original staging note, for the record)
+Per `GUIDE_AR_WORKFLOW.md` sequencing the twin can't be created by Blog (rail #1 — only the
+WPML "+" makes the linked twin). At EN-publish time trid 4805 had only the EN side (2918);
+Bader then did the "+" and Blog populated (above).
 
 - AR MD staged: **`drafts/bandf-360-mall_AR_2026-07-05.md`** — Bader's verbatim Kuwaiti AR
   from the source doc (matches listing twin 2730's About), neutral-model shape, price
