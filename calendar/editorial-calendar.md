@@ -21,11 +21,11 @@ only after the full gate clears — see Published note below).
 
 | Position | Guide | Slug | Note |
 |----------|-------|------|------|
-| **Featured** (editorial of the week) | B+F — 360 Mall (Solar Garden) / Zahra | `bandf-360-mall` | newest (2026-07-05) → auto-featured ✓; born-neutral (D-168) |
-| 2 | Odachi — Kuwait City / Khaleejia Tower | `odachi-kuwait-city` | live EN · AR fenced |
-| 3 | MizuMesa (Nikkei) — Sharq / KIPCO | `mizumesa-sharq` | live EN · AR fenced |
-| 4 | South Avenue Salon & Spa — Sabah Al-Salem | `south-avenue-salon-sabah-al-salem` | live EN · AR fenced |
-| 5 | Naranj — Salmiya | `naranj-salmiya` | live EN · AR fenced — rotates off if the block caps at 4 |
+| **Featured** (editorial of the week) | Elysee Beauty Lounge & Queue Café — Mahboula (Park Inn rooftop) | `elysee-queue-cafe-mahboula` | newest (2026-07-05) → auto-featured ✓; **first COMBINED guide** (two venues, one feature) |
+| 2 | B+F — 360 Mall (Solar Garden) / Zahra | `bandf-360-mall` | live EN · AR fenced |
+| 3 | Odachi — Kuwait City / Khaleejia Tower | `odachi-kuwait-city` | live EN · AR fenced |
+| 4 | MizuMesa (Nikkei) — Sharq / KIPCO | `mizumesa-sharq` | live EN · AR fenced |
+| 5 | South Avenue Salon & Spa — Sabah Al-Salem | `south-avenue-salon-sabah-al-salem` | live EN · AR fenced — rotates off if the block caps at 4 |
 
 ---
 
@@ -117,6 +117,25 @@ verified (place-card → `/ar/places/صباح-السالم/صالون-ساوث-�
 mizumesa 2618, keif 2630, vibes 2634, south-avenue 2619, odachi 2808, **B+F 2924**. All
 publish+noindex; ride the site-wide AR-public flip together (no per-guide unfence). EN
 sides untouched.
+
+**Elysee Beauty Lounge & Queue Café — COMBINED guide PUBLISHED (born-neutral) 2026-07-05:**
+EN `guide_article` **3115** at `/guide/elysee-queue-cafe-mahboula/` — **first combined guide**
+(two venues in one feature, owner-directed) and **first use of the D-180 Canva-interim PASS
+path**. Two women-only spots sharing the 24th-floor rooftop of the Park Inn by Radisson,
+Mahboula: **Elysee Beauty Lounge** (Beauty, listing 3066) + **Queue Café** (Cafés, listing
+3067), framed as a salon-visit-plus-coffee day out. **Both place cards render** — `[[place]]`
+= Queue 3067 + Elysee 3066 via an unquoted raw `[q8tly_place id=3066]` shortcode (WP
+`shortcode_unautop` strips the wrapping `<p>` → clean card; verified 2 cards, 0 literal leak).
+Photos: the intake's **22 originals were 4284–5712px** (native landscape) → the qualification
+gate PASSED cleanly, and 5 were fitted to **7:5 1520×1086** (one ratio, all ≥1520px) — hero
+3110 + inline 3111–3114 (rooftop lounge / Elysee sign / salon sea-view / Queue sign / café
+interior). Voice neutral (D-168): owner's "fancy/breathtaking" rendered as facts (rooftop /
+24th floor / floor-to-ceiling windows / sea views); **no fabrication** — Elysee salon
+services/hours/price are unknown, so the salon is described only by confirmed facts. Kit
+backup `20260705-205507`. **AR twin PENDING** — combined AR staged
+`drafts/elysee-queue-cafe-mahboula_AR_2026-07-06.md` (assembled from Bader's verbatim AR;
+combined arrangement + captions need his D-145 pass; then WPML "+" → populate). Open content
+gaps (listing lane, not photos): Queue phone + coordinates; Elysee salon services/hours/price.
 
 **B+F AR twin LIVE (fenced) 2026-07-05:** `guide_article` **2924** (trid 4805) at
 `/ar/guide/bandf-360-mall/`, publish + noindex. Bader made the WPML "+" (clean editable
