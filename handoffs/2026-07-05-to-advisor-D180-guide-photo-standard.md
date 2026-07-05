@@ -8,6 +8,15 @@ values (template v1.14.220):** landscape **1.4–1.6:1** (7:5 ≈ 1.407 ideal), 
 wide (1520 preferred), **one ratio per guide**, **portraits disqualified for rhythm** (v1.14.220
 renders portraits whole — so this is about landscape rhythm + resolution, not anti-clipping).
 
+**Intake gate added (owner rule, 2026-07-05) — `GUIDE_PHOTO_STANDARD.md` §0, mirrored in
+`CLAUDE.md` Step 0.** The first question on any guide is *"Do the photos QUALIFY?"* — not
+*"how do we fix this image?"* Measure the landscape-crop width **first** (landscape src = long
+edge; portrait src = short-edge/width — the B+F trap). **≥1520 PASS → build + Canva-fit 7:5
+1520×1086; 1200–1520 conditional (Canva-fit, flag if tight); <1200 / edge-to-edge subject /
+portrait-only-no-crop = FAIL → DEFER, keep listing live, move on.** Canva reframes but never
+upscales; low-res = re-shoot, not a Blog fix. This makes photo-qualification a **gate at
+intake**, ending the "open a fix-request on unqualifiable photos" pattern (B+F was the last).
+
 ## Application 1 — B+F (the composition test case)
 **The owner's test — "can a re-crop/re-shoot make the sign sit well?" — answer: YES.**
 The pre-crop already achieved it: hero **2914** places the "B+F" sign legible, prominent and

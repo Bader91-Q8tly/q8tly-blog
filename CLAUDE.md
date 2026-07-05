@@ -8,6 +8,16 @@ area/district guides, and single-place spotlights.
 
 **Everything is automated through `guide-kit/`.** Don't hand-build it.
 
+**STEP 0 — photo qualification gate (ASK FIRST, before building anything).** The first
+question on any guide is *"Do the photos QUALIFY?"* — NOT *"how do we fix this image?"*
+Measure the **landscape-crop width FIRST** (landscape source = long edge; portrait source =
+short edge/width — the B+F trap). **≥1520px** = PASS (build; Canva-fit to 7:5 1520×1086 where
+needed). **1200–1520px** = conditional (Canva-fit, flag if tight). **<1200px, subject
+edge-to-edge, or portrait-only with no croppable landscape** = FAIL → **DEFER the guide,
+keep the listing live, move on.** Canva reframes but **never upscales**; a low-res set is a
+**re-shoot, not a fix** — flag it, don't open a fix-request. Full rule + decision table:
+**`guide-kit/GUIDE_PHOTO_STANDARD.md`** (D-180).
+
 1. The new guide arrives as one folder: `guide-kit/guides/<slug>/` with
    `article.md` (frontmatter + PLAIN prose body) and an `images/` subfolder
    (`hero.*`, optional `og.*`, `inline-*.*`). See `guide-kit/guide.template.md`

@@ -6,6 +6,35 @@
 > composition test case.** Status: DRAFT for ratification (Advisor → Decision Log, D-180).
 > **Frame numbers below are Builder's landed values (2026-07-05, template v1.14.220).**
 
+## 0. Intake gate — ASK THIS FIRST (owner rule, 2026-07-05)
+
+**The first question on any guide is "Do the photos QUALIFY for guide/blog?" — NOT
+"how do we fix this image?"** Photo qualification is a **gate at intake**, before any guide
+is built. Stop opening fix-requests on photos that simply don't qualify.
+
+**Step 1 — measure width FIRST.** The binding number is the **width available for a landscape
+7:5 crop**:
+- landscape-oriented source → its **long edge**;
+- portrait source → its **short edge (width)** — a landscape crop is only ever as wide as the
+  source width. *(B+F trap: long edge was 1448–1600 px but usable landscape width was only
+  1086 px → it failed. Measure the landscape width, not just the long edge.)*
+
+```bash
+# quick screen: usable landscape-crop width for every source in a folder
+for f in "<folder>"/*.{jpg,jpeg,png,webp}; do sips -g pixelWidth -g pixelHeight "$f"; done
+```
+
+**Step 2 — decide, then act:**
+| Landscape width | Verdict | Action |
+|---|---|---|
+| **≥1520 px**, subject off edges, one ratio achievable | **PASS** | Build the guide; **Canva-fit to 7:5 (1520×1086)** where reframing is needed |
+| **1200–1520 px** | **CONDITIONAL** | Canva-fit is fine; **flag if it looks tight** |
+| **<1200 px**, or subject edge-to-edge, or portrait-only with no croppable landscape | **FAIL** | **Do NOT force the guide.** Keep the listing live; **DEFER**; move to a business with better photos |
+
+**Canva reframes; it never upscales.** A low-res set is a **re-shoot, not a fix** — flag it and
+move on. Do not spend cycles trying to crop, optimize, or Canva-fit a set that lacks the
+pixels; that is a sourcing problem to route back, not a Blog framing task.
+
 ## 1. The frame numbers (Builder — landed)
 - **Ratio:** landscape **1.4–1.6 : 1**. Ideal = **7:5 ≈ 1.407:1** (the frame's box).
 - **Resolution:** **≥ 1200 px wide** (1520 px preferred).
