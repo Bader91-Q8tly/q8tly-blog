@@ -35,6 +35,22 @@ for f in "<folder>"/*.{jpg,jpeg,png,webp}; do sips -g pixelWidth -g pixelHeight 
 move on. Do not spend cycles trying to crop, optimize, or Canva-fit a set that lacks the
 pixels; that is a sourcing problem to route back, not a Blog framing task.
 
+## 0b. Gate-live boundary — which guides ran through it (provenance)
+
+The gate became a **pre-publish requirement during the B+F work on 2026-07-05** (B+F is the
+case that exposed the sub-1520 sourcing problem and created this standard). Status of the
+corpus against it:
+
+| Guide | Published | Gate status |
+|---|---|---|
+| `elysee-queue-cafe-mahboula` (3115) | 2026-07-05 23:57 | ✅ **Gated pre-publish, PASSED** — 22 sources at 4284–5712px, Canva-fit to 7:5 1520×1086 (first Canva-PASS) |
+| `bandf-360-mall` / B+F (2918) | 2026-07-05 01:00 | ⚠ **Grandfathered** — the reference case; its own Canva-fit test found originals only 1086px (<1520) → kept live, flagged for a higher-res re-shoot |
+| `odachi-kuwait-city` (2800) + original 6 (anosha 2189, naranj 2251, south-avenue 2339, mizumesa 2362, keif 2132, vibes 2131) | ≤ 2026-07-04 | ⚠ **Predate the gate — grandfathered** (mizumesa re-cropped to 7:5 later, 2026-07-05, but as a fix, not a pre-publish gate) |
+
+**Demarcation:** the gate is live for **everything published after B+F**. So far
+`elysee-queue-cafe-mahboula` is the only guide published *through* it (PASS); B+F and
+everything before it predate it. Every new guide from here runs the §0 gate first.
+
 ## 1. The frame numbers (Builder — landed)
 - **Ratio:** landscape **1.4–1.6 : 1**. Ideal = **7:5 ≈ 1.407:1** (the frame's box).
 - **Resolution:** **≥ 1200 px wide** (1520 px preferred).
