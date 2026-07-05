@@ -58,3 +58,4 @@ is the same write-class as production, so the discipline applies now.
 | 20260705-112345 | EN re-author `mizumesa-sharq` (post 2362) | `staging-20260705-112345-en-guide-mizumesa-sharq.sql.gz` | 2594761 B | staging |
 | 20260705-112512 | populate AR twin `mizumesa-sharq` (post 2618) | `staging-20260705-112512-ar-twin-mizumesa-sharq.sql.gz` | 2596180 B | staging |
 | 20260705-205507 | publish guide `elysee-queue-cafe-mahboula` | `staging-20260705-205507-guide-elysee-queue-cafe-mahboula.sql.gz` | 2622783 B | staging |
+| 20260705-224728 | populate AR twin `elysee-queue-cafe-mahboula` (post 3122) | `staging-20260705-224728-ar-twin-elysee-queue-cafe-mahboula.sql.gz` | 2614121 B | staging |

@@ -132,10 +132,19 @@ gate PASSED cleanly, and 5 were fitted to **7:5 1520×1086** (one ratio, all ≥
 interior). Voice neutral (D-168): owner's "fancy/breathtaking" rendered as facts (rooftop /
 24th floor / floor-to-ceiling windows / sea views); **no fabrication** — Elysee salon
 services/hours/price are unknown, so the salon is described only by confirmed facts. Kit
-backup `20260705-205507`. **AR twin PENDING** — combined AR staged
-`drafts/elysee-queue-cafe-mahboula_AR_2026-07-06.md` (assembled from Bader's verbatim AR;
-combined arrangement + captions need his D-145 pass; then WPML "+" → populate). Open content
-gaps (listing lane, not photos): Queue phone + coordinates; Elysee salon services/hours/price.
+backup `20260705-205507`. **AR twin LIVE (fenced) 2026-07-05:** `guide_article` **3122**
+(trid 4923) at `/ar/guide/elysee-queue-cafe-mahboula/`, publish + noindex — Bader did the
+WPML "+", Blog populated from `drafts/elysee-queue-cafe-mahboula_AR_2026-07-06.md` (backup
+`20260705-224728`; images reused 3110–3114). Verify PASS: **both AR place cards render** →
+`/ar/places/المهبولة/elysee-beauty-lounge/` (3066, raw shortcode) + `.../queue-cafe/` (3067,
+`[[place]]`), 0 literal leak, noindex fence present. **Open (D-145 while fenced):** the
+combined AR arrangement + connective phrasing + captions are Blog-assembled from Bader's
+verbatim sentences — need his review/authoring on the fenced page. Open content gaps (listing
+lane, not photos): Queue phone + coordinates; Elysee salon services/hours/price.
+**Quality note (owner, 2026-07-05):** Pipeline rated the listings non-qualifying and the blog
+~7/10 — the photos cleared the D-180 *technical* floor (≥1520px, 7:5) but are amateur phone
+shots (angled/sideways-shot); **gate PASS = publishable floor, not a quality guarantee.** Kept
+live as-is per owner. Lever to raise it = styled re-shoot + fuller Elysee intake.
 
 **B+F AR twin LIVE (fenced) 2026-07-05:** `guide_article` **2924** (trid 4805) at
 `/ar/guide/bandf-360-mall/`, publish + noindex. Bader made the WPML "+" (clean editable
