@@ -55,3 +55,5 @@ is the same write-class as production, so the discipline applies now.
 | 20260704-200917 | populate AR twin `odachi-kuwait-city` (post 2808) | `staging-20260704-200917-ar-twin-odachi-kuwait-city.sql.gz` | 2497796 B | staging |
 | 20260704-215916 | publish guide `bandf-360-mall` | `staging-20260704-215916-guide-bandf-360-mall.sql.gz` | 2540755 B | staging |
 | 20260704-223255 | populate AR twin `bandf-360-mall` (post 2924) | `staging-20260704-223255-ar-twin-bandf-360-mall.sql.gz` | 2555075 B | staging |
+| 20260705-112345 | EN re-author `mizumesa-sharq` (post 2362) | `staging-20260705-112345-en-guide-mizumesa-sharq.sql.gz` | 2594761 B | staging |
+| 20260705-112512 | populate AR twin `mizumesa-sharq` (post 2618) | `staging-20260705-112512-ar-twin-mizumesa-sharq.sql.gz` | 2596180 B | staging |

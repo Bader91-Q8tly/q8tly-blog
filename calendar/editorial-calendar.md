@@ -68,6 +68,14 @@ rolls" / "A beef dish"; AR mirrors); key facts now render as the **TABLE** (the 
 Final = About → 3 captioned photos → key-facts table → listing card. AR fenced. EN via
 new `guide-kit/reinject_en.py` (EN counterpart to populate_ar_twin.py; no fence).
 Photo-orphan flag RESOLVED. Remaining flags: SEO meta still old; AR listing slug numeric.
+**PHOTO FIX 2026-07-05 (first D-180 application, owner-approved):** the 4 portrait photos
+(mixed 0.75/0.56 ratios) were re-cropped to **landscape 7:5 (1.407) at 1536px** — one ratio,
+all ≥1200px — resolving the portrait/rhythm + sign-clip issues. **inline-2 swapped** (the
+900px "One of the rolls" had no ≥1200px source) → a **1536px Nikkei fried-dish**, caption
+"One of the rolls" → **"A Nikkei plate"** (AR "أحد أطباق الرول" → "طبق نيكي"). New landscape
+attachments hero **3039** + inline **3040/3042/3043** (source: `Desktop/All /Mizu`); EN 2362
+re-injected + AR twin 2618 re-populated (backups `20260705-112345` / `20260705-112512`); old
+2358–2361 trashed. Verified clean landscape on mobile.
 **Naranj NEUTRAL re-author 2026-07-01:** EN **2251** + AR **2612** bodies replaced with the
 same short/neutral model (D-168) — About + 3 captioned photos (hero 2247 "Outside Naranj" +
 inline 2248/2249/2250 = "Inside Naranj" / "Mezze and meat arayes" / "Dessert at the end of

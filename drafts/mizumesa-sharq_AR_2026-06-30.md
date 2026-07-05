@@ -30,7 +30,7 @@ status: draft
 
 [[image:inline-1|داخل ميزوميسا]]
 
-[[image:inline-2|أحد أطباق الرول]]
+[[image:inline-2|طبق نيكي]]
 
 [[image:inline-3|طبق لحم]]
 

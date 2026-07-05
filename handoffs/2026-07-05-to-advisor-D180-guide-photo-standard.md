@@ -23,17 +23,15 @@ compliance it wants (a) the hero re-aligned to the guide's **1.40**, and (b) ide
 **≥1200 px re-shoot at one landscape ratio** on a future pass. Neither is urgent; retire/hold
 is the owner's call, but nothing here forces a defer — the *photograph* is good.
 
-## Application 2 — MizuMesa (2362): propose re-crops/swap only (owner rules)
-All four sources are **portrait** → disqualified for rhythm as-is; need landscape 1.40 crops.
-| Slot | Source | Landscape-crop width | Action |
-|---|---|---|---|
-| hero (2358) | 1536×2048 | 1536 ✓ | re-crop 1.40 centred on the full sign (Latin+Arabic) |
-| inline-1 (2359) | 1536×2048 | 1536 ✓ | re-crop 1.40 on the booth |
-| inline-2 (2360) | **900×1600** | **900 ✗ (<1200)** | **swap** for a ≥1200 px dish shot (or accept 900 px — owner's call) |
-| inline-3 (2361) | 1536×2048 | 1536 ✓ | re-crop 1.40 on the beef board |
-**Verdict:** MizuMesa qualifies **after** re-cropping the three 1536 px shots to one landscape
-1.40 ratio **and resolving inline-2** (900 px is the only hard blocker). Blog can execute the
-re-crops in-lane (Odachi/B+F precedent) on owner go.
+## Application 2 — MizuMesa (2362): **DONE (owner said "go with the fix", 2026-07-05)**
+All four portrait photos re-cropped to **landscape 7:5 (1.407) at 1536 px** — one ratio, all
+≥1200 px. **inline-2 swapped**: the only roll shots were 900/1152 px (both <1200), so the
+900 px "One of the rolls" → a **1536 px Nikkei fried-dish**, caption **"A Nikkei plate"** (AR
+"طبق نيكي"). New attachments hero **3039** + inline **3040/3042/3043** (source `Desktop/All
+/Mizu`, which held 15 shots incl. higher-res options). EN 2362 re-injected + AR twin 2618
+re-populated (backups `20260705-112345`/`112512`); old 2358–2361 trashed; verified clean
+landscape on mobile. **This is the standard's first proof-of-use** — the sub-1200 px rolls
+were correctly rejected and swapped rather than shipped.
 
 ## Application 3 — the 3 in-flight guides (checklist applied before their re-authors)
 | Guide | Orientation / width | Composition | Verdict |

@@ -34,7 +34,7 @@ The place is upscale and works for lunch or dinner, with indoor seating, a famil
 
 [[image:inline-1|Inside MizuMesa]]
 
-[[image:inline-2|One of the rolls]]
+[[image:inline-2|A Nikkei plate]]
 
 [[image:inline-3|A beef dish]]
 
