@@ -136,7 +136,12 @@ band **$$ → $$$** (KD figure kept), and slug/district settled = **Zahra** (pla
 (not venue amenities)" line only; no Burger/Steakhouse/"Restaurant inside Mall" labels in
 guide prose (NEEDS-BADER). Photos pre-cropped landscape (portrait originals would slice —
 the Odachi lesson); hero 2914 + inline 2915/2916/2917. Kit run backup `20260704-215916`.
-AR twin pending the "+".
+**Canva-interim fit test 2026-07-05 (D-180): FAILED on sourcing, not framing.** The full
+ORIGINAL B+F folder is the same size as the optimized set — the storefront/sign original is
+**1086 px wide** (6 of 7 are 1086–1089 px; only the salad is 1200 px). A landscape 7:5 crop
+maxes at the source width (1086 px) → under the 1200 bar; Canva reframes but can't upscale.
+**Verdict: photo-SOURCING problem → B+F grandfathered as-is; fix = higher-res re-shoot
+(≥1520 px, landscape), not Canva.** No guide change made.
 
 **Odachi PUBLISHED (born-neutral) 2026-07-04:** EN `guide_article` **2800** at
 `/guide/odachi-kuwait-city/` — **first guide shipped straight onto the D-168 neutral model

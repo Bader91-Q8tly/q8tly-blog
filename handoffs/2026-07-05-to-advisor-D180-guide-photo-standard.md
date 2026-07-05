@@ -23,6 +23,23 @@ compliance it wants (a) the hero re-aligned to the guide's **1.40**, and (b) ide
 **≥1200 px re-shoot at one landscape ratio** on a future pass. Neither is urgent; retire/hold
 is the owner's call, but nothing here forces a defer — the *photograph* is good.
 
+### Canva-interim fit test (owner-ruled, 2026-07-05) — RESULT: sourcing problem, not framing
+Checked the **full original** B+F folder (`Desktop/new listing /Completed /BF `), not the
+optimized copies. **The originals are the same size as the optimized set** — width is the
+binding dimension for a landscape 7:5 crop, and:
+| # | photo | width |
+|---|---|---|
+| 2 | **storefront / "B+F" sign (the acceptance case)** | **1086 px** |
+| 1 | kale salad (food) | 1200 px (only one ≥1200) |
+| 0,3,4,5,6 | court / interior / terrace / beef / musakhan | 1086–1089 px |
+The storefront original is **1086 px wide** → a landscape crop maxes at 1086 px, **under the
+1200 bar** and far under 1520. Canva **reframes but cannot upscale**; filling a 1520×1086
+frame from 1086 px would need ~40 % upscaling (forbidden/blurry). **So B+F is a photo-SOURCING
+problem, not a framing one.** Per the ruling: **B+F stays as-is (grandfathered); the fix is a
+higher-res re-shoot (≥1520 px wide, shot landscape), not Canva.** No Canva design was created,
+no guide change made. *The Canva interim itself is validated — it just needs sources with
+enough pixels; B+F is the case that proves the "cannot upscale" boundary.*
+
 ## Application 2 — MizuMesa (2362): **DONE (owner said "go with the fix", 2026-07-05)**
 All four portrait photos re-cropped to **landscape 7:5 (1.407) at 1536 px** — one ratio, all
 ≥1200 px. **inline-2 swapped**: the only roll shots were 900/1152 px (both <1200), so the
