@@ -24,6 +24,15 @@ sys.path.insert(0, HERE)
 import publish_guide as kit  # reuse parse_frontmatter, md_to_blocks, word_count, ssh, load_config
 
 
+
+def env_label(host):
+    """Backup/label env derived from the RESOLVED ssh host — never a literal.
+    Fixed 2026-08-12: all three tools hardcoded "staging", so the first real prod
+    run wrote `staging-…` dumps and a `staging` BACKUP_LOG column and had to be
+    renamed by hand. Staging hosts carry the `staging-` prefix; anything else is prod."""
+    h = (host or "").lower()
+    return "staging" if "staging" in h else "prod"
+
 def die(m):
     print(f"\n❌ {m}\n", file=sys.stderr); sys.exit(1)
 
@@ -39,7 +48,15 @@ def main():
     ap.add_argument("--en-id", required=True, help="EN guide_article id (twin source)")
     ap.add_argument("--ar-id", default=None, help="override; else auto-discovered via WPML")
     ap.add_argument("--media", default="", help="stem=attachment,... (e.g. inline-1=2192,hero=2190)")
-    ap.add_argument("--draft", dest="keep_draft", action="store_true", help="leave post_status=draft (default: publish + noindex, so the /ar/ page renders for the first-twin proof)")
+    ap.add_argument("--draft", dest="keep_draft", action="store_true", help="leave post_status=draft (default: publish)")
+    # FENCE DEFAULT INVERTED 2026-08-12. The noindex fence was rail #4, a PRE-FLIP
+    # guard for when /ar/ was dark. Prod has been live and indexable since 2026-08-08
+    # and all existing twins are unfenced, so fencing a new twin now actively hides a
+    # good Arabic page from Google. Default = unfenced; --fence re-arms it for a dark env.
+    ap.add_argument("--no-fence", dest="no_fence", action="store_true", default=True,
+                    help="do NOT set noindex (DEFAULT — prod is live/indexable)")
+    ap.add_argument("--fence", dest="no_fence", action="store_false",
+                    help="set noindex (pre-flip/dark environments only)")
     ap.add_argument("--execute", action="store_true")
     args = ap.parse_args()
 
@@ -113,7 +130,7 @@ echo "en_to_ar=".(int)apply_filters("wpml_object_id",$e,"guide_article",false,"a
 
     hero = media.get("hero", "")
     status = "draft" if args.keep_draft else "publish"
-    robots = "draft (not public)" if args.keep_draft else "publish + noindex (fenced; page renders for the proof)"
+    robots = "draft (not public)" if args.keep_draft else ("publish, UNFENCED (indexable)" if args.no_fence else "publish + noindex (FENCED — dark env only)")
 
     print(f"\n=== POPULATE AR TWIN {ar}  (twin of EN {en})  [{'EXECUTE' if args.execute else 'DRY RUN'}] ===")
     print(f"title    : {fm['title']}")
@@ -132,19 +149,24 @@ echo "en_to_ar=".(int)apply_filters("wpml_object_id",$e,"guide_article",false,"a
     bdir = cfg["BACKUP_DIR"]
     if not (bdir and os.path.isdir(bdir)):
         die("BACKUP_DIR missing — no write without a backup")
-    dump = os.path.join(bdir, f"staging-{ts}-ar-twin-{fm['slug']}.sql.gz")
+    dump = os.path.join(bdir, f"{env_label(host)}-{ts}-ar-twin-{fm['slug']}.sql.gz")
     with open(dump, "wb") as f:
         subprocess.run(["ssh", "-o", "BatchMode=yes", host, "wp db export - 2>/dev/null | gzip"], stdout=f)
     size = os.path.getsize(dump) if os.path.exists(dump) else 0
     print(f"\n[1] backup : {os.path.basename(dump)} ({size} B)")
     with open(os.path.join(HERE, "BACKUP_LOG.md"), "a", encoding="utf-8") as lg:
-        lg.write(f"| {ts} | populate AR twin `{fm['slug']}` (post {ar}) | `{os.path.basename(dump)}` | {size} B | staging |\n")
+        lg.write(f"| {ts} | populate AR twin `{fm['slug']}` (post {ar}) | `{os.path.basename(dump)}` | {size} B | {env_label(host)} |\n")
 
     # ── stream body (charset-safe) ──
     bodyfile = f"/tmp/guidekit-ar-{fm['slug']}-body.html"
     subprocess.run(["ssh", "-o", "BatchMode=yes", host, f"cat > {bodyfile}"], input=final.encode("utf-8"), check=True)
 
     # ── update-only PHP (ensure_ascii=False → real UTF-8) ──
+    # Fence only when explicitly asked; otherwise CLEAR any inherited noindex so the
+    # twin is indexable (prod live since 2026-08-08).
+    fence_php = ("delete_post_meta($id,'rank_math_robots');   // UNFENCED (default, post-flip)"
+                 if args.no_fence else
+                 "update_post_meta($id,'rank_math_robots',array('noindex'));   // FENCE (dark env)")
     php = f"""<?php
 $id = {ar};
 if (get_post_type($id) !== 'guide_article') {{ echo "ERR=not a guide_article\\n"; exit; }}
@@ -168,7 +190,7 @@ $h = {int(hero) if str(hero).isdigit() else 0};
 if ($h>0) {{ set_post_thumbnail($id,$h); update_post_meta($id,'hero_photo_id',$h); }}
 update_post_meta($id,'rank_math_title',{jx(fm.get('seo_title') or fm['title'])});
 update_post_meta($id,'rank_math_description',{jx(fm.get('meta_description',''))});
-update_post_meta($id,'rank_math_robots',array('noindex'));   // FENCE (rail #4)
+{fence_php}
 echo "OK=".$id."\\n"; echo "URL=".get_permalink($id)."\\n"; echo "ST=".get_post_status($id)."\\n";
 """
     rc, out, err = kit.ssh(host, "wp eval-file -", inp=php)
@@ -204,10 +226,13 @@ echo "OK=".$id."\\n"; echo "URL=".get_permalink($id)."\\n"; echo "ST=".get_post_
             print(f"    {'✗ EN leak!' if en_leak else '✓'} no bare /places/ (EN under AR)")
             print(f"    {'✗' if dbl else '✓'} no /ar/en/ double-prefix")
             print(f"    {ok(single_title)} no double title")
-            print(f"    {'present ✓' if noindex else '⚠ check'} noindex robots meta (fence)")
+            if args.no_fence:
+                print(f"    {'✗ STILL FENCED!' if noindex else '✓'} unfenced (indexable) — prod is live")
+            else:
+                print(f"    {'present ✓' if noindex else '⚠ check'} noindex robots meta (fence)")
         except Exception as e:
             print(f"    ⚠ could not fetch {u}: {e}")
-    print(f"\n✅ POPULATED  {site}/ar/guide/{fm['slug']}/  (post {ar}, {status}, noindex-fenced)\n")
+    print(f"\n✅ POPULATED  {site}/ar/guide/{fm['slug']}/  (post {ar}, {status}, {'unfenced/indexable' if args.no_fence else 'noindex-fenced'})\n")
 
 
 if __name__ == "__main__":

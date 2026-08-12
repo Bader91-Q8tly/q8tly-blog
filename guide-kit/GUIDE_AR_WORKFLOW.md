@@ -146,12 +146,21 @@ scaffold** for Bader to rewrite (e.g. `*_AR_draft.md` on his Desktop) — not
 publishable until Bader rewrites + approves it. The approved rewrite is the
 D-145-clean AR we inject.
 
-**Sequencing rule (critical — avoids stale/empty WPML slots):** the WPML "+" comes
-**right before injection, NOT before the AR content exists.** Order per guide:
-**approved AR MD ready → Bader does "+" (clean native shell) → tool injects →
-fence.** Never "+" first — an early "+" (esp. under ATE) leaves a stale/empty trid
-slot (we hit exactly this on 2189's first attempt). See §9-G for the ATE caveat
-(the "+" must create an *editable* WP-editor shell, not an ATE job).
+**⚠ CORRECTED 2026-08-12 — THE "+" DOES NOT CREATE A POST ON PROD.** The old rule
+below ("Bader does '+' (clean native shell) → tool injects → fence") is **WRONG while
+`doc_translation_method = ate`**, which is the live prod state. Confirmed on prod during
+the Cure twin: clicking "+" opened an **ATE cloud job** (`wp_icl_translate_job`
+`editor='ate'`, `editor_job_id=207172644`, `translated=0`; `icl_translation_status.status=2`)
+and left `wp_icl_translations` holding only a **placeholder `ar` row with `element_id NULL`**.
+No WP post exists until an ATE job completes and syncs back — so there is nothing for the
+tool to populate, and Bader sees "nothing happened".
+
+**Use §9-G's working recipe instead.** The fence step in the old order is also obsolete —
+see rail #4, twins are now UNFENCED (prod live + indexable since 2026-08-08).
+
+*(Historical: the original rule existed to avoid stale/empty trid slots — an early "+" on
+EN 2189 left a dangling empty `ar` slot. That hazard is real and is exactly what the
+recipe's step 4 cleans up.)*
 
 ---
 
@@ -508,6 +517,36 @@ Publishing it as-is **double-renders**.
   Until resolved, **no guide AR twin can be created the rail-#1 way.** First "+"
   attempt on EN 2189 left a dangling empty `ar` slot in trid 4656 — cancel it via
   the WPML UI (Translation Management / the post's Language box), never by hand.
+
+### ⚠ 2026-08-12 — "RESOLVED-IN-PRACTICE" DOES NOT HOLD ON PROD. Confirmed live.
+
+The 2026-06-29 note above was written against **staging**. On **prod** the "+" routes into
+ATE exactly as the original blocker predicted (evidence in §1's correction). Treat §9-G as
+**OPEN on prod**, and build twins with the recipe below.
+
+#### The working recipe (owner-authorized; used for Cure twin 5032, reusable)
+
+Run it once per twin. Steps 3–5 are the part nobody should have to rediscover.
+
+1. **Snapshot prod** (`bin/db-snapshot.sh prod`, canon script) before any write.
+2. **`wp_insert_post`** the AR post directly: empty body, title = business name,
+   slug = the EN slug, `post_status=publish`, `post_type=guide_article`.
+3. ⚠ **`do_action('wpml_set_element_language_details', …)` is a SILENT NO-OP here.**
+   It returns without error and leaves the new post as **`en` on its own new trid**.
+   Do not trust it, and do not assume success from the absence of an error.
+4. Delete the **NULL-element `ar` placeholder row** left by the ATE job (it is job
+   bookkeeping, not a translation link — no existing post loses its language when it
+   goes), then call the API that actually works:
+   **`$sitepress->set_element_language_details($new_id, 'post_guide_article', $trid, 'ar', 'en')`**
+5. Re-point `icl_translation_status` at the new `translation_id` and convert the job row
+   from the ATE shape to the WP-editor shape. **Target shape copied from the known-good
+   Elysee twin 3122:** `status=10, translator_id=0, needs_update=0` ·
+   `editor='wp', editor_job_id=NULL, translated=1`.
+6. **`populate_ar_twin.py --en-id <EN_ID>`** — it auto-discovers the twin. As of
+   2026-08-12 it leaves the twin **unfenced by default**; no manual fence-clearing step.
+
+**Verify after:** `<html lang="ar">` · `robots: index, follow` · self-canonical ·
+hreflang ar/en/x-default · 0 bare `/places/` · no `/ar/en/` double prefix · no mojibake.
 
 **Consistency note vs the listings model (for Advisor's check):** the listings
 lane uses DeepL MT for bodies + controlled-term/area/name machinery; this lane

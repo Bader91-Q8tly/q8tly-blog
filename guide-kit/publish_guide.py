@@ -18,6 +18,15 @@ ARTICLE_TYPES = {"longread", "guide", "quick_take"}
 CHROME_FORBIDDEN = ["q8tly-guide-single", "By Q8tly Editorial", "wp:post-title"]
 
 
+
+def env_label(host):
+    """Backup/label env derived from the RESOLVED ssh host — never a literal.
+    Fixed 2026-08-12: all three tools hardcoded "staging", so the first real prod
+    run wrote `staging-…` dumps and a `staging` BACKUP_LOG column and had to be
+    renamed by hand. Staging hosts carry the `staging-` prefix; anything else is prod."""
+    h = (host or "").lower()
+    return "staging" if "staging" in h else "prod"
+
 def die(msg):
     print(f"\n❌ {msg}\n", file=sys.stderr)
     sys.exit(1)
@@ -242,14 +251,14 @@ def main():
     rc, ts, _ = ssh(host, "date +%Y%m%d-%H%M%S")
     ts = ts.strip()
     if backup_dir and os.path.isdir(backup_dir):
-        dump = os.path.join(backup_dir, f"staging-{ts}-guide-{slug}.sql.gz")
+        dump = os.path.join(backup_dir, f"{env_label(host)}-{ts}-guide-{slug}.sql.gz")
         with open(dump, "wb") as f:
             p = subprocess.run(["ssh", "-o", "BatchMode=yes", host, "wp db export - 2>/dev/null | gzip"],
                                stdout=f)
         size = os.path.getsize(dump) if os.path.exists(dump) else 0
         print(f"\n[1] backup    : {os.path.basename(dump)} ({size} bytes)")
         with open(os.path.join(HERE, "BACKUP_LOG.md"), "a", encoding="utf-8") as lg:
-            lg.write(f"| {ts} | publish guide `{slug}` | `{os.path.basename(dump)}` | {size} B | staging |\n")
+            lg.write(f"| {ts} | publish guide `{slug}` | `{os.path.basename(dump)}` | {size} B | {env_label(host)} |\n")
     else:
         print("[1] backup    : ⚠ BACKUP_DIR missing — aborting (discipline: no write without a verified backup).")
         die("create the backup dir or fix config.sh BACKUP_DIR")

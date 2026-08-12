@@ -33,6 +33,15 @@ sys.path.insert(0, HERE)
 import publish_guide as kit  # reuse parse_frontmatter, md_to_blocks, word_count, ssh, load_config, CHROME_FORBIDDEN
 
 
+
+def env_label(host):
+    """Backup/label env derived from the RESOLVED ssh host — never a literal.
+    Fixed 2026-08-12: all three tools hardcoded "staging", so the first real prod
+    run wrote `staging-…` dumps and a `staging` BACKUP_LOG column and had to be
+    renamed by hand. Staging hosts carry the `staging-` prefix; anything else is prod."""
+    h = (host or "").lower()
+    return "staging" if "staging" in h else "prod"
+
 def die(m):
     print(f"\n❌ {m}\n", file=sys.stderr); sys.exit(1)
 
@@ -142,13 +151,13 @@ echo "lang=".($ld && isset($ld["language_code"]) ? $ld["language_code"] : "")."\
     bdir = cfg["BACKUP_DIR"]
     if not (bdir and os.path.isdir(bdir)):
         die("BACKUP_DIR missing — no write without a backup")
-    dump = os.path.join(bdir, f"staging-{ts}-en-guide-{fm['slug']}.sql.gz")
+    dump = os.path.join(bdir, f"{env_label(host)}-{ts}-en-guide-{fm['slug']}.sql.gz")
     with open(dump, "wb") as f:
         subprocess.run(["ssh", "-o", "BatchMode=yes", host, "wp db export - 2>/dev/null | gzip"], stdout=f)
     size = os.path.getsize(dump) if os.path.exists(dump) else 0
     print(f"\n[1] backup : {os.path.basename(dump)} ({size} B)")
     with open(os.path.join(HERE, "BACKUP_LOG.md"), "a", encoding="utf-8") as lg:
-        lg.write(f"| {ts} | EN re-author `{fm['slug']}` (post {post_id}) | `{os.path.basename(dump)}` | {size} B | staging |\n")
+        lg.write(f"| {ts} | EN re-author `{fm['slug']}` (post {post_id}) | `{os.path.basename(dump)}` | {size} B | {env_label(host)} |\n")
 
     # ── stream body (charset-safe) ──
     bodyfile = f"/tmp/guidekit-en-{fm['slug']}-body.html"
