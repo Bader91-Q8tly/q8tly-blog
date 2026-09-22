@@ -125,9 +125,10 @@ Backup: `prod-20260922-222816.sql.gz` (canon) + each tool's own dump
    list, 2 FAQ answers and `hero_alt`; AR heading + table («سولانج ميزون (Solange Maison)», the Arabic
    form taken from **Bader's own** Solange AR draft, not invented), 6 Latin prose mentions and `hero_alt`.
    The EN/AR flagships and the Solange Maison spotlight guide now agree on the name.
-⚠ **Still "Solange" on both pages — but only in the place card and the map pin**, because listing
-4025 is *still titled "Solange"*. Verified: 3 occurrences per page, all from the card/pin markup, none
-from article text. That rename is the long-standing Pipeline item (routed 2026-08-13, still open).
+✅ **CLOSED same day:** the card/pin "Solange" came from listing 4025 still being titled "Solange".
+Bader then had Blog rename the listing itself (EN 4025 + AR 4040 → "Solange Maison", slug untouched) —
+a **Pipeline-lane write done on owner instruction**; see `handoffs/2026-09-22-to-pipeline-solange-rename.md`.
+Both flagship pages now render "Solange Maison" in the card and the pin, with zero "Solange" left.
 Re-verified both pages: 10 cards + 10 pins each, 1 table, 0 shortcode leak, no mojibake,
 EN and AR both `index, follow`, AR H1 «أفضل 10 مطاعم في الكويت (2026)».
 
