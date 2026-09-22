@@ -79,6 +79,35 @@ def md_inline(t):
     return t
 
 
+def image_block(stem, cap, alt, aid, url, fallback_alt=""):
+    """The single source of truth for an inline image block (all three tools call this).
+
+    alt precedence: explicit `alt` from the marker → the caption → fallback (post title).
+    The title fallback is a LAST resort: under the four-H2 no-caption shape it produced
+    `alt="<title>"` on every image, which is the defect this function exists to kill.
+    """
+    alt_text = alt or cap or fallback_alt
+    cap_html = (f'<figcaption class="wp-block-image__caption">{html.escape(cap)}</figcaption>'
+                if cap else "")
+    return (f'<!-- wp:image {{"id":{aid},"sizeSlug":"large","linkDestination":"none"}} -->\n'
+            f'<figure class="wp-block-image size-large"><img src="{url}" '
+            f'alt="{html.escape(alt_text)}" class="wp-image-{aid}"/>{cap_html}</figure>\n'
+            f'<!-- /wp:image -->')
+
+
+def missing_alt(body_images):
+    """Stems with neither an explicit alt nor a caption — they'd fall back to the title."""
+    return [stem for stem, cap, alt in body_images if not (alt or cap)]
+
+
+PLACE_MARKER = re.compile(r"^\[\[place:(\d+)\]\]$")
+
+
+def extra_place_ids(body):
+    """IDs from `[[place:ID]]` markers — the extra cards a multi-venue guide carries."""
+    return [m.group(1) for m in (PLACE_MARKER.match(l.strip()) for l in body.split("\n")) if m]
+
+
 def md_to_blocks(body, place_id, map_ids):
     lines = body.split("\n")
     out, i, images = [], 0, []
@@ -89,6 +118,11 @@ def md_to_blocks(body, place_id, map_ids):
             if place_id:
                 out.append(f'<!-- wp:shortcode -->\n[q8tly_place id="{place_id}"]\n<!-- /wp:shortcode -->')
             i += 1; continue
+        # `[[place:ID]]` = a card for another listing (best-of lists, combined guides).
+        m_place = PLACE_MARKER.match(s)
+        if m_place:
+            out.append(f'<!-- wp:shortcode -->\n[q8tly_place id="{m_place.group(1)}"]\n<!-- /wp:shortcode -->')
+            i += 1; continue
         if s == "[[map]]":
             if map_ids:
                 ids = ",".join(str(x) for x in map_ids)
@@ -96,9 +130,14 @@ def md_to_blocks(body, place_id, map_ids):
             i += 1; continue
         m_img = re.match(r"\[\[image:([^\]|]+)(?:\|([^\]]*))?\]\]", s)
         if m_img:
-            stem, cap = m_img.group(1).strip(), (m_img.group(2) or "").strip()
-            images.append((stem, cap))
-            out.append(f"<!--GUIDEKIT_IMG:{stem}|{cap}-->")
+            stem = m_img.group(1).strip()
+            # `[[image:stem]]` · `[[image:stem|caption]]` · `[[image:stem|caption|alt]]`
+            # `[[image:stem||alt]]` = no caption but real alt text (the four-H2 no-caption shape).
+            parts = (m_img.group(2) or "").split("|")
+            cap = parts[0].strip()
+            alt = parts[1].strip() if len(parts) > 1 else ""
+            images.append((stem, cap, alt))
+            out.append(f"<!--GUIDEKIT_IMG:{stem}|{cap}|{alt}-->")
             i += 1; continue
         # table
         if s.startswith("|") and i + 1 < len(lines) and re.match(r"^\s*\|[\s:|-]+\|\s*$", lines[i + 1]):
@@ -210,8 +249,15 @@ def main():
     disk = {os.path.splitext(os.path.basename(p))[0]: p
             for p in sorted(glob.glob(os.path.join(img_dir, "*"))) if os.path.isfile(p)}
     hero = next((disk[k] for k in disk if k == "hero"), None)
-    referenced = [stem for stem, _ in body_images]
+    # `hero_id:` reuses an attachment already in the media library (no re-upload).
+    reuse_hero = str(fm.get("hero_id") or "").strip()
+    if reuse_hero and not reuse_hero.isdigit():
+        die(f"hero_id '{reuse_hero}' must be an attachment ID.")
+    if reuse_hero and hero:
+        die("both images/hero.* and hero_id are set — pick one.")
+    referenced = [stem for stem, _, _ in body_images]
     missing_imgs = [s for s in referenced if s not in disk]
+    extra_places = extra_place_ids(body)
 
     print(f"\n=== GUIDE DROP: {slug}  ({'EXECUTE' if args.execute else 'DRY RUN'}) ===")
     print(f"title         : {fm['title']}")
@@ -219,8 +265,14 @@ def main():
     print(f"lang/status   : {fm['lang']} / {status}")
     print(f"topic         : {fm['topic']}   article_type: {fm['article_type']}   word_count: {wc}")
     print(f"place_id      : {place_id}   map_ids: {map_ids or '—'}")
-    print(f"hero image    : {os.path.basename(hero) if hero else '⚠ NONE (flat-plate hero)'}")
+    if extra_places:
+        print(f"extra places  : {', '.join(extra_places)}")
+    print(f"hero image    : {os.path.basename(hero) if hero else (f'reuse attachment {reuse_hero}' if reuse_hero else '⚠ NONE (flat-plate hero)')}")
     print(f"inline images : {', '.join(referenced) or '—'}")
+    _no_alt = missing_alt(body_images)
+    if _no_alt:
+        print(f"⚠ alt text    : MISSING on {', '.join(_no_alt)} — these will fall back to the "
+              f"post title. Add `[[image:<stem>||descriptive alt]]`.")
     print(f"replaces page : {fm.get('replaces_page_slug') or '—'}")
     if missing_imgs:
         die(f"body references images not in images/: {missing_imgs}")
@@ -230,11 +282,15 @@ def main():
         rc, sn, _ = ssh(host, f"wp post list --post_type=guide_article --posts_per_page=-1 --field=post_name 2>/dev/null")
         if rc == 0 and slug in sn.split():
             die(f"slug '{slug}' already exists as a guide_article. Pick a unique slug.")
-        if place_id:
-            rc, pt, _ = ssh(host, f"wp post get {place_id} --field=post_type 2>/dev/null")
+        for pid in dict.fromkeys([x for x in [place_id] + extra_places + map_ids if x]):
+            rc, pt, _ = ssh(host, f"wp post get {pid} --field=post_type 2>/dev/null")
             if pt.strip() != "gd_place":
-                die(f"place_id {place_id} is not a published gd_place (got '{pt.strip() or 'nothing'}').")
-        print("remote checks : ✓ slug free, place_id resolves")
+                die(f"place id {pid} is not a published gd_place (got '{pt.strip() or 'nothing'}').")
+        if reuse_hero:
+            rc, pt, _ = ssh(host, f"wp post get {reuse_hero} --field=post_type 2>/dev/null")
+            if pt.strip() != "attachment":
+                die(f"hero_id {reuse_hero} is not an attachment (got '{pt.strip() or 'nothing'}').")
+        print("remote checks : ✓ slug free, every place id resolves" + (", hero_id is an attachment" if reuse_hero else ""))
     else:
         print("remote checks : (skipped)")
 
@@ -276,18 +332,16 @@ def main():
         rc, url, _ = ssh(host, f'wp post get {att} --field=guid 2>/dev/null')
         media[stem] = (att, url.strip())
         print(f"[2] uploaded  : {stem} -> attachment {att}")
-    hero_id = media.get("hero", ("", ""))[0]
+    hero_id = media.get("hero", ("", ""))[0] or reuse_hero
+    if reuse_hero:
+        print(f"[2] hero      : reusing attachment {reuse_hero} (not re-uploaded)")
 
     # ── 3. body: replace image placeholders with real blocks ──
     final = block_body
-    for stem, cap in body_images:
+    for stem, cap, alt in body_images:
         aid, url = media.get(stem, ("", ""))
-        alt = cap or fm["title"]
-        cap_html = f'<figcaption class="wp-block-image__caption">{html.escape(cap)}</figcaption>' if cap else ""
-        blk = (f'<!-- wp:image {{"id":{aid},"sizeSlug":"large","linkDestination":"none"}} -->\n'
-               f'<figure class="wp-block-image size-large"><img src="{url}" alt="{html.escape(alt)}" '
-               f'class="wp-image-{aid}"/>{cap_html}</figure>\n<!-- /wp:image -->')
-        final = final.replace(f"<!--GUIDEKIT_IMG:{stem}|{cap}-->", blk)
+        blk = image_block(stem, cap, alt, aid, url, fallback_alt=fm["title"])
+        final = final.replace(f"<!--GUIDEKIT_IMG:{stem}|{cap}|{alt}-->", blk)
 
     bodyfile = f"/tmp/guidekit-{slug}-body.html"
     subprocess.run(["ssh", "-o", "BatchMode=yes", host, f"cat > {bodyfile}"], input=final.encode(), check=True)

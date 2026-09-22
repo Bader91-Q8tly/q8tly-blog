@@ -103,18 +103,13 @@ echo "lang=".($ld && isset($ld["language_code"]) ? $ld["language_code"] : "")."\
 
     # ── build image blocks from EXISTING media (reuse; no upload — repo is text-only) ──
     final = blocks
-    for stem, cap in body_images:
+    for stem, cap, alt in body_images:
         aid = media.get(stem, "")
         if not aid:
             die(f"no --media mapping for image stem '{stem}'")
         rc, url, _ = kit.ssh(host, f"wp post get {aid} --field=guid 2>/dev/null")
-        url = url.strip()
-        alt = cap or fm["title"]
-        cap_html = f'<figcaption class="wp-block-image__caption">{html.escape(cap)}</figcaption>' if cap else ""
-        blk = (f'<!-- wp:image {{"id":{aid},"sizeSlug":"large","linkDestination":"none"}} -->\n'
-               f'<figure class="wp-block-image size-large"><img src="{url}" alt="{html.escape(alt)}" '
-               f'class="wp-image-{aid}"/>{cap_html}</figure>\n<!-- /wp:image -->')
-        final = final.replace(f"<!--GUIDEKIT_IMG:{stem}|{cap}-->", blk)
+        blk = kit.image_block(stem, cap, alt, aid, url.strip(), fallback_alt=fm["title"])
+        final = final.replace(f"<!--GUIDEKIT_IMG:{stem}|{cap}|{alt}-->", blk)
 
     hero = media.get("hero", "")
     seo_title = fm.get("seo_title", "")
@@ -123,7 +118,11 @@ echo "lang=".($ld && isset($ld["language_code"]) ? $ld["language_code"] : "")."\
     print(f"\n=== EN RE-AUTHOR post {post_id}  [{'EXECUTE' if args.execute else 'DRY RUN'}] ===")
     print(f"title  : {fm.get('title')}")
     print(f"place_id: {place_id}   map_ids: {map_ids}   words: {wc}   hero(reuse): {hero or '⚠none'}")
-    print(f"images : " + ", ".join(f"{s}->{media.get(s, '?')}" for s, _ in body_images))
+    print(f"images : " + ", ".join(f"{s}->{media.get(s, '?')}" for s, _, _ in body_images))
+    _no_alt = kit.missing_alt(body_images)
+    if _no_alt:
+        print(f"⚠ alt  : MISSING on {', '.join(_no_alt)} — will fall back to the post title. "
+              f"Add `[[image:<stem>||descriptive alt]]`.")
     print(f"SEO    : rank_math_title {'-> set' if seo_title else '(unchanged, not in draft)'}, "
           f"rank_math_description {'-> set' if meta_desc else '(unchanged, not in draft)'}")
     print("fence  : NONE — EN always stays indexable")

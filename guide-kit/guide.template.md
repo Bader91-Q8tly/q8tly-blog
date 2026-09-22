@@ -17,6 +17,7 @@ place_id: 0                                      # the gd_place listing ID this 
 
 # ── OPTIONAL ──
 map_ids: [0]                                     # gd_place IDs for [[map]]; omit to skip the map
+hero_id:                                         # reuse an existing attachment as hero (instead of images/hero.*)
 word_count: auto                                 # 'auto' counts the body, or put an integer
 seo_title: ""                                    # Rank Math <title>; omit → uses title
 meta_description: ""                             # Rank Math description; ≤ 155 chars
@@ -50,6 +51,8 @@ Tables work too:
 ## Markers the publisher expands (place these where you want them)
 
 [[place]]                         <!-- → [q8tly_place id=<place_id>] : the listing card -->
+
+[[place:123]]                     <!-- → [q8tly_place id=123] : a card for another listing (best-of lists) -->
 
 [[map]]                           <!-- → [q8tly_map ids=<map_ids>] : the map pin list (max 1) -->
 

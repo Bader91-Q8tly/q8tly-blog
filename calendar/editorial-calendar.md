@@ -17,15 +17,38 @@ only after the full gate clears — see Published note below).
 > by *publish recency*. To pin a non-newest guide as the feature you'd need a
 > Builder/Module 6 "featured" flag → **route to the Advisor** (don't touch the widget).
 
-**Live order on the homepage now (newest-first, verified):**
+> ⚠ **ENV CHANGED 2026-08-08 — guides now publish to PROD (q8tly.com), not staging.**
+> Phase C flipped prod live + indexable; the whole guide corpus and the AR twins live there,
+> and the twins are **UNFENCED** (the "AR fenced" notes below are pre-flip history, kept for
+> provenance). **Staging is stale** — newest real `gd_place` is 3563 (2026-07-27) vs prod past
+> 4659 — so a guide about any recent listing hard-fails there. Run the kit with
+> `--ssh-host baderlol44-pwgjm.wordpress.com@ssh.wp.com --site-url https://q8tly.com`.
+> Blog `CLAUDE.md` still says "staging only / prod frozen" → **stale, owed a fix**.
+> Canon: **prod writes stay manual + gated** — get Bader's word, snapshot prod first.
 
-| Position | Guide | Slug | Note |
-|----------|-------|------|------|
-| **Featured** (editorial of the week) | Elysee Beauty Lounge & Queue Café — Mahboula (Park Inn rooftop) | `elysee-queue-cafe-mahboula` | newest (2026-07-05) → auto-featured ✓; **first COMBINED guide** (two venues, one feature) |
-| 2 | B+F — 360 Mall (Solar Garden) / Zahra | `bandf-360-mall` | live EN · AR fenced |
-| 3 | Odachi — Kuwait City / Khaleejia Tower | `odachi-kuwait-city` | live EN · AR fenced |
-| 4 | MizuMesa (Nikkei) — Sharq / KIPCO | `mizumesa-sharq` | live EN · AR fenced |
-| 5 | South Avenue Salon & Spa — Sabah Al-Salem | `south-avenue-salon-sabah-al-salem` | live EN · AR fenced — rotates off if the block caps at 4 |
+> ⚠ **CORRECTION 2026-08-12 — the "auto-features the newest" note above is WRONG on prod.**
+> Verified cache-busted after publishing Cure (newest, 2026-08-12): the featured block
+> (`q8-home-section--featured-guide` / `q8-feat-guide`) serves **MizuMesa** (post 2362, June),
+> not the newest guide. So the block is **not** ordering by publish recency, whatever it did on
+> staging in June. Cure did surface immediately in the **"Fresh from our editors"** strip.
+> **Not Blog's widget** (Module 6 / Builder — we feed it, we don't touch it) → **route to the
+> Advisor**: what actually drives the featured slot, and is there a pin/flag Blog can set?
+
+**Live homepage state (verified cache-busted, 2026-08-12):**
+
+| Slot | Guide | Slug | Note |
+|------|-------|------|------|
+| **Featured block** (`q8-feat-guide`) | MizuMesa (Nikkei) — Sharq | `mizumesa-sharq` | ⚠ **not the newest** — selection rule unknown, see correction above |
+| Fresh from our editors · 1 | MizuMesa | `mizumesa-sharq` | |
+| Fresh from our editors · 2 | **Solange Maison — Kuwait City / Salhia Complex** | `solange-maison-kuwait-city` | **5430**, live 2026-08-13. 2nd fine-dining guide. **First guide built to the four-H2 EN/AR mirror shape** (Cure EN still isn't — see Advisor note) |
+| Fresh from our editors · 3 | **Cure — Shuwaikh / Design District** | `cure-shuwaikh` | **first prod-published guide**, first fine-dining guide, first in the "friend who went" register (D-168 amendment) |
+| Fresh from our editors · 3 | Elysee Beauty Lounge & Queue Café — Mahboula | `elysee-queue-cafe-mahboula` | **first COMBINED guide** (two venues, one feature) |
+| Fresh from our editors · 4 | B+F — 360 Mall (Solar Garden) / Zahra | `bandf-360-mall` | |
+| Fresh from our editors · 5 | Odachi — Kuwait City / Khaleejia Tower | `odachi-kuwait-city` | |
+
+Also live in the corpus (not in the homepage strip): `south-avenue-salon-sabah-al-salem`,
+`naranj-salmiya`, `anosha-beauty-salon-sabah-al-salem`, `keif-restaurant-al-kout-mall`,
+`vibes-coffee-roastery-al-kout-mall`.
 
 ---
 
@@ -33,11 +56,108 @@ only after the full gate clears — see Published note below).
 
 | Title | Type (best-of / area guide) | District / Category | EN | AR | Target | Notes |
 |-------|-----------------------------|---------------------|----|----|--------|-------|
-| _empty — all spotlights shipped (see Published)_ | — | — | — | — | — | Anosha (2189), Naranj (2251), South Avenue (2339), MizuMesa (2362) are live EN. Pipeline needs seeding: next idea + a best-of/area guide. |
+| **The 11 Best Italian Restaurants in Kuwait (2026)** | **best-of list** #2 | Food & Drink / 11 Italian, country-wide | ✅ live **6313** | ✅ live **6315**, unfenced | 2026-09-22 | **DONE (EN+AR same day).** Verbatim + same build pattern as list #1 (11 cards + `[[map]]`); intro fix "opera house fountain" → "at the opera house, facing the museum fountain" (approved). Hero = Trapani listing photo fitted to 1520×1086 (new attachment 6312). ⚠ Rights unverified (`_rw_1920` looks like a portfolio image; Bader chose it knowingly). Links to list #1 both languages. AR = the file + 1 approved edit (Delfino booking "required"); twin again built without the "+". |
+| **The 10 Best Restaurants in Kuwait (2026)** | **best-of list** (first one) | Food & Drink / 10 restaurants, country-wide | ✅ live **6307** | ✅ live **6309**, unfenced | 2026-09-22 | **DONE (EN+AR same day).** Bader's SEO article injected verbatim + 3 approved build changes (text links → 10 place cards, `[[map]]` of all 10, Solange booking "required" → "recommended"). Hero reuses Solange Maison dining room (5427). AR = Bader's Arabic + 3 approved edits (Solange "recommended", restored Chops hours/price + Amiti breakfast, hero alt); twin built **without the "+"** (WPML wrote the TM rows itself). FAQ schema owed (Builder). |
+| ~~Cure — AR twin~~ | spotlight (AR side) | Fine Dining / Shuwaikh | ✅ live **5025** | ✅ live **5032**, unfenced | 2026-08-12 | **DONE.** Bader's Kuwaiti Arabic (D-145) injected + verified. Twin created via the **ATE workaround** — the WPML "+" opens an ATE cloud job, not a post; see the handoff for the working recipe. `GUIDE_AR_WORKFLOW.md` **still needs a post-flip rewrite** (ATE path + unfenced default). |
+| **Paparazzi** | spotlight | Fine Dining / Italian, Kuwait City (4643) | idea | — | — | **Runner-up from the 2026-08-12 fine-dining gate.** Listing is well-populated (amenities recorded, unlike Cure). **Blocked on photos:** the only storefront shot is a night frame ~90% black → fails D-180 §3B exposure/composition. Needs a **daylight exterior**; the food shots (truffle tagliatelle) are already good. |
+| Solange | spotlight | Fine Dining / Chinese, Salhia Complex (4025) | idea | — | — | `$$$$`. Photo set is 1 native landscape + ~12 croppable portraits → conditional PASS, would be a heavy rescue pass. |
+| Queens | spotlight | Fine Dining / The Avenues (4659) | idea | — | — | Richest amenities of the pool. **Photos fail:** 2 landscape at 1320px (<1520), rest portrait → DEFER pending a re-shoot. |
+| ~~Nouga~~ | — | — | — | — | — | **Not fine dining** — Cafes / Specialty Coffee `$$` (4362). Photo set is 0/11 landscape. Out of the fine-dining pool. |
+| ~~Odashi~~ | — | — | — | — | — | **No prod listing under this name** (not Odachi 2432, already guided). Photos 864–1200px → **FAIL, re-shoot not a fix**. |
 
 ---
 
 ## Published
+
+**Env note (2026-08-12):** entries below the Cure block were written pre-flip, when the corpus
+was staging-only and prod was frozen. Post Phase-C (2026-08-08) the corpus lives on **prod**
+(q8tly.com) with **AR twins unfenced**. Historical "staging / fenced" wording is kept as
+provenance, not current state.
+
+**THE 11 BEST ITALIAN RESTAURANTS IN KUWAIT (2026) LIVE ON PROD 2026-09-22 — `guide_article` 6313**
+at `https://q8tly.com/guide/best-italian-restaurants-in-kuwait/`. 11 place cards (Trapani 1920 · Novikov 5368 · Paparazzi 4643 · Delfino 5059 · Delizio 6072 · Utopia 5905 · Eataly 6012 · NAC 3385 · Si 4224 · Select 3231 · OFK 4618) + `[q8tly_map]`. Hero 6312. Rank Math title/description/focus keywords set. **AR twin 6315 live same day** at `/ar/guide/best-italian-restaurants-in-kuwait/` (11 cards → `/ar/places/`, hreflang paired, indexable). AR SEO title/meta later reset to Western digits + the 11 H2s moved to «الاسم (Latin)» house style (table column still em-dashed). Handoff: `handoffs/2026-09-22-best-italian-list.md`.
+
+**THE 10 BEST RESTAURANTS IN KUWAIT (2026) LIVE ON PROD 2026-09-22 — `guide_article` 6307**
+at `https://q8tly.com/guide/best-restaurants-in-kuwait/`. **First best-of list.** 10 place cards (MizuMesa 2354 · Solange 4025 · Naranj 2239 · Cure 3807 · Off the Coal 4330 · Amiti Noura 3145 · Chef Pillai 2818 · Kiwa 1939 · Queens 4659 · Chops 5575) + one `[q8tly_map]` of all 10. Hero = reused attachment 5427. Rank Math title/description/focus keywords set. **AR twin 6309 live same day** at `/ar/guide/best-restaurants-in-kuwait/` (10 cards → `/ar/places/`, hreflang paired, indexable). Handoff: `handoffs/2026-09-22-best-restaurants-list.md`.
+
+**SOLANGE MAISON (Salhia Complex, Kuwait City) LIVE ON PROD 2026-08-13 — `guide_article` 5430**
+at `https://q8tly.com/guide/solange-maison-kuwait-city/`. Listing: Solange **4025**
+(`/places/kuwait-city/solange/`, Fine Dining, `verified_by_q8tly`). Media hero **5426** +
+inline **5427/5428/5429**; topic term 1715; kicker *Food & Drink · Guide · 3 min read* (559 words).
+Verify green: 200 · house chrome · hero · no double title · **four body H2s** (The escalator /
+The dining room / The ceiling / The food) + Key facts · 0 figcaptions · 0 shortcode leak ·
+place card → `/places/kuwait-city/solange/` · served images 1520×1086 exif-clean.
+Backups `prod-20260813-165435` (pre-write) + `prod-20260813-075517` (kit).
+
+- **Name:** Bader ruled canonical = **Solange Maison** (their branding: solangemaison.com).
+  ⚠ **The listing is still titled "Solange", so the place card renders "Solange" under a guide
+  titled "Solange Maison"** — visible now, Pipeline's write.
+- **First guide on the four-H2 EN/AR mirror shape.** ⚠ Cure's EN still has zero body H2s, so the
+  "standard" doesn't match it — ruling + a Cure EN restructure owed (Advisor note 2026-08-13).
+- **Photo gate: CONDITIONAL PASS, weakest set shipped.** Originals GONE — only the 1600px
+  `optimized images/` set survives. All 16 sources portrait at 1600px → landscape-crop width
+  1600, clearing 1520 by **5% with no headroom**; **every photo is a portrait rescue** (D-180 §4).
+  Rejected: 5EAAC280 (1086px), IMG_3967, IMG_3985, IMG_3958.
+- **⚠ LIVE DEFECT — alt text.** No-captions shape + `publish_guide.py:285` (`alt = cap or title`)
+  ⇒ all three inline images carry `alt="Solange Maison"`. Kit fix owed (alt field on the marker).
+- **⚠ `/ar/` English leak is LIVE** on this guide (200, `index, follow`, EN body under `lang="ar"`)
+  until Bader's Arabic lands. Unruled class — Advisor.
+- **Pack vs live disagreements** (resolved in favour of live, none asserted): valet parking
+  (pack-only) · 15–19 KD per head (pack-only; `price_kd_min/max` null) · Restaurants parent
+  category missing · Celebrations tag absent. AR twin amenities **DO** populate (not Cure's class),
+  but the AR **description is still English**.
+- **AR TWIN LIVE 2026-08-13 — `guide_article` 5436** at `/ar/guide/solange-maison-kuwait-city/`,
+  **publish + UNFENCED (indexable)**. Bader's Kuwaiti Arabic (D-145) injected faithfully, same day
+  as the EN. Verified: `lang="ar"` · `robots: index, follow` · self-canonical · kicker
+  «طعام وشراب · دليل · 3 دقايق من وقتك» · **four body H2s** (من أول المصعد / الصالة / السقف / الأكل)
+  + معلومات سريعة · 7-row table · place card → `/ar/places/مدينة-الكويت/solange/` · 0 bare
+  `/places/` · 0 shortcode leak · no mojibake · hreflang ar/en/x-default. **This closes the
+  `/ar/` English-leak for this guide** (the class stays open — Advisor).
+  Backups `prod-20260813-171242` (pre-write) + `prod-20260813-081514` (tool).
+- **🏆 FIRST FULLY-MIRRORED EN/AR PAIR** — 5430 and 5436 have identical four-H2 structure and
+  matching 7-row facts tables. Cure (5025/5032) still doesn't mirror; ruling + restructure owed.
+- **Twin created via the API path**, not the WPML "+" — Bader pressed "+" and it opened an
+  **ATE cloud job** again (`editor='ate'`, `editor_job_id 207331742`, `translated=0`, NULL-element
+  placeholder), exactly as on Cure. The documented recipe worked **first try, no strays**.
+  **The "+" is a dead end; stop asking for it.**
+- ✅ Two kit fixes confirmed landed this run: **env label** (`prod-…` + `| prod |`, no manual
+  rename) and **the AR fence** (`populate_ar_twin.py` now ships unfenced by default).
+  ⚠ Still open: `alt = cap or title` → `alt="Solange Maison"` ×3 on **both** sides.
+- ⚠ Title call: Bader's AR draft headed the doc «سولانج ميزون»; shipped as **"Solange Maison"**
+  (Latin) per his own "business names stay in the business's own script" rule + the Cure
+  precedent (AR twin titled "Cure"). **One-line change if he wants the transliteration.**
+
+**CURE (Shuwaikh) LIVE ON PROD 2026-08-12 — `guide_article` 5025** at
+`https://q8tly.com/guide/cure-shuwaikh/`. **First Blog-lane write to production**, first
+**fine-dining** guide, and the first guide in the **"friend you ask before you go"** register.
+Listing: Cure **3807** (`/places/shuwaikh/cure/`, Fine Dining + Restaurants, `verified_by_q8tly`).
+Media: hero **5021** + inline **5022/5023/5024**; topic term 1715; kicker serves
+*Food & Drink · Guide · 3 min read* (497 words — the corpus norm is 1 min). Verify green:
+200, house chrome, hero, no double title, deck + byline, place card → `/places/shuwaikh/cure/`,
+0 shortcode leak, breadcrumb → `/guide/topic/food-drink/`. Backups
+`prod-20260812-092224` (pre-write, canon script) + `prod-20260812-092325` (kit).
+
+- **Register = a D-168 AMENDMENT, owner-approved, owed to the Decision Log via Advisor.**
+  Structure unchanged from the corpus (About prose → captioned photos → key-facts TABLE →
+  `[[place]]`; no map, no FAQ); only the voice moves — who it suits, when to go, an ordering
+  steer, cost in feel, and **one honest drawback**.
+- **Photo gate (D-180): PASS**, 7 of 10 sources native landscape at 4032–5712px, all fitted to
+  7:5 1520×1086, one ratio, EXIF-clean, verified upright **on the served CDN files**.
+  **inline-2 is a PORTRAIT RESCUE** (IMG_2372, 3024×4032 → crop width 3024 ≥1520, plate whole)
+  — logged per D-180 §4. IMG_2371 (gold bowl) rejected: any 7:5 crop clips it at both edges.
+- **⚠ `sips -g` LIES ON HEIC ORIENTATION** — reports stored dims, so `Orientation=1` files read
+  as landscape but display portrait. First crop pass produced sideways-rendering files. Redone
+  order-correct (orientation → strip → crop → resize, per the Pipeline's landed
+  `convert_photos.py`). **D-180 §0's `sips` one-liner is unsafe as written → amendment owed.**
+- **⚠ Kit mislabels prod backups as `staging`** (hardcoded literal) — corrected by hand this
+  run; fix owed in `publish_guide.py` (and likely the two sibling tools).
+- **Data owed on listing 3807:** `amenities` **EMPTY on EN *and* AR** (so Pipeline's
+  "AR twins with empty amenities" is really an **EN-source** gap — their owed site-wide check
+  must cover EN); also null `payment_methods`, `smoking`, `phone`, `website`, `instagram`,
+  and **no KD figure** (`price_kd_min/max` null) → the guide gives a band, never a number.
+- **AR twin: not started**, waits on Bader's Arabic (D-145).
+
+---
 
 All live on STAGING (English) via the Guide Ingestion Kit. Production frozen.
 **AR (2026-06-29):** mechanism unblocked — Builder set `guide_article`/`topic`/

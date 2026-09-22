@@ -545,6 +545,15 @@ Run it once per twin. Steps 3–5 are the part nobody should have to rediscover.
 6. **`populate_ar_twin.py --en-id <EN_ID>`** — it auto-discovers the twin. As of
    2026-08-12 it leaves the twin **unfenced by default**; no manual fence-clearing step.
 
+**No-"+" variant (cleaner, proven 2026-09-22 on best-restaurants twin 6309).** If nobody
+presses "+", there is no ATE job and no NULL placeholder. Do steps 1–2 (insert as `draft`
+so an empty page never goes live), call `$sitepress->set_element_language_details(…)` into
+the EN trid, then run step 6. **Skip the placeholder delete and step 5 entirely.**
+`populate_ar_twin.py`'s save makes WPML write the `icl_translation_status` + `icl_translate_job`
+rows itself, already in the known-good shape (`status=10, translator_id=0, needs_update=0`
+· `editor='wp', editor_job_id=NULL, translated=1`). **Zero raw writes to any `icl_*` table.**
+So tell Bader **not** to press "+" for guides.
+
 **Verify after:** `<html lang="ar">` · `robots: index, follow` · self-canonical ·
 hreflang ar/en/x-default · 0 bare `/places/` · no `/ar/en/` double prefix · no mojibake.
 

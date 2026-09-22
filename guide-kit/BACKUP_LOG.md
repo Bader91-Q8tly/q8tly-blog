@@ -59,3 +59,35 @@ is the same write-class as production, so the discipline applies now.
 | 20260705-112512 | populate AR twin `mizumesa-sharq` (post 2618) | `staging-20260705-112512-ar-twin-mizumesa-sharq.sql.gz` | 2596180 B | staging |
 | 20260705-205507 | publish guide `elysee-queue-cafe-mahboula` | `staging-20260705-205507-guide-elysee-queue-cafe-mahboula.sql.gz` | 2622783 B | staging |
 | 20260705-224728 | populate AR twin `elysee-queue-cafe-mahboula` (post 3122) | `staging-20260705-224728-ar-twin-elysee-queue-cafe-mahboula.sql.gz` | 2614121 B | staging |
+| 20260812-092224 | PRE-WRITE snapshot, prod (canon `q8tly-core/bin/db-snapshot.sh prod`) | `prod-20260812-092224.sql.gz` | 2914576 B | **prod** |
+| 20260812-092325 | publish guide `cure-shuwaikh` (post 5025) — FIRST BLOG WRITE TO PROD | `prod-20260812-092325-guide-cure-shuwaikh.sql.gz` | 2928144 B | **prod** |
+
+> ⚠ **Kit bug (found 2026-08-12, first prod run):** `publish_guide.py` hardcodes the `staging`
+> label in both the dump filename and this log's env column (`publish_guide.py` §1 backup —
+> `f"staging-{ts}-guide-{slug}.sql.gz"` and the literal `| staging |`). On the Cure run it
+> wrote a **prod** dump named `staging-…`. Renamed to `prod-20260812-092325-…` and re-verified
+> (gzip OK + `Dump completed` marker). **Fix owed:** derive the label from the resolved
+> `--ssh-host`/env, not a literal — otherwise every future prod run mislabels its own audit
+> trail. Same fix likely needed in `reinject_en.py` / `populate_ar_twin.py`.
+| 20260812-094928 | EN caption fix `cure-shuwaikh` (post 5025) — inline-2 "A beef plate" → "Short Ribs Donburi" | `prod-20260812-094928-en-guide-cure-shuwaikh.sql.gz` | 2942117 B | **prod** |
+
+> ⚠ **Same mislabel bug CONFIRMED in `reinject_en.py`** (2026-08-12): it too hardcodes
+> `staging-` in the dump filename and `| staging |` in this log. Renamed + re-verified by
+> hand again. The fix is one shared helper across all three tools (`publish_guide.py`,
+> `reinject_en.py`, `populate_ar_twin.py`) — derive the env label from the resolved SSH host.
+| 20260812-031047 | populate AR twin `cure-shuwaikh` (post 5032) | `staging-20260812-031047-ar-twin-cure-shuwaikh.sql.gz` | 2925444 B | staging |
+| 20260813-075517 | publish guide `solange-maison-kuwait-city` | `prod-20260813-075517-guide-solange-maison-kuwait-city.sql.gz` | 3040960 B | prod |
+| 20260813-081514 | populate AR twin `solange-maison-kuwait-city` (post 5436) | `prod-20260813-081514-ar-twin-solange-maison-kuwait-city.sql.gz` | 3056439 B | prod |
+| 20260813-082925 | populate AR twin `solange-maison-kuwait-city` (post 5436) | `prod-20260813-082925-ar-twin-solange-maison-kuwait-city.sql.gz` | 3058849 B | prod |
+| 20260813-131544 | EN re-author `cure-shuwaikh` (post 5025) | `prod-20260813-131544-en-guide-cure-shuwaikh.sql.gz` | 3055406 B | prod |
+| 20260813-131901 | populate AR twin `cure-shuwaikh` (post 5032) | `prod-20260813-131901-ar-twin-cure-shuwaikh.sql.gz` | 3058384 B | prod |
+| 20260813-132128 | populate AR twin `cure-shuwaikh` (post 5032) | `prod-20260813-132128-ar-twin-cure-shuwaikh.sql.gz` | 3060311 B | prod |
+| 20260813-132234 | populate AR twin `solange-maison-kuwait-city` (post 5436) | `prod-20260813-132234-ar-twin-solange-maison-kuwait-city.sql.gz` | 3061173 B | prod |
+| 20260813-132352 | EN re-author `solange-maison-kuwait-city` (post 5430) | `prod-20260813-132352-en-guide-solange-maison-kuwait-city.sql.gz` | 3061773 B | prod |
+| 20260922-145424 | publish guide `best-restaurants-in-kuwait` | `prod-20260922-145424-guide-best-restaurants-in-kuwait.sql.gz` | 3245281 B | prod |
+| 20260922-185639 (local UTC+3 = 15:56 server) | pre-write snapshot: create AR twin shell for `best-restaurants-in-kuwait` (EN 6307) | `prod-20260922-185639.sql.gz` | 3.1 MB | prod |
+| 20260922-155801 | populate AR twin `best-restaurants-in-kuwait` (post 6309) | `prod-20260922-155801-ar-twin-best-restaurants-in-kuwait.sql.gz` | 3254621 B | prod |
+| 20260922-170719 | publish guide `best-italian-restaurants-in-kuwait` | `prod-20260922-170719-guide-best-italian-restaurants-in-kuwait.sql.gz` | 3267309 B | prod |
+| 20260922-212041 (local UTC+3) | pre-write snapshot: create AR twin shell for `best-italian-restaurants-in-kuwait` (EN 6313) | `prod-20260922-212041.sql.gz` | 3.1 MB | prod |
+| 20260922-182140 | populate AR twin `best-italian-restaurants-in-kuwait` (post 6315) | `prod-20260922-182140-ar-twin-best-italian-restaurants-in-kuwait.sql.gz` | 3278760 B | prod |
+| 20260922-183043 | populate AR twin `best-italian-restaurants-in-kuwait` (post 6315) | `prod-20260922-183043-ar-twin-best-italian-restaurants-in-kuwait.sql.gz` | 3291707 B | prod |

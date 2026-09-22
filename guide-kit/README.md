@@ -40,10 +40,16 @@ guides/
   related / CTA — the template owns all of it; hand-built chrome double-renders.
 - **Markers** the publisher expands in the body:
   - `[[place]]` → `[q8tly_place id=<place_id>]` (the listing card)
-  - `[[map]]` → `[q8tly_map ids=<map_ids>]` (numbered map pins; max 1/article)
+  - `[[place:ID]]` → `[q8tly_place id=ID]` — a card for *another* listing (best-of
+    lists, combined guides). Every ID is verified as a `gd_place` before publish.
+  - `[[map]]` → `[q8tly_map ids=<map_ids>]` (numbered pin list with Directions
+    links; interactive tiles are still deferred; max 1/article)
   - `[[image:STEM|Caption]]` → an inline photo from `images/STEM.*`
 - **Image slots are declared by filename:** `hero.*`, `og.*` (optional),
   `inline-*.*`. The hero is the Featured image + `hero_photo_id`.
+- **Or reuse an existing hero:** set `hero_id: <attachment ID>` in the frontmatter
+  (and leave out `images/hero.*`) to reuse media already in the library, with no
+  re-upload. First used by `best-restaurants-in-kuwait` (hero 5427).
 
 ---
 

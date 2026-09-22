@@ -115,18 +115,13 @@ echo "en_to_ar=".(int)apply_filters("wpml_object_id",$e,"guide_article",false,"a
 
     # ── build image blocks from EXISTING media (reuse; no upload — repo is text-only) ──
     final = blocks
-    for stem, cap in body_images:
+    for stem, cap, alt in body_images:
         aid = media.get(stem, "")
         if not aid:
             die(f"no --media mapping for image stem '{stem}'")
         rc, url, _ = kit.ssh(host, f"wp post get {aid} --field=guid 2>/dev/null")
-        url = url.strip()
-        alt = cap or fm["title"]
-        cap_html = f'<figcaption class="wp-block-image__caption">{html.escape(cap)}</figcaption>' if cap else ""
-        blk = (f'<!-- wp:image {{"id":{aid},"sizeSlug":"large","linkDestination":"none"}} -->\n'
-               f'<figure class="wp-block-image size-large"><img src="{url}" alt="{html.escape(alt)}" '
-               f'class="wp-image-{aid}"/>{cap_html}</figure>\n<!-- /wp:image -->')
-        final = final.replace(f"<!--GUIDEKIT_IMG:{stem}|{cap}-->", blk)
+        blk = kit.image_block(stem, cap, alt, aid, url.strip(), fallback_alt=fm["title"])
+        final = final.replace(f"<!--GUIDEKIT_IMG:{stem}|{cap}|{alt}-->", blk)
 
     hero = media.get("hero", "")
     status = "draft" if args.keep_draft else "publish"
@@ -137,8 +132,26 @@ echo "en_to_ar=".(int)apply_filters("wpml_object_id",$e,"guide_article",false,"a
     print(f"url      : {site}/ar/guide/{fm['slug']}/")
     print(f"fence    : {robots}")
     print(f"topic    : {fm['topic']}   hero(reuse): {hero or '⚠none'}   words: {wc}")
-    print(f"images   : " + ", ".join(f"{s}->{media.get(s,'?')}" for s, _ in body_images))
+    print(f"images   : " + ", ".join(f"{s}->{media.get(s,'?')}" for s, _, _ in body_images))
     print(f"shortcodes: place={place_id} map={map_ids}")
+
+    # ── SEO meta: be LOUD when the draft omits it (D-ruling 2026-08-13) ──
+    # Silence here is how 7 of 8 AR twins shipped with a bare brand-name <title> and NO
+    # description at all, while every EN guide had both. Never fail quietly on this again.
+    _seo_t, _seo_d = fm.get("seo_title", "").strip(), fm.get("meta_description", "").strip()
+    if not _seo_t:
+        print(f"⚠ SEO    : no `seo_title` in the draft — rank_math_title falls back to the bare "
+              f"title {fm['title']!r}. Arabic search sees a brand name with no cuisine/area.")
+    if not _seo_d:
+        print("⚠ SEO    : no `meta_description` in the draft — the twin ships with NO description; "
+              "Arabic SERP snippets will be whatever Google scrapes.")
+    if _seo_t and _seo_d:
+        print(f"SEO      : rank_math_title + description -> set ({len(_seo_d)} chars)")
+
+    _no_alt = kit.missing_alt(body_images)
+    if _no_alt:
+        print(f"⚠ alt    : MISSING on {', '.join(_no_alt)} — will fall back to the post title. "
+              f"Add `[[image:<stem>||descriptive alt]]`.")
 
     if not args.execute:
         print("\nDRY RUN — no writes. Re-run with --execute once the twin shell exists.\n")
@@ -188,8 +201,21 @@ $t = get_term_by('slug',{jx(fm['topic'])},'topic');
 if ($t) {{ wp_set_object_terms($id,array((int)$t->term_id),'topic'); update_post_meta($id,'primary_topic',(int)$t->term_id); echo "TERM=".$t->term_id."\\n"; }}
 $h = {int(hero) if str(hero).isdigit() else 0};
 if ($h>0) {{ set_post_thumbnail($id,$h); update_post_meta($id,'hero_photo_id',$h); }}
-update_post_meta($id,'rank_math_title',{jx(fm.get('seo_title') or fm['title'])});
-update_post_meta($id,'rank_math_description',{jx(fm.get('meta_description',''))});
+// SEO meta: NEVER blank an existing value the draft doesn't mention (2026-08-13).
+// This used to write unconditionally, so re-running on a draft without seo_title/
+// meta_description silently WIPED good meta — it destroyed Cure AR 5032's title and
+// description on a re-run. Now: set only what the draft supplies; otherwise leave alone.
+// Matches reinject_en.py's documented behaviour on the EN side.
+$seo_t = {jx(fm.get('seo_title',''))};
+$seo_d = {jx(fm.get('meta_description',''))};
+if (trim($seo_t) !== '') {{ update_post_meta($id,'rank_math_title',$seo_t); }}
+elseif (trim((string) get_post_meta($id,'rank_math_title',true)) === '') {{
+    update_post_meta($id,'rank_math_title',{jx(fm['title'])});   // first write only
+}} else {{ echo "SEO_TITLE=kept-existing\\n"; }}
+if (trim($seo_d) !== '') {{ update_post_meta($id,'rank_math_description',$seo_d); }}
+elseif (trim((string) get_post_meta($id,'rank_math_description',true)) !== '') {{
+    echo "SEO_DESC=kept-existing\\n";
+}}
 {fence_php}
 echo "OK=".$id."\\n"; echo "URL=".get_permalink($id)."\\n"; echo "ST=".get_post_status($id)."\\n";
 """
