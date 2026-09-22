@@ -113,3 +113,21 @@ Re-verified: 10 cards all `/ar/places/`, 10 map pins, 1 table, 0 shortcode leak,
 `index, follow`, self-canonical, and the three earlier approved edits (Solange booking, Amiti breakfast,
 Chops price) all intact.
 
+## Third fix round (Bader, same day) — EN 6307 **and** AR 6309
+Backup: `prod-20260922-222816.sql.gz` (canon) + each tool's own dump
+(`…-192933-en-guide-…`, `…-193037-ar-twin-…`). EN went through `reinject_en.py`
+(idempotency diff shown before writing: 35 lines, all intended), AR through `populate_ar_twin.py`.
+1. **ميزو ميسا → ميزوميسا** (one word), matching the sign and MizuMesa guide 2618. The two-word
+   form from the 2nd pass is gone from the page.
+2. **Quick-list table** name column moved to the bracket style, matching the headings (10 cells).
+3. **شيف بيلى → شيف بيلاي.**
+4. **"Solange" → "Solange Maison"** in BOTH flagship languages: EN heading, table, body, occasion
+   list, 2 FAQ answers and `hero_alt`; AR heading + table («سولانج ميزون (Solange Maison)», the Arabic
+   form taken from **Bader's own** Solange AR draft, not invented), 6 Latin prose mentions and `hero_alt`.
+   The EN/AR flagships and the Solange Maison spotlight guide now agree on the name.
+⚠ **Still "Solange" on both pages — but only in the place card and the map pin**, because listing
+4025 is *still titled "Solange"*. Verified: 3 occurrences per page, all from the card/pin markup, none
+from article text. That rename is the long-standing Pipeline item (routed 2026-08-13, still open).
+Re-verified both pages: 10 cards + 10 pins each, 1 table, 0 shortcode leak, no mojibake,
+EN and AR both `index, follow`, AR H1 «أفضل 10 مطاعم في الكويت (2026)».
+

@@ -93,3 +93,5 @@ is the same write-class as production, so the discipline applies now.
 | 20260922-183043 | populate AR twin `best-italian-restaurants-in-kuwait` (post 6315) | `prod-20260922-183043-ar-twin-best-italian-restaurants-in-kuwait.sql.gz` | 3291707 B | prod |
 | 20260922-183444 | populate AR twin `best-italian-restaurants-in-kuwait` (post 6315) | `prod-20260922-183444-ar-twin-best-italian-restaurants-in-kuwait.sql.gz` | 3293009 B | prod |
 | 20260922-190546 | populate AR twin `best-restaurants-in-kuwait` (post 6309) | `prod-20260922-190546-ar-twin-best-restaurants-in-kuwait.sql.gz` | 3293576 B | prod |
+| 20260922-192933 | EN re-author `best-restaurants-in-kuwait` (post 6307) | `prod-20260922-192933-en-guide-best-restaurants-in-kuwait.sql.gz` | 3295968 B | prod |
+| 20260922-193037 | populate AR twin `best-restaurants-in-kuwait` (post 6309) | `prod-20260922-193037-ar-twin-best-restaurants-in-kuwait.sql.gz` | 3299229 B | prod |
