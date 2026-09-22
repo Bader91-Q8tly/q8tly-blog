@@ -83,8 +83,12 @@ Backups: `prod-20260922-212942.sql.gz` (canon, pre-write) + `prod-20260922-18304
 2. **Western digits in the SEO title + meta description** (11, 2026). Verified: zero Eastern-Arabic
    digits in either. The H1, deck and body keep Eastern-Arabic digits — that was not part of the request.
 3. The 11 restaurant H2s: «الاسم — Latin:» → «الاسم (Latin):». Verified 11/11, 0 em dashes left in headings.
-⚠ **The quick-list TABLE's name column still uses " — "** (11 cells, e.g. «تراباني — Trapani»). Only the
-headings were requested; say the word and it's a one-line change to match.
+**Second fix round** (Bader, same day; backup `prod-20260922-213355.sql.gz` + tool `prod-20260922-183838-…`):
+the quick-list **table's** name column moved to the same «الاسم (Latin)» style (11 cells, 0 em dashes left
+anywhere in the body), and the **H1/post_title** went to Western digits («… : 11 خيارًا للبيتزا والباستا»).
+The deck and body keep Eastern-Arabic digits by instruction, and the table's en-dash hour ranges (١٢ ظهرًا–١١ مساءً)
+are untouched — only the name separator changed.
+⚠ Corpus consistency: the other AR list (6309) still has an Eastern-digit H1 «أفضل ١٠ مطاعم في الكويت (٢٠٢٦)».
 Re-verified after: 11 cards all `/ar/places/`, 11 map pins, 1 table, 0 shortcode leak, no mojibake,
 `index, follow`, the Delfino edit and the internal AR link both intact.
 

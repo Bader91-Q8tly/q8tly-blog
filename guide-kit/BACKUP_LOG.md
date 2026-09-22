@@ -91,3 +91,4 @@ is the same write-class as production, so the discipline applies now.
 | 20260922-212041 (local UTC+3) | pre-write snapshot: create AR twin shell for `best-italian-restaurants-in-kuwait` (EN 6313) | `prod-20260922-212041.sql.gz` | 3.1 MB | prod |
 | 20260922-182140 | populate AR twin `best-italian-restaurants-in-kuwait` (post 6315) | `prod-20260922-182140-ar-twin-best-italian-restaurants-in-kuwait.sql.gz` | 3278760 B | prod |
 | 20260922-183043 | populate AR twin `best-italian-restaurants-in-kuwait` (post 6315) | `prod-20260922-183043-ar-twin-best-italian-restaurants-in-kuwait.sql.gz` | 3291707 B | prod |
+| 20260922-183444 | populate AR twin `best-italian-restaurants-in-kuwait` (post 6315) | `prod-20260922-183444-ar-twin-best-italian-restaurants-in-kuwait.sql.gz` | 3293009 B | prod |
