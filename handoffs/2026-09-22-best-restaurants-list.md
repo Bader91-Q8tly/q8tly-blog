@@ -91,3 +91,25 @@ all 5 approved edits present, 0 "يحتاج إلى حجز" left · Article schem
 - Topic term: the twin carries EN term 1715 (same as Cure AR 5032). Solange AR 5436 carries 1715 **and**
   AR term 2368, so the corpus is inconsistent. The kicker renders Arabic either way.
 - Solange AR 5436's TM row shows `needs_update=1` (WPML thinks it's stale vs EN 5430). Pre-existing, not touched.
+
+## Fix round on the AR twin 6309 (Bader-requested, same day) — via `populate_ar_twin.py`
+Backup: `prod-20260922-220451.sql.gz` (canon, pre-write) + the tool's own dump.
+1. **Western digits** in `post_title`/H1, `rank_math_title` and `rank_math_description`
+   («أفضل 10 مطاعم في الكويت (2026)»). Verified zero Eastern-Arabic digits in all three.
+   The **deck and body keep Eastern-Arabic digits** by instruction, so the on-page deck reads ١٠
+   while the search snippet reads 10.
+2. **The 10 headings** moved to «الاسم العربي (Latin):», matching the Italian guide.
+   ⚠ **Provenance:** this article contained NO Arabic name spellings (headings were Latin-only), and
+   neither do the 10 AR listing twins (all Latin-titled). Only 2 of 10 existed anywhere in the corpus
+   (نارنج 2612, ميزوميسا 2618). Rather than invent 8, Blog asked; **Bader supplied all 10 himself**
+   (2026-09-22) and they were injected verbatim: ميزو ميسا · سولانج · نارنج · كيور · أوف ذا كول ·
+   عمتي نورة · شيف بيلى · كيوا · كوينز · تشوبس.
+   ⚠ **Corpus conflict:** Bader's «ميزو ميسا» (two words) differs from the live MizuMesa AR guide
+   title «ميزوميسا» (2618). Not reconciled — owner's call which spelling is canonical.
+3. **The quick-list table keeps Latin-only names** — Blog asked, no answer given, so not changed.
+4. **Place cards still render Latin names** (Solange, Cure, …) because the AR *listings* are Latin-titled.
+   Listing-side → Pipeline.
+Re-verified: 10 cards all `/ar/places/`, 10 map pins, 1 table, 0 shortcode leak, no mojibake,
+`index, follow`, self-canonical, and the three earlier approved edits (Solange booking, Amiti breakfast,
+Chops price) all intact.
+
