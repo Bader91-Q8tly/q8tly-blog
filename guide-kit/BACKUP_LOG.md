@@ -99,3 +99,4 @@ is the same write-class as production, so the discipline applies now.
 | 20260923-195646 | publish guide `bar-fres-arraya-centre` | `prod-20260923-195646-guide-bar-fres-arraya-centre.sql.gz` | 3367120 B | prod |
 | 20260923-225758 (local UTC+3) | pre-write snapshot: create AR twin shell for `bar-fres-arraya-centre` (EN 6589, trid 6699) | `prod-20260923-225758.sql.gz` | 3.2 MB | prod |
 | 20260923-195920 | populate AR twin `bar-fres-arraya-centre` (post 6591) | `prod-20260923-195920-ar-twin-bar-fres-arraya-centre.sql.gz` | 3376921 B | prod |
+| 20260923-230939 (local UTC+3) | pre-write snapshot (under /tmp/q8tly-publish.lock): listing 6443/6444 rename "Bar Frès" + Casual Dining + Upscale/-Family-Friendly + non-smoking | `prod-20260923-230939.sql.gz` | 3.2 MB | prod |

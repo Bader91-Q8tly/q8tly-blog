@@ -28,9 +28,13 @@ Listing links stay **text links**. Bader's instruction was about where the link 
    «في زيارة مدوّنة Q8tly بتاريخ **١٩ سبتمبر ٢٠٢٦**، كانت الأسعار كالتالي:». The trailing «والمؤرخة في <date>»
    was part of the invoice phrase and would have repeated the date. FAQ: «تراوحت أسعار الأطباق الموثقة في الفاتورة
    المشار إليها من سبتمبر ٢٠٢٦ بين …» → «في زيارة مدوّنة Q8tly بتاريخ ١٩ سبتمبر ٢٠٢٦، تراوحت أسعار الأطباق بين …».
-3. **Jabriya (editor note 8): no branch in our data.** Prod has only the Arraya pair 6443/6444 (6447/6448 are
-   their revisions). There are no other listings sharing the brand's website, Instagram or Google place_id, and the Pipeline's
-   state/run log has only Arraya. Nothing to change; the article never mentioned Jabriya.
+3. **Jabriya (editor note 8): ⚠ CORRECTED.** I first reported "no branch in our data", and that was **wrong**.
+   There is **no Jabriya listing on the site**: prod has only the Arraya pair 6443/6444 (6447/6448 are their revisions),
+   and no other listing shares the brand's website, Instagram or Google place_id. But the **Pipeline's run log does
+   record one** (P-285 TASK-1): a second "bar fres" in **Jabriya, Building 51**, on Google Places and listed as their
+   Jabriya branch on their own site, which the Pipeline deliberately did not build. My grep matched "fres" inside
+   "fresh", and `head` cut the output off before that line. Told Bader the same evening. Neither guide mentions Jabriya,
+   so nothing published changes.
 
 **Left as written (not in scope; flagged to Bader):** two other AR mentions of the bill, both accurate:
 the intro «وأسعار الأطباق المذكورة في فاتورة سبتمبر ٢٠٢٦» and «بلغ إجمالي الفاتورة لشخصين».
@@ -58,8 +62,15 @@ Both pages use the **flat-plate hero** (no featured image; og:image = the site d
 D-180 gate first (`GUIDE_PHOTO_STANDARD.md`; measure the landscape crop width; order-correct exif_transpose →
 crop → strip). Then upload the hero to the EN post and reuse it on the AR twin (`--media hero=<id>` via
 `populate_ar_twin.py` / `reinject_en.py`). Candidates are in `~/Desktop/new listing /Bader pending /Bar fres/`.
-⚠ Per Pipeline P-285, the 6 PNGs there are **cropped screenshots** and the storefront is a screenshot with an
-Apple "Clean Up" AI edit. Only 1 genuine photo was used on the listing, so screen these before any guide use.
+**Record corrected (Bader, 2026-09-23):** the storefront (`AC25D4FA…jpg`, the "bar frès parisian·japanese" sign) is
+the **blogger's own photo, with people removed** by AI for privacy. That's allowed under the photo rule (people may be removed
+or blurred; the venue must not be changed; now in `GUIDE_PHOTO_STANDARD.md` §3-D). An earlier version of this note
+called it an "AI-edited screenshot". That label came from Pipeline P-285's metadata reading (its XMP carries
+`Credit=Apple Photos Clean Up`, and the file shares the 6 PNGs' 1078×1459 size), which I relayed without checking.
+Pipeline's P-285 also inferred from that size that the 6 PNGs are cropped screenshots. Since then (P-292, 22:22 the same evening)
+Bader had the listing gallery **replaced with all 8** (`optimized images/`), storefront featured, so the listing already
+uses them. For the guide, the D-180 size/ratio gate still applies: all are portrait 1078×1459 or smaller, so a landscape
+7:5 crop is only ~1078 px wide, under the 1200 floor. Expect a FAIL on resolution unless larger originals exist.
 
 ## Twin creation: the no-"+" recipe (third run, runbook §9-G)
 Snapshot → `wp_insert_post` draft (6591) → `$sitepress->set_element_language_details(6591,'post_guide_article',6699,'ar','en')`
@@ -87,3 +98,9 @@ both edits present, old phrasings gone.
    would have stored the title as "Bar Frès". New `php_str()` = `ensure_ascii=False` + `$` escaped. Tested locally
    with PHP (accents, Arabic, `$$$`, `{$x}`, backslashes) and verified on prod (`è` = `C3A8`). CHARSET.md and the
    template were updated.
+
+## Listing flags CLOSED the same evening (Bader's instruction; see `handoffs/2026-09-23-to-pipeline-bar-fres-listing-edit.md`)
+Listing 6443/6444 is now titled **"Bar Frès"** (slug `barfres` kept, so both guides' links still resolve), **Casual Dining**
++ **Upscale**, **Family-Friendly removed**, Smoking = **non-smoking**. That closes the three soft conflicts listed under
+"Data check" above: the name, the Family-Friendly tag, and "No smoking" missing from the listing. Hours stay 11:00–22:00 until
+Bader confirms the close with the restaurant.

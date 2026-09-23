@@ -7,9 +7,9 @@
 #      "Better for adults. Close seating along the belt makes it less comfortable with young children."
 # Listing link kept as a TEXT link (Bader's instruction was about where the link points; no card).
 # DATA CHECK vs listing 6443 (prod, 2026-09-23): Arraya Centre ground floor, Kuwait City, daily 11:00-22:00,
-# $$$ (~12 KD pp), indoor only, KNET/Visa/Mastercard/Cash, Parisian-Japanese - all match. The listing is
-# titled "Barfres" (owner ruling); the article styles the name "Bar Frès". Listing has no smoking value
-# ("No smoking" is the article's). Listing still carries the Family-Friendly tag (Pipeline, editor note 2).
+# $$$ (~12 KD pp), indoor only, KNET/Visa/Mastercard/Cash, Parisian-Japanese - all match. Same evening, on
+# Bader's instruction, the listing was retitled "Bar Frès" (slug kept), set non-smoking, Family-Friendly removed,
+# Casual Dining + Upscale -> the name/smoking/kids mismatches are closed.
 # NO PHOTOS: held until Bader confirms the restaurant's permission -> flat-plate hero for now.
 # FAQ SCHEMA (asked for in the SEO block) is NOT set: guides have no FAQPage emitter -> Builder via Advisor.
 title: "Bar Frès: How Kuwait's Parisian-Japanese Conveyor-Belt Restaurant Works"

@@ -86,6 +86,18 @@ crop-fix handoff.)
 - [ ] Body subjects (dish/detail) are **whole and intentionally in frame**; no competing
       brand dominating; workable exposure.
 
+**D. Edits: people out, venue untouched (owner rule, stated 2026-09-23)**
+- [ ] **People may be removed or blurred** for privacy, including with AI tools such as Apple Photos
+      "Clean Up". That is allowed and does not disqualify the photo.
+- [ ] **The venue itself must not be changed:** sign, décor, layout, food and plates stay as shot.
+      An edit that alters the venue disqualifies the photo.
+- [ ] **Metadata only says *that* a photo was edited, not *what* was edited.** XMP
+      `DigitalSourceType=compositeWithTrainedAlgorithmicMedia` / `Credit=Apple Photos Clean Up` is what a
+      privacy removal leaves behind. Never label a photo "AI-edited" or "a screenshot" from metadata or pixel
+      size alone. Ask Bader who shot it and what was removed. (Bar Frès 2026-09-23: the storefront carrying
+      this XMP is the **blogger's own photo with people removed**, i.e. allowed. It had been recorded as an
+      "AI-edited screenshot".)
+
 **C. Enough of them**
 - [ ] ≥1 hero + ≥3 body photos that all clear A and B.
 

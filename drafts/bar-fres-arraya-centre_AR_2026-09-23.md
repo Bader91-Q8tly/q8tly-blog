@@ -11,7 +11,9 @@ BADER'S EDITS (2026-09-23, exact wording from his instructions):
      "في زيارة مدوّنة Q8tly بتاريخ ١٩ سبتمبر ٢٠٢٦" (the trailing "والمؤرخة في <date>" belonged to the
      invoice phrase and would have repeated the date); FAQ "الموثقة في الفاتورة المشار إليها من سبتمبر ٢٠٢٦"
      -> sentence now opens "في زيارة مدوّنة Q8tly بتاريخ ١٩ سبتمبر ٢٠٢٦، ...".
-  3. Editor note 8's Jabriya branch: none in our data (prod has only Arraya 6443/6444) -> nothing to do.
+  3. Editor note 8's Jabriya branch: no Jabriya LISTING on the site (prod has only Arraya 6443/6444), but the
+     Pipeline's run log (P-285) records a Jabriya branch (Building 51) it chose not to build. Not mentioned in
+     this article, so nothing to change. (First reported to Bader as "none in our data"; corrected same evening.)
 Numbered steps keep Arabic-Indic numerals (kit renders ١. as an arabic-indic <ol>).
 deck = the file's meta description (house pattern). slug = EN slug (house convention for twins).
 NO PHOTOS (held for the restaurant's permission).
