@@ -29,7 +29,12 @@ So the kit is correct **on staging today**. Two standing rules:
    latin1 write there re-corrupts. This matters *doubly for Arabic*: every AR
    character is multibyte, so a latin1 write mojibakes the entire article.
 
-2. **Latent meta fragility (harden when convenient).** `build_create_php()` embeds
+2. **Latent meta fragility — FIXED 2026-09-23** (first EN title with an accent,
+   "Bar Frès", guide 6589). `build_create_php()` now encodes every value with
+   `php_str()` = `json.dumps(ensure_ascii=False)` + `$` escaped, the same real-UTF-8
+   approach `populate_ar_twin.py`/`reinject_en.py` already used. Verified on prod:
+   `è` stored as `C3A8`, zero literal `\u00..` in the post's meta. Original note:
+   `build_create_php()` embeds
    meta via `json.dumps(...)` (default `ensure_ascii=True`) **inside a PHP
    double-quoted string**. PHP only decodes `\u{XXXX}` *with* braces — a bare
    `—` is stored literally. Decks today are clean, but a non-ASCII deck/

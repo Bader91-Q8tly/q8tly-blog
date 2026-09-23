@@ -101,6 +101,7 @@ def missing_alt(body_images):
 
 
 PLACE_MARKER = re.compile(r"^\[\[place:(\d+)\]\]$")
+OL_ITEM = re.compile(r"^[0-9٠-٩]+\.\s+")
 
 
 def extra_place_ids(body):
@@ -175,11 +176,22 @@ def md_to_blocks(body, place_id, map_ids):
                 items.append("<li>" + md_inline(lines[i].strip()[2:]) + "</li>"); i += 1
             out.append("<!-- wp:list -->\n<ul>" + "".join(items) + "</ul>\n<!-- /wp:list -->")
             continue
+        # ordered list: `1. ` or Eastern-Arabic `١. ` (AR drafts number in Arabic-Indic;
+        # keep that on the page instead of the browser's default Western 1. 2. 3.)
+        if OL_ITEM.match(s):
+            items, arabic = [], bool(re.match(r"^[٠-٩]", s))
+            while i < len(lines) and OL_ITEM.match(lines[i].strip()):
+                items.append("<li>" + md_inline(OL_ITEM.sub("", lines[i].strip(), count=1)) + "</li>"); i += 1
+            attrs, style = ('{"ordered":true,"type":"arabic-indic"}', ' style="list-style-type:arabic-indic"') if arabic \
+                else ('{"ordered":true}', "")
+            out.append(f"<!-- wp:list {attrs} -->\n<ol{style}>" + "".join(items) + "</ol>\n<!-- /wp:list -->")
+            continue
         if s == "":
             i += 1; continue
         # paragraph (gather)
         buf = [s]; i += 1
-        while i < len(lines) and lines[i].strip() and not re.match(r"^\s*(#{2,3}\s|>|\||-\s|\[\[)", lines[i].strip()):
+        while i < len(lines) and lines[i].strip() and not re.match(r"^\s*(#{2,3}\s|>|\||-\s|\[\[)", lines[i].strip()) \
+                and not OL_ITEM.match(lines[i].strip()):
             buf.append(lines[i].strip()); i += 1
         out.append("<!-- wp:paragraph -->\n<p>" + md_inline(" ".join(buf)) + "</p>\n<!-- /wp:paragraph -->")
     return "\n\n".join(out), images
@@ -384,8 +396,17 @@ def main():
     print(f"\n✅ DONE  {new_url}\n   handoff: guide-kit/runs/{slug}.md\n")
 
 
+def php_str(s):
+    """A PHP double-quoted string literal that keeps non-ASCII as real UTF-8.
+
+    json.dumps' default ensure_ascii=True emits `\\u00e8`, which PHP stores LITERALLY
+    (it only decodes `\\u{e8}` with braces), so "Frès" became "Fr\\u00e8s" (CHARSET.md).
+    `$` is escaped so a value can never interpolate a PHP variable."""
+    return json.dumps(s if s is not None else "", ensure_ascii=False).replace("$", "\\$")
+
+
 def build_create_php(fm, slug, status, wc, hero_id, bodyfile):
-    j = json.dumps
+    j = php_str
     seo_title = fm.get("seo_title") or fm["title"]
     return f"""<?php
 $body = file_get_contents({j(bodyfile)});

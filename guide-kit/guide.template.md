@@ -38,6 +38,12 @@ and lists work:
 - A point
 - Another point
 
+Numbered steps work too (an AR draft may number with ١. ٢. ٣., which
+renders as an Arabic-Indic list):
+
+1. First step
+2. Second step
+
 > A pulled quote reads well between sections.
 
 ### A sub-section
