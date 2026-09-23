@@ -119,8 +119,10 @@ echo "en_to_ar=".(int)apply_filters("wpml_object_id",$e,"guide_article",false,"a
         aid = media.get(stem, "")
         if not aid:
             die(f"no --media mapping for image stem '{stem}'")
-        rc, url, _ = kit.ssh(host, f"wp post get {aid} --field=guid 2>/dev/null")
-        blk = kit.image_block(stem, cap, alt, aid, url.strip(), fallback_alt=fm["title"])
+        url = kit.attachment_url(host, aid)
+        if not url:
+            die(f"attachment {aid} (stem '{stem}') has no file URL")
+        blk = kit.image_block(stem, cap, alt, aid, url, fallback_alt=fm["title"])
         final = final.replace(f"<!--GUIDEKIT_IMG:{stem}|{cap}|{alt}-->", blk)
 
     hero = media.get("hero", "")

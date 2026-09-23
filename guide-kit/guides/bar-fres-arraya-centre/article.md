@@ -10,7 +10,11 @@
 # $$$ (~12 KD pp), indoor only, KNET/Visa/Mastercard/Cash, Parisian-Japanese - all match. Same evening, on
 # Bader's instruction, the listing was retitled "Bar Frès" (slug kept), set non-smoking, Family-Friendly removed,
 # Casual Dining + Upscale -> the name/smoking/kids mismatches are closed.
-# NO PHOTOS: held until Bader confirms the restaurant's permission -> flat-plate hero for now.
+# PHOTOS (added 2026-09-23 on Bader's instruction, TEMPORARY): the 8 listing photos (6489-6496), portrait
+# 1078x1459 / 941x1317 = below the D-180 guide standard (landscape, >=1200 px) -> OWNER OVERRIDE, to be replaced by
+# the blogger's full-size originals or the restaurant's official photos. Hero = new 16:9 collage (room|plates|
+# storefront, photos 02/06/01 at native scale, width-cropped only). Body: inline-1=01 storefront, inline-2=06 plates
+# on belt, inline-3=07 plate close-up, inline-4=03 dining room, inline-5=08 dish. Alt text Blog-drafted, Bader-approved.
 # FAQ SCHEMA (asked for in the SEO block) is NOT set: guides have no FAQPage emitter -> Builder via Advisor.
 title: "Bar Frès: How Kuwait's Parisian-Japanese Conveyor-Belt Restaurant Works"
 slug: bar-fres-arraya-centre
@@ -22,7 +26,7 @@ place_id: 6443
 word_count: auto
 seo_title: "Bar Frès Kuwait: Conveyor-Belt Dining in Arraya Centre (Prices 2026) | Q8tly"
 meta_description: "How Bar Frès works: a Parisian-Japanese conveyor-belt restaurant in Arraya Centre, Kuwait City. Plate colours, prices, who it suits and tips before you go."
-hero_alt: ""
+hero_alt: "Three Bar Frès photos side by side: the dining room with crane murals and red velvet chairs, sushi plates on the conveyor belt, and the entrance with its lit sign."
 hero_caption: ""
 replaces_page_slug: ""
 status: publish
@@ -34,9 +38,13 @@ Here's everything you need to know before you go: how it works, what the plate c
 
 ## Where it is
 
+[[image:inline-1||The Bar Frès entrance in Arraya Centre, with the lit bar frès parisian-japanese sign above red velvet curtains and a bonsai tree on each side.]]
+
 Bar Frès is on the ground floor of **Arraya Centre** in Kuwait City. The entrance is easy to spot from the mall: dark wood, red velvet curtains and "bar frès, parisian·japanese" in lights above the door.
 
 ## How it works
+
+[[image:inline-2||Sushi on red and green plates and a red-and-black noodle bowl moving along the conveyor belt at Bar Frès.]]
 
 The heart of the restaurant is the belt. It runs down the middle of long marble tables, with red velvet chairs lined up on both sides.
 
@@ -49,6 +57,8 @@ The heart of the restaurant is the belt. It runs down the middle of long marble 
 It's a fun way to eat, especially when you're hungry and want to try a bit of everything.
 
 ## Plate colours and prices
+
+[[image:inline-3||Blue, red and black plates of sushi and small dishes on the belt, with a black bowl of cucumber salad in front.]]
 
 Each plate colour has its own price, so the colour tells you the cost before you pick it up. On our visit in **September 2026**, the bill showed:
 
@@ -66,6 +76,8 @@ Two people spent **22.100 KD** in total with soft drinks, so plan on roughly **1
 
 ## The room
 
+[[image:inline-4||The Bar Frès dining room: red velvet chairs along a white marble counter with the conveyor belt down the middle, under chandeliers wrapped in red fringe.]]
+
 For a conveyor-belt restaurant, Bar Frès is surprisingly elegant. Think crimson velvet chairs, white marble counters, crystal chandeliers wrapped in red fringe, candles along the belt and hand-painted crane murals on the walls. The "Parisian" half of the name shows in the room as much as on the plate.
 
 ## Good to know
@@ -78,6 +90,8 @@ For a conveyor-belt restaurant, Bar Frès is surprisingly elegant. Think crimson
 - **Hours:** open daily from 11 AM. Check the Q8tly listing for today's closing time.
 
 ## Who it's for
+
+[[image:inline-5||A crispy-topped sushi roll held in chopsticks above a red plate, with a bowl of green salad behind it on a marble counter.]]
 
 Bar Frès works best for **a group of friends** who want to share and try lots of dishes, or **a casual date** with a difference. If you've never tried belt dining, it's worth going at least once for the experience alone.
 

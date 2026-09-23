@@ -197,6 +197,14 @@ def md_to_blocks(body, place_id, map_ids):
     return "\n\n".join(out), images
 
 
+def attachment_url(host, aid):
+    """The attachment's real file URL. NOT `guid`: attachments made outside `wp media import`
+    (e.g. the listings pipeline's wp_insert_attachment) carry an attachment-PAGE guid such as
+    /places/kuwait-city/barfres/barfres-1-2/, which renders as a broken <img> (found 2026-09-23)."""
+    rc, out, _ = ssh(host, f'wp eval "echo wp_get_attachment_url({int(aid)});" 2>/dev/null')
+    return out.strip()
+
+
 def word_count(body):
     txt = re.sub(r"\[\[[^\]]+\]\]", "", body)
     txt = re.sub(r"[#>*_`|-]", " ", txt)
@@ -341,8 +349,7 @@ def main():
             subprocess.run(["ssh", "-o", "BatchMode=yes", host, f"cat > {remote}"], stdin=f, check=True)
         rc, out, err = ssh(host, f'wp media import {remote} --title="{slug} {stem}" --porcelain 2>/dev/null')
         att = out.strip().splitlines()[-1] if out.strip() else ""
-        rc, url, _ = ssh(host, f'wp post get {att} --field=guid 2>/dev/null')
-        media[stem] = (att, url.strip())
+        media[stem] = (att, attachment_url(host, att))
         print(f"[2] uploaded  : {stem} -> attachment {att}")
     hero_id = media.get("hero", ("", ""))[0] or reuse_hero
     if reuse_hero:
