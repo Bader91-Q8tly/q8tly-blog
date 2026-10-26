@@ -128,12 +128,11 @@ This matches the category count of 53. 26 of them carry the V60 tag and 11 carry
 
 Every fact in both samples comes from the listing's own text. The V60 explanation is general coffee knowledge, not a claim about any place.
 
-## Hero image (from a listing's own photos)
+## Hero image: APPROVED (owner, 26 Oct 03:41)
 
-- **Proposed: KODO Roastery (listing 3172), `IMG_2315.HEIC`**, the lit facade at night with the "Kodo Roastery" sign. After EXIF orientation is applied it measures 5712×4284 landscape, which **passes** the 1520px gate. A person is faintly visible through the glass; blur them if they're identifiable (photo privacy rule).
-- **Alternate: `IMG_2299.HEIC`**, the same facade by day (5712×4284, passes). Parked cars sit in the foreground.
+**KODO Roastery (listing 3172), `IMG_2315.HEIC`**, the night facade (5712×4284, passes the 1520px rule). The person behind the glass gets blurred as a **retouch on the owner's pass (D-254)**. The original file stays untouched.
 
 ## Open points
 
 - **Equipment searches** («ادوات v60», «عدة v60», «معدات قهوة v60 الكويت»): no live listing says it sells V60 equipment, so the article won't target them.
-- **Candidates for the owner** (not on Q8tly yet, so not in the article): **Limu**, Shuwaikh. It's a pending pack in `Desktop/new listing /Bader pending /Limu/`, proposed as Cafes › Specialty Coffee, and the pack mentions V60 and a Roastery tag. I did not add places from memory, because I can't verify them.
+- **Limu** (Shuwaikh): the Pipeline is listing it on 26 Oct. Check q8tly.com **before the full draft** (not before). If it's live, it goes into Shuwaikh like any other listing.
