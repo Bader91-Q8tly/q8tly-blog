@@ -1,4 +1,4 @@
-# POSTING — Specialty coffee pair (EN + AR) · ready to post, NOTHING on q8tly.com yet
+# POSTING — Specialty coffee pair (EN + AR) · PUBLISHED 26 Oct 2026 (see the end of this file)
 
 **Gate:** create only after the Advisor's "window clear" (plugin release in flight; other sessions writing to prod).
 Then both go in as **drafts** (EN/AR twins), the owner reads them on the site, and they **publish only on his word**.
@@ -58,3 +58,9 @@ FAQ schema: not set (no FAQPage emitter for guides, so this routes to Builder vi
 - **Hero re-cut to 16:9, 1600×900** (template frame), same blur re-applied on the copy in original coordinates (1990,2252)–(2520,2754), crop y 200–3413 of 5712×4284 so the whole sign shows. sha256 `c69e817ea7f0be6668af077ecf9760c00f989e039dde57cb291c8e5565072f77`. Original still `7b18b166…fb15d`.
 - Body: 60 links, Limu present, no mojibake. Focus keywords set on both; touched + Rocket flushed. Public URLs 404 (drafts). **Publish only on the owner's word.**
 - Backups: `prod-20261026-014758-guide-…`, `prod-20261026-014950-ar-twin-…` (BACKUP_LOG).
+
+## ✅ PUBLISHED: 26 Oct 2026, ~05:01 Kuwait (owner's word; under the lock 04:57:57 → 05:02:52)
+- EN 7760 → AR 7762 published, one cache flush; twins still linked.
+- Live: https://q8tly.com/guide/specialty-coffee-kuwait/ · https://q8tly.com/ar/guide/specialty-coffee-kuwait/
+- Checked anonymously: 200, title and description as set, canonical, hreflang pair, og:image = hero, index/follow, in the sitemap, 51/51 listing links.
+- The 7:5 hero sha256 in the Files table above is superseded by the 16:9 file listed under DRAFTS.

@@ -1,4 +1,4 @@
-# POSTING — Matcha pair (EN + AR) · ready to post, NOTHING on q8tly.com yet
+# POSTING — Matcha pair (EN + AR) · PUBLISHED 26 Oct 2026 (see the end of this file)
 
 **Gate:** create only after the Advisor's "window clear" (plugin release in flight; other sessions writing to prod).
 Then both go in as **drafts** (EN/AR twins), the owner reads them on the site, and they **publish only on his word**.
@@ -54,3 +54,9 @@ FAQ schema: not set (guides have no FAQPage emitter, so this routes to Builder v
 - **Hero re-cut to 16:9, 1600×900** before upload: the template renders `q8-hero` 1600×900 (hard crop) + CSS 16:9, so a 1520×1086 file would be CSS-cropped. Same source/framing (crop y 760–1840 of 1920×2560). sha256 `4f83f67c0cfc855333ededa6c5ef231db1d6dd9c9c3e574a907495c4f0e081c3`. (The 7:5 file is superseded.)
 - Focus keywords set on both; touched + Rocket flushed. Public URLs 404 (drafts). **Publish only on the owner's word.**
 - Backups: `prod-20261026-014407-guide-…`, `prod-20261026-014618-ar-twin-…` (BACKUP_LOG).
+
+## ✅ PUBLISHED: 26 Oct 2026, ~05:00 Kuwait (owner's word; under the lock 04:57:57 → 05:02:52)
+- EQ 1945 was removed first (owner 04:56): 18 places. Then EN 7753 → AR 7755 published, one cache flush; twins still linked.
+- Live: https://q8tly.com/guide/where-to-get-matcha-in-kuwait/ · https://q8tly.com/ar/guide/where-to-get-matcha-in-kuwait/
+- Checked anonymously: 200, title and description as set, canonical, hreflang pair, og:image = hero, index/follow, in the sitemap, 18/18 listing links.
+- The 7:5 hero sha256 in the Files table above is superseded by the 16:9 file listed under DRAFTS.
