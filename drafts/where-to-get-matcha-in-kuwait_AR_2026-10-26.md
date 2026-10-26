@@ -1,5 +1,5 @@
 <!--
-SEO ARTICLE, AR (written first: «ماتشا» is 1,800/mo, KD 1). Twin of where-to-get-matcha-in-kuwait_EN_2026-10-26.md.
+SEO ARTICLE, AR (written first: «ماتشا» is 1,800/mo, KD 1). Twin of guide-kit/guides/where-to-get-matcha-in-kuwait/article.md (EN).
 Brief: ~/Downloads/SEO_KEYWORDS_BLOGGER_BRIEF_2026-10-16.md §3. Mock-up approved by the owner 26 Oct 04:08
 (drafts/matcha_MOCKUP_AR-EN_2026-10-26.md). Places: the 19 live listings tagged Matcha whose own text says they
 serve matcha (owner's cuts of 03:41 applied). Every place fact is from the listing's own text (API read 26 Oct).

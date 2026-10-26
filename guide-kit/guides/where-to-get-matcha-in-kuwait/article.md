@@ -1,13 +1,11 @@
-<!--
-SEO ARTICLE, EN. Twin of where-to-get-matcha-in-kuwait_AR_2026-10-26.md (AR is the lead; this is NOT its source).
-Brief: ~/Downloads/SEO_KEYWORDS_BLOGGER_BRIEF_2026-10-16.md §3. Targets «matcha latte», «what is matcha»,
-«matcha powder kuwait», «does matcha have caffeine», «matcha benefits»; bare «matcha» (KD 68) deliberately not targeted.
-Mock-up approved by the owner 26 Oct 04:08. Places: the same 19 live Matcha-tagged listings whose own text says matcha.
-Every place fact is from the listing's own text (API read 26 Oct). Matcha Matcha = one listing per branch.
-Hero: same file as AR (Matcha Matcha Abu Halifa, media 1115, 7:5 crop → images/hero.jpg, 1520×1086, EXIF-clean).
-STATUS: markdown draft only. Not on q8tly.com until the Advisor's word; then WPML-twinned draft → owner → publish.
--->
 ---
+# SEO ARTICLE, EN. Twin of where-to-get-matcha-in-kuwait_AR_2026-10-26.md (AR is the lead; this is NOT its source).
+# Brief: ~/Downloads/SEO_KEYWORDS_BLOGGER_BRIEF_2026-10-16.md §3. Targets «matcha latte», «what is matcha»,
+# «matcha powder kuwait», «does matcha have caffeine», «matcha benefits»; bare «matcha» (KD 68) deliberately not targeted.
+# Mock-up approved by the owner 26 Oct 04:08. Places: the same 19 live Matcha-tagged listings whose own text says matcha.
+# Every place fact is from the listing's own text (API read 26 Oct). Matcha Matcha = one listing per branch.
+# Hero: same file as AR (Matcha Matcha Abu Halifa, media 1115, 7:5 crop → images/hero.jpg, 1520×1086, EXIF-clean).
+# STATUS: markdown draft only. Not on q8tly.com until the Advisor's word; then WPML-twinned draft → owner → publish.
 title: "Where to Get Matcha in Kuwait: Matcha Latte Spots by Area"
 slug: where-to-get-matcha-in-kuwait
 lang: en

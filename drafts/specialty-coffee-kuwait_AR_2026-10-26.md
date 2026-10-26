@@ -1,9 +1,9 @@
 <!--
-SEO ARTICLE, AR. Twin of specialty-coffee-kuwait_EN_2026-10-26.md, built on the Arabic keywords «قهوة مختصة الكويت»
+SEO ARTICLE, AR. Twin of guide-kit/guides/specialty-coffee-kuwait/article.md (EN), built on the Arabic keywords «قهوة مختصة الكويت»
 (H1 + lede) and «محمصة قهوة الكويت» (H2 of the roasteries section, exactly as written), not translated from the EN title.
 Also «قهوة مختصة», «محمصة قهوة», «قهوة v60». Brief: ~/Downloads/SEO_KEYWORDS_BLOGGER_BRIEF_2026-10-16.md §1.
 Mock-up approved by the owner 26 Oct 04:08. Places: the same 50 as EN (53 Specialty Coffee / AR 2030 minus the three
-Coffee Bean & Tea Leaf branches). Limu checked 26 Oct before drafting: not live yet, not included. Every place fact is
+Coffee Bean & Tea Leaf branches) + Limu (AR 7741 / EN 7740), added 26 Oct 04:30 after both pages returned 200 = 51. Every place fact is
 from the listing's own text (API read 26 Oct). Arabic names where the AR listing title has one («الاسم (Latin)»).
 Hero: KODO Roastery (3172) IMG_2315.HEIC night facade, APPROVED; blur of the person behind the glass = retouch on the
 owner's pass (D-254), original untouched. Links site-relative; Western digits in title/seo_title/meta, Eastern in body.
@@ -13,19 +13,19 @@ STATUS: markdown draft only. Not on q8tly.com until the Advisor's word; then WPM
 title: "قهوة مختصة الكويت: المقاهي والمحامص حسب المنطقة"
 slug: specialty-coffee-kuwait
 lang: ar
-deck: "٥٠ كوفي ومحمصة قهوة مختصة من دليل Q8tly مرتبة حسب المنطقة، مع اللي يقدّم V60 منها، وشرح سريع لقهوة v60."
+deck: "٥١ كوفي ومحمصة قهوة مختصة من دليل Q8tly مرتبة حسب المنطقة، مع اللي يقدّم V60 منها، وشرح سريع لقهوة v60."
 topic: food-drink
 article_type: guide
 place_id: 3172
 word_count: auto
 seo_title: "قهوة مختصة الكويت: المقاهي والمحامص حسب المنطقة"
-meta_description: "قهوة مختصة الكويت حسب المنطقة: 50 كوفي ومحمصة من دليل Q8tly، شنو منها يقدّم V60، ووين تلقى محمصة قهوة الكويت."
+meta_description: "قهوة مختصة الكويت حسب المنطقة: 51 كوفي ومحمصة من دليل Q8tly، شنو منها يقدّم V60، ووين تلقى محمصة قهوة الكويت."
 hero_alt: "واجهة KODO Roastery في الشويخ بالليل: لافتة Kodo Roastery مضوية فوق جدار طابوق أحمر وباب زجاجي منوّر."
 hero_caption: ""
 status: draft
 ---
 
-إذا تدوّر على قهوة مختصة الكويت فيها خيارات بكل منطقة، مو بس بالعاصمة. بهالدليل جمعنا ٥٠ كوفي ومحمصة من تصنيف القهوة المختصة في دليل Q8tly، ورتبناها حسب المنطقة، من محامص الشويخ إلى الكوفيهات اللي تفتح ٢٤ ساعة بالجنوب. كل اسم يوديك لصفحة المكان في الدليل، وفيها اللوكيشن والصور والمواعيد.
+إذا تدوّر على قهوة مختصة الكويت فيها خيارات بكل منطقة، مو بس بالعاصمة. بهالدليل جمعنا ٥١ كوفي ومحمصة من تصنيف القهوة المختصة في دليل Q8tly، ورتبناها حسب المنطقة، من محامص الشويخ إلى الكوفيهات اللي تفتح ٢٤ ساعة بالجنوب. كل اسم يوديك لصفحة المكان في الدليل، وفيها اللوكيشن والصور والمواعيد.
 
 ## شنو يعني قهوة مختصة؟ وشنو قهوة v60؟
 
@@ -54,6 +54,7 @@ status: draft
 - [مارون (Maroon)](/ar/places/الشويخ/maroon/) في مجمع مرسانا: مكان واسع يقدّم V60 وماتشا مع معجنات وساندويتشات.
 - [Toby's Estate](/ar/places/الشويخ/tobys-estate-mayar/) في مجمع إيدج: الـV60 من ضمن طرق التحضير عنده.
 - [Gathio](/ar/places/الشويخ/gathio-shuwaikh/) في موقارت مول: تصميم حديث وقعدة داخلية بس، مع V60 ومخبوزات.
+- [Limu](/ar/places/الشويخ/limu-shuwaikh/): كافيه ومحمصة من دورين، يقدّم أكثر من ثمانية أنواع من القهوة المختصة منها V60، ويبيع حبوب قهوة أحادية المصدر من إثيوبيا والبرازيل ورواندا وإندونيسيا واليمن للتحضير بالبيت.
 - [Nouga](/ar/places/الشويخ/nouga/): قهوة من مطبخ شوكولاتة حرفي مع الإكلير. عليه تاق V60 في الدليل.
 - [OPT](/ar/places/الشويخ/opt-free-zone/) في المنطقة الحرة: يفتح ٢٤ ساعة على البحر قريب من جسر جابر، وقفة قهوة قبل المشي على الجسر.
 - [PICK](/ar/places/الشويخ/pick-shuwaikh/) في مجمع التلال: العلامة الكويتية للمقاهي الصحية، سبانش لاتيه مثلج وكولد برو.

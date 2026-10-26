@@ -1,32 +1,30 @@
-<!--
-SEO ARTICLE, EN. Twin of specialty-coffee-kuwait_AR_2026-10-26.md (AR built on its own keywords, not a translation).
-Brief: ~/Downloads/SEO_KEYWORDS_BLOGGER_BRIEF_2026-10-16.md §1. Targets «specialty coffee kuwait», «best coffee shop in kuwait»,
-«coffee shop kuwait», «coffee shop in kuwait city», «best cafe in kuwait»; the V60 section catches «v60 coffee».
-Mock-up approved by the owner 26 Oct 04:08. Places: the 53 live Specialty Coffee listings (EN 1500) minus the three
-Coffee Bean & Tea Leaf branches (mock-up recommendation, approved) = 50. Limu checked 26 Oct before drafting: not live
-yet, so not included. Every place fact is from the listing's own text (API read 26 Oct). "Tagged V60" = the listing
-carries the V60 tag but its text doesn't say V60.
-Hero: KODO Roastery (3172) IMG_2315.HEIC, night facade, APPROVED; person behind the glass blurred as a retouch on the
-owner's pass (D-254), original untouched. Hero file not prepared here (owner's retouch first).
-STATUS: markdown draft only. Not on q8tly.com until the Advisor's word; then WPML-twinned draft → owner → publish.
--->
 ---
+# SEO ARTICLE, EN. Twin of specialty-coffee-kuwait_AR_2026-10-26.md (AR built on its own keywords, not a translation).
+# Brief: ~/Downloads/SEO_KEYWORDS_BLOGGER_BRIEF_2026-10-16.md §1. Targets «specialty coffee kuwait», «best coffee shop in kuwait»,
+# «coffee shop kuwait», «coffee shop in kuwait city», «best cafe in kuwait»; the V60 section catches «v60 coffee».
+# Mock-up approved by the owner 26 Oct 04:08. Places: the 53 live Specialty Coffee listings (EN 1500) minus the three
+# Coffee Bean & Tea Leaf branches (mock-up recommendation, approved) = 50, plus Limu (Shuwaikh, EN 7740 / AR 7741),
+# added 26 Oct 04:30 after both listing pages returned 200 (owner's instruction) = 51. Every place fact is from the listing's own text (API read 26 Oct). "Tagged V60" = the listing
+# carries the V60 tag but its text doesn't say V60.
+# Hero: KODO Roastery (3172) IMG_2315.HEIC, night facade, APPROVED; person behind the glass blurred as a retouch on the
+# owner's pass (D-254), original untouched. Hero file not prepared here (owner's retouch first).
+# STATUS: markdown draft only. Not on q8tly.com until the Advisor's word; then WPML-twinned draft → owner → publish.
 title: "The Specialty Coffee Shops of Kuwait: A Guide by Area"
 slug: specialty-coffee-kuwait
 lang: en
-deck: "Fifty specialty coffee shops and roasteries listed on Q8tly, area by area, with the ones that brew V60 and a short guide to what V60 coffee is."
+deck: "Fifty-one specialty coffee shops and roasteries listed on Q8tly, area by area, with the ones that brew V60 and a short guide to what V60 coffee is."
 topic: food-drink
 article_type: guide
 place_id: 3172
 word_count: auto
 seo_title: "Specialty Coffee Kuwait: Best Coffee Shops by Area"
-meta_description: "Specialty coffee in Kuwait by area: 50 coffee shops and roasteries listed on Q8tly, which ones brew V60, and how to find the best coffee shop near you."
+meta_description: "Specialty coffee in Kuwait by area: 51 coffee shops and roasteries listed on Q8tly, which ones brew V60, and how to find the best coffee shop near you."
 hero_alt: "KODO Roastery in Shuwaikh at night, its lit Kodo Roastery sign above a red-brick front and a glowing glass door."
 hero_caption: ""
 status: draft
 ---
 
-Q8tly lists 50 specialty coffee shops and roasteries in Kuwait, and only ten of them are in Kuwait City, Sharq and Bneid Al Gar. This guide covers all 50, area by area, from Shuwaikh's roasteries to 24-hour drive-throughs in the south. Every place links to its listing, where you'll find the map pin, hours and photos. To find the best coffee shop in Kuwait for you, start with your area and check which ones brew V60.
+Q8tly lists 51 specialty coffee shops and roasteries in Kuwait, and only ten of them are in Kuwait City, Sharq and Bneid Al Gar. This guide covers all 51, area by area, from Shuwaikh's roasteries to 24-hour drive-throughs in the south. Every place links to its listing, where you'll find the map pin, hours and photos. To find the best coffee shop in Kuwait for you, start with your area and check which ones brew V60.
 
 ## What "specialty coffee" means, and what a V60 is
 
@@ -57,6 +55,7 @@ These are the picks if you're looking for a coffee shop in Kuwait City.
 - [Maroon](/places/shuwaikh/maroon/), Marsana Complex: a large café serving V60 and matcha with pastries and sandwiches.
 - [Toby's Estate](/places/shuwaikh/tobys-estate-mayar/), EDGE Complex: V60 pour-over among the brew methods.
 - [Gathio](/places/shuwaikh/gathio-shuwaikh/), Mogart Mall: modern, indoor-only, with V60 and baked goods.
+- [Limu](/places/shuwaikh/limu-shuwaikh/): a café and roastery on two floors, with more than eight specialty coffees including V60, and single-origin beans from Ethiopia, Brazil, Rwanda, Indonesia and Yemen to brew at home.
 - [Nouga](/places/shuwaikh/nouga/): coffee from an artisan chocolatier's kitchen, with éclairs. It's tagged V60 on Q8tly.
 - [OPT](/places/shuwaikh/opt-free-zone/), Free Zone: open 24 hours on the waterfront near the Jaber Bridge, a stop for coffee before walking the bridge.
 - [PICK](/places/shuwaikh/pick-shuwaikh/), Al Tilal Complex: Kuwait's healthy café brand, with iced Spanish latte and cold brew.
