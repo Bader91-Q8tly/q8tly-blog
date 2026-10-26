@@ -51,3 +51,10 @@ FAQ schema: not set (no FAQPage emitter for guides, so this routes to Builder vi
    → `python3 guide-kit/populate_ar_twin.py drafts/specialty-coffee-kuwait_AR_2026-10-26.md --en-id E --media hero=H --draft` (dry-run, then `--execute`).
 5. Set the Rank Math focus keywords on both. Then touch (`wp post update`) and flush the cache.
 6. Owner reads both drafts on the site. **Publish only on his word.**
+
+## ✅ POSTED AS DRAFTS — 26 Oct 2026, 04:47–04:50 Kuwait (Advisor "window clear" 04:35; under /tmp/q8tly-publish.lock 04:38:44 → 04:51:29)
+- EN **7760** (draft) · AR **7762** (draft) · trid **7172** · hero attachment **7759** (shared).
+- WPML proven: EN 7760 → ar 7762, AR 7762 → en 7760; AR row = the Bar Frès shape (10 / 0 / 0 / `wp` / 1). Zero raw `icl_*` writes.
+- **Hero re-cut to 16:9, 1600×900** (template frame), same blur re-applied on the copy in original coordinates (1990,2252)–(2520,2754), crop y 200–3413 of 5712×4284 so the whole sign shows. sha256 `c69e817ea7f0be6668af077ecf9760c00f989e039dde57cb291c8e5565072f77`. Original still `7b18b166…fb15d`.
+- Body: 60 links, Limu present, no mojibake. Focus keywords set on both; touched + Rocket flushed. Public URLs 404 (drafts). **Publish only on the owner's word.**
+- Backups: `prod-20261026-014758-guide-…`, `prod-20261026-014950-ar-twin-…` (BACKUP_LOG).

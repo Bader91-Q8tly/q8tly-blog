@@ -47,3 +47,10 @@ FAQ schema: not set (guides have no FAQPage emitter, so this routes to Builder v
    → `python3 guide-kit/populate_ar_twin.py drafts/where-to-get-matcha-in-kuwait_AR_2026-10-26.md --en-id E --media hero=H --draft` (dry-run, then `--execute`). Zero raw `icl_*` writes.
 6. Set the Rank Math focus keywords on both. Then `wp post update` (touch) and flush the cache.
 7. Owner reads both drafts on the site. **Publish only on his word.**
+
+## ✅ POSTED AS DRAFTS — 26 Oct 2026, 04:44–04:47 Kuwait (Advisor "window clear" 04:35; under /tmp/q8tly-publish.lock 04:38:44 → 04:51:29)
+- EN **7753** (draft) · AR **7755** (draft) · trid **7169** · hero attachment **7752** (shared).
+- WPML proven: EN 7753 → ar 7755, AR 7755 → en 7753; AR row status 10 / translator 0 / needs_update 0 / editor `wp` / translated 1 = the Bar Frès 6591 shape. Zero raw `icl_*` writes.
+- **Hero re-cut to 16:9, 1600×900** before upload: the template renders `q8-hero` 1600×900 (hard crop) + CSS 16:9, so a 1520×1086 file would be CSS-cropped. Same source/framing (crop y 760–1840 of 1920×2560). sha256 `4f83f67c0cfc855333ededa6c5ef231db1d6dd9c9c3e574a907495c4f0e081c3`. (The 7:5 file is superseded.)
+- Focus keywords set on both; touched + Rocket flushed. Public URLs 404 (drafts). **Publish only on the owner's word.**
+- Backups: `prod-20261026-014407-guide-…`, `prod-20261026-014618-ar-twin-…` (BACKUP_LOG).

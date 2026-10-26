@@ -103,3 +103,7 @@ is the same write-class as production, so the discipline applies now.
 | 20260923-233128 (local UTC+3) | pre-write snapshot: add photos to Bar Frès guides 6589/6591 (hero collage upload + 5 inline reuse) | `prod-20260923-233128.sql.gz` | 3.2 MB | prod |
 | 20260923-203343 | EN re-author `bar-fres-arraya-centre` (post 6589) | `prod-20260923-203343-en-guide-bar-fres-arraya-centre.sql.gz` | 3391298 B | prod |
 | 20260923-203530 | populate AR twin `bar-fres-arraya-centre` (post 6591) | `prod-20260923-203530-ar-twin-bar-fres-arraya-centre.sql.gz` | 3394593 B | prod |
+| 20261026-014407 | publish guide `where-to-get-matcha-in-kuwait` | `prod-20261026-014407-guide-where-to-get-matcha-in-kuwait.sql.gz` | 3747272 B | prod |
+| 20261026-014618 | populate AR twin `where-to-get-matcha-in-kuwait` (post 7755) | `prod-20261026-014618-ar-twin-where-to-get-matcha-in-kuwait.sql.gz` | 3760350 B | prod |
+| 20261026-014758 | publish guide `specialty-coffee-kuwait` | `prod-20261026-014758-guide-specialty-coffee-kuwait.sql.gz` | 3778876 B | prod |
+| 20261026-014950 | populate AR twin `specialty-coffee-kuwait` (post 7762) | `prod-20261026-014950-ar-twin-specialty-coffee-kuwait.sql.gz` | 3797409 B | prod |

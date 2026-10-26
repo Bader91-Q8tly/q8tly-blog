@@ -30,3 +30,13 @@
 - Abu Halifa AR listing URLs carry a space in the area slug (`/ar/places/أبو حليفة/…`); they resolve (200), hyphen form 301s to them. Articles link the `%20` form.
 - Photo manifest maps folder `Matcha mahboula` to Matcha Matcha **Salmiya** (1831); the folder's own notes say **Abu Halifa** (2669).
 - No live listing says it sells matcha powder or V60 equipment → powder section is buying advice only; equipment keywords not targeted.
+
+## ✅ DRAFTS ON q8tly.com (26 Oct, 04:44–04:51 Kuwait) — awaiting the owner's read + publish word
+| Guide | EN | AR | trid | hero att |
+|---|---|---|---|---|
+| matcha | 7753 | 7755 | 7169 | 7752 |
+| specialty coffee | 7760 | 7762 | 7172 | 7759 |
+- ⚠ The Advisor's "Pipeline idle" did not hold at 04:35: `/tmp/q8tly-publish.lock` was held by the Pipeline's live run (pid 45348, P-398 Tampopo). Waited for its release, took the lock 04:38:44, released 04:51:29.
+- Link recheck: 34 pages crawled 200 (slow, ~15 s/page uncached) + all 114 listing links matched against a fresh catalogue read (600 published) + the 6 tag/category/flagship pages 200.
+- Heroes re-cut to 16:9 1600×900 (template frame) before upload; details in each POSTING.md.
+- To publish (owner's word only): `wp post update <id> --post_status=publish` for EN then AR, touch + Rocket flush, then check `/ar/places/` links render on the AR pages and both URLs 200.
