@@ -40,3 +40,12 @@
 - Link recheck: 34 pages crawled 200 (slow, ~15 s/page uncached) + all 114 listing links matched against a fresh catalogue read (600 published) + the 6 tag/category/flagship pages 200.
 - Heroes re-cut to 16:9 1600×900 (template frame) before upload; details in each POSTING.md.
 - To publish (owner's word only): `wp post update <id> --post_status=publish` for EN then AR, touch + Rocket flush, then check `/ar/places/` links render on the AR pages and both URLs 200.
+
+## ✅ PUBLISHED (owner's word, ~05:00 Kuwait) — lock 04:57:57 → released after proofs
+- EQ fix first (owner 04:56): EQ 1945 removed from matcha EN 7753 + AR 7755, 19 → 18 (text, deck, meta). EN updated by a direct
+  `wp_update_post` (status kept draft) because **`reinject_en.py` hardcodes `post_status => publish`** (would have published early) — fix that tool.
+  Backups `prod-20261026-015836-en-guide-…-remove-eq`, `prod-20261026-015927-ar-twin-…`, then `prod-…-pre-publish-matcha-coffee-guides`.
+- Published per pair EN → AR, one Rocket flush per pair; twins still linked (7753↔7755, 7760↔7762).
+- Anonymous proofs (one request at a time, 5 s apart): all four 200; served <title> = seo_title, meta description = set (154/116/151/109);
+  canonical = URL; hreflang ar/en/x-default pair; og:image = hero (via i0.wp.com Photon CDN); robots index,follow;
+  all four in `guide_article-sitemap.xml` (first read); listing links 18/18/51/51 present + published per catalogue.
