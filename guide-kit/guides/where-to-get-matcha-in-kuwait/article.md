@@ -2,27 +2,28 @@
 # SEO ARTICLE, EN. Twin of where-to-get-matcha-in-kuwait_AR_2026-10-26.md (AR is the lead; this is NOT its source).
 # Brief: ~/Downloads/SEO_KEYWORDS_BLOGGER_BRIEF_2026-10-16.md §3. Targets «matcha latte», «what is matcha»,
 # «matcha powder kuwait», «does matcha have caffeine», «matcha benefits»; bare «matcha» (KD 68) deliberately not targeted.
-# Mock-up approved by the owner 26 Oct 04:08. Places: the same 19 live Matcha-tagged listings whose own text says matcha.
+# Mock-up approved by the owner 26 Oct 04:08. Places: 18 live Matcha-tagged listings whose own text says matcha.
+# 26 Oct 04:56 (owner): EQ (1945) REMOVED: it does not serve matcha; its listing text was wrong (Pipeline correcting). 19 -> 18.
 # Every place fact is from the listing's own text (API read 26 Oct). Matcha Matcha = one listing per branch.
 # Hero: same file as AR (Matcha Matcha Abu Halifa, media 1115, 7:5 crop → images/hero.jpg, 1520×1086, EXIF-clean).
 # STATUS: markdown draft only. Not on q8tly.com until the Advisor's word; then WPML-twinned draft → owner → publish.
 title: "Where to Get Matcha in Kuwait: Matcha Latte Spots by Area"
 slug: where-to-get-matcha-in-kuwait
 lang: en
-deck: "What matcha is, how a matcha latte differs from iced and ceremonial matcha, and 19 Q8tly-listed places to drink it, area by area."
+deck: "What matcha is, how a matcha latte differs from iced and ceremonial matcha, and 18 Q8tly-listed places to drink it, area by area."
 topic: food-drink
 article_type: guide
 place_id: 2669
-map_ids: [1831, 1948, 1945, 1833, 4561, 7220, 6465, 7452, 7645, 7686, 6193, 3275, 1852, 1864, 1849, 2669, 1875, 1949, 1906]
+map_ids: [1831, 1948, 1833, 4561, 7220, 6465, 7452, 7645, 7686, 6193, 3275, 1852, 1864, 1849, 2669, 1875, 1949, 1906]
 word_count: auto
 seo_title: "Where to Get Matcha in Kuwait: Matcha Latte by Area"
-meta_description: "What is matcha, how a matcha latte differs from iced and ceremonial, and where to get matcha in Kuwait: 19 Q8tly-listed cafés by area, plus buying powder."
+meta_description: "What is matcha, how a matcha latte differs from iced and ceremonial, and where to get matcha in Kuwait: 18 Q8tly-listed cafés by area, plus buying powder."
 hero_alt: "The matcha bar at Matcha Matcha in Abu Halifa, under a yellow neon MATCHA MATCHA sign and a pink heart on a green chequered wall."
 hero_caption: ""
 status: draft
 ---
 
-Nineteen places listed on Q8tly serve matcha, and their menus go well past the plain green latte. This guide explains what matcha is and how it's served, then lists where to get it, area by area. Each place is a live Q8tly listing that mentions matcha on its own page. At the end there's a short guide to buying matcha powder if you want to make it at home.
+Eighteen places listed on Q8tly serve matcha, and their menus go well past the plain green latte. This guide explains what matcha is and how it's served, then lists where to get it, area by area. Each place is a live Q8tly listing that mentions matcha on its own page. At the end there's a short guide to buying matcha powder if you want to make it at home.
 
 ## What is matcha?
 
@@ -40,8 +41,6 @@ Matcha is Japanese green tea in powdered form. The tea plants are shaded from th
 [Matcha Matcha](/places/salmiya/matcha-matcha-salmiya/) in Al-Khalid Complex is known for its matcha. It has indoor and outdoor seating, including a roof that is quiet in the mornings and used for studying and reading.
 
 [Sluggish](/places/salmiya/sluggish/) is a tiny specialty-coffee and matcha bar known for its maple, ube and strawberry matcha, a signature drink called the Slug, and vegan café bites. It's laptop-friendly, and resident cats come with the deal.
-
-[EQ](/places/salmiya/eq/) is a calm coffee bar with a Gulf view in Essa Tower on Salem Al-Mubarak Street. It serves iced matcha alongside Spanish lattes, cold brew and a well-loved San Sebastian cheesecake, and it's popular with students and solo workers.
 
 [Toby's Estate](/places/salmiya/tobys-estate-salmiyah/), an Australian-origin specialty coffee roastery on the ground floor of Symphony Mall, has matcha boba on the menu and a praised outdoor seating area.
 

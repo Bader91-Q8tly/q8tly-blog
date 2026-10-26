@@ -107,3 +107,5 @@ is the same write-class as production, so the discipline applies now.
 | 20261026-014618 | populate AR twin `where-to-get-matcha-in-kuwait` (post 7755) | `prod-20261026-014618-ar-twin-where-to-get-matcha-in-kuwait.sql.gz` | 3760350 B | prod |
 | 20261026-014758 | publish guide `specialty-coffee-kuwait` | `prod-20261026-014758-guide-specialty-coffee-kuwait.sql.gz` | 3778876 B | prod |
 | 20261026-014950 | populate AR twin `specialty-coffee-kuwait` (post 7762) | `prod-20261026-014950-ar-twin-specialty-coffee-kuwait.sql.gz` | 3797409 B | prod |
+| 20261026-015836 | EN draft 7753 `where-to-get-matcha-in-kuwait`: remove EQ (owner 04:56), 19→18 | `prod-20261026-015836-en-guide-where-to-get-matcha-in-kuwait-remove-eq.sql.gz` | 3840548 B | prod |
+| 20261026-015927 | populate AR twin `where-to-get-matcha-in-kuwait` (post 7755) | `prod-20261026-015927-ar-twin-where-to-get-matcha-in-kuwait.sql.gz` | 3843837 B | prod |

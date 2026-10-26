@@ -1,32 +1,33 @@
 <!--
 SEO ARTICLE, AR (written first: «ماتشا» is 1,800/mo, KD 1). Twin of guide-kit/guides/where-to-get-matcha-in-kuwait/article.md (EN).
 Brief: ~/Downloads/SEO_KEYWORDS_BLOGGER_BRIEF_2026-10-16.md §3. Mock-up approved by the owner 26 Oct 04:08
-(drafts/matcha_MOCKUP_AR-EN_2026-10-26.md). Places: the 19 live listings tagged Matcha whose own text says they
+(drafts/matcha_MOCKUP_AR-EN_2026-10-26.md). Places: 18 live listings tagged Matcha whose own text says they
 serve matcha (owner's cuts of 03:41 applied). Every place fact is from the listing's own text (API read 26 Oct).
 Matcha Matcha = one listing per branch, like the others (brand in the hero frame is OK per Advisor/owner).
 Hero: Matcha Matcha Abu Halifa gallery photo matcha-matcha-abu-halifa-08.jpg (media 1115), 7:5 crop 1920 wide →
 guide-kit/guides/where-to-get-matcha-in-kuwait/images/hero.jpg (1520×1086, EXIF-clean, gitignored).
 Links are site-relative. Western digits in title/seo_title/meta; Eastern-Arabic in the body (house style).
+26 Oct 04:56 (owner): EQ (1945) REMOVED: it does not serve matcha; its listing text was wrong (Pipeline correcting). 19 -> 18.
 STATUS: markdown draft only. Not on q8tly.com until the Advisor's word; then WPML-twinned draft → owner → publish.
 -->
 ---
 title: "ماتشا في الكويت: شنو هي، وشلون تنشرب، ووين تلقاها حسب المنطقة"
 slug: where-to-get-matcha-in-kuwait
 lang: ar
-deck: "ماتشا لاتيه، ماتشا مثلجة، وكافيهات متخصصة بالماتشا: ١٩ مكان من دليل Q8tly مرتبة حسب المنطقة، مع دليل سريع لاختيار ماتشا بودر للبيت."
+deck: "ماتشا لاتيه، ماتشا مثلجة، وكافيهات متخصصة بالماتشا: ١٨ مكان من دليل Q8tly مرتبة حسب المنطقة، مع دليل سريع لاختيار ماتشا بودر للبيت."
 topic: food-drink
 article_type: guide
 place_id: 2669
-map_ids: [1831, 1948, 1945, 1833, 4561, 7220, 6465, 7452, 7645, 7686, 6193, 3275, 1852, 1864, 1849, 2669, 1875, 1949, 1906]
+map_ids: [1831, 1948, 1833, 4561, 7220, 6465, 7452, 7645, 7686, 6193, 3275, 1852, 1864, 1849, 2669, 1875, 1949, 1906]
 word_count: auto
 seo_title: "ماتشا في الكويت: وين تشربها حسب المنطقة"
-meta_description: "ماتشا لاتيه وماتشا مثلجة في الكويت: 19 مكان من دليل Q8tly حسب المنطقة، شنو هي الماتشا، وشلون تختار ماتشا بودر للبيت."
+meta_description: "ماتشا لاتيه وماتشا مثلجة في الكويت: 18 مكان من دليل Q8tly حسب المنطقة، شنو هي الماتشا، وشلون تختار ماتشا بودر للبيت."
 hero_alt: "بار الماتشا في Matcha Matcha بأبو حليفة تحت لافتة نيون صفراء مكتوب عليها MATCHA MATCHA وقلب وردي، على جدار أخضر بمربعات."
 hero_caption: ""
 status: draft
 ---
 
-في دليل Q8tly وحده ١٩ مكان يقدّم الماتشا، والمنيوهات صارت تتعدى اللاتيه الأخضر العادي بواجد: ماتشا مثلجة، ونكهات، وحتى حلويات بالماتشا. بهالدليل نشرح شنو هي الماتشا، وشلون تنقدّم، ووين تلقاها في الكويت حسب المنطقة، وكل مكان فيه مسجّل في الدليل ويذكر الماتشا في صفحته. وبالأخير عندك نصايح سريعة إذا تبي تشتري ماتشا بودر وتسويها بالبيت.
+في دليل Q8tly وحده ١٨ مكان يقدّم الماتشا، والمنيوهات صارت تتعدى اللاتيه الأخضر العادي بواجد: ماتشا مثلجة، ونكهات، وحتى حلويات بالماتشا. بهالدليل نشرح شنو هي الماتشا، وشلون تنقدّم، ووين تلقاها في الكويت حسب المنطقة، وكل مكان فيه مسجّل في الدليل ويذكر الماتشا في صفحته. وبالأخير عندك نصايح سريعة إذا تبي تشتري ماتشا بودر وتسويها بالبيت.
 
 ## شنو هي الماتشا؟
 
@@ -44,8 +45,6 @@ status: draft
 [Matcha Matcha](/ar/places/السالمية/matcha-matcha-salmiya/) في مجمع الخالد معروف بالماتشا، وعنده جلسات داخلية وخارجية منها جلسات على السطح، والسطح يكون هادي الصبح وينفع للدراسة والقراءة.
 
 [Sluggish](/ar/places/السالمية/sluggish/) مقهى صغير ودافي للقهوة المختصة والماتشا، معروف بالماتشا بنكهات القيقب والأوبي والفراولة، وعنده مشروب خاص اسمه «Slug» ولقمات نباتية. وفيه قطاوة عايشين بالمكان، والقعدة تناسب اللابتوب.
-
-[EQ](/ar/places/السالمية/eq/) مقهى هادي في برج إيسا على شارع سالم المبارك، يطل على البحر، يقدّم ماتشا مثلجة مع سبانش لاتيه وكولد برو وتشيز كيك سان سيباستيان، ويقصدونه الطلاب واللي يشتغلون بروحهم.
 
 [Toby's Estate](/ar/places/السالمية/tobys-estate-salmiyah/) محمصة قهوة مختصة أسترالية الأصل في الدور الأرضي من سيمفوني مول، ومن مشروباتها ماتشا بوبا، مع جلسات خارجية مشهود لها.
 

@@ -36,7 +36,7 @@ FAQ schema: not set (guides have no FAQPage emitter, so this routes to Builder v
 - Hero: upload once with the EN post (attachment **H**); AR reuses it (`--media hero=H`).
 - Links are already per language. EN → `/places/<area>/<slug>/`, `/places/tags/matcha/`, `/guide/best-restaurants-in-kuwait/` (6307).
   AR → `/ar/places/<area-ar>/<slug>/`, `/ar/places/tags/ماتشا/`, `/ar/guide/best-restaurants-in-kuwait/` (6309).
-- Listings (19, EN slug = AR slug): 1831, 1948, 1945, 1833, 4561, 7220, 6465, 7452, 7645, 7686, 6193, 3275, 1852, 1864, 1849, 2669, 1875, 1949, 1906.
+- Listings (18 after EQ 1945 was removed 26 Oct 04:56; EN slug = AR slug): 1831, 1948, 1833, 4561, 7220, 6465, 7452, 7645, 7686, 6193, 3275, 1852, 1864, 1849, 2669, 1875, 1949, 1906.
 
 ## Order of operations (when the window is clear)
 1. Re-check: every listing link still 200 (EN + AR), and the Abu Halifa AR URL (it has a space in the area slug, linked as `%20`).
