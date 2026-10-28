@@ -155,6 +155,10 @@ python3 reinject_en.py drafts/<slug>_EN_<date>.md <en_post_id> \
   --media inline-1=<id>,inline-2=<id>,hero=<id> --execute
 ```
 
+- **Status is kept unless you say otherwise.** By default the post keeps its
+  current `post_status` (a draft stays a draft). To publish, pass
+  `--status publish`; `--status draft` unpublishes. (Fixed 2026-10-28: it
+  used to hard-code `publish`, so fixing a draft's body published it early.)
 - **Update-only, one explicit post.** It writes to exactly the `post_id` you
   pass and nothing else. Images are **reused** (`--media stem=attachment_id`),
   never re-uploaded.

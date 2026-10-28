@@ -21,9 +21,16 @@ diffs it against the newly-generated body. Dry run always shows this; it's the
 built-in no-op/safe-rerun check — if a guide's approved MD hasn't changed,
 re-running should report NO CHANGE.
 
+Status: the post KEEPS its current post_status by default (a draft stays a
+draft, a live guide stays live). Fixed 2026-10-28: the tool used to hard-code
+post_status=publish in both the update and the cache touch, so a body fix on a
+draft published it early (matcha 7753, 26 Oct, had to be done by hand).
+Publishing is now an explicit choice: --status publish.
+
 Usage:
   python3 reinject_en.py <draft.md> <post_id> \
-      --media inline-1=2359,inline-2=2360,inline-3=2361,hero=2358 [--execute]
+      --media inline-1=2359,inline-2=2360,inline-3=2361,hero=2358 \
+      [--status keep|draft|publish] [--execute]
 Default = DRY RUN (verifies target, builds the body, prints the diff/plan, no writes).
 """
 import argparse, difflib, html, json, os, re, subprocess, sys
@@ -56,6 +63,8 @@ def main():
     ap.add_argument("draft")
     ap.add_argument("post_id", help="EN guide_article id to update (the post itself, never its AR twin)")
     ap.add_argument("--media", default="", help="stem=attachment,... (e.g. inline-1=2359,hero=2358)")
+    ap.add_argument("--status", choices=("keep", "draft", "publish"), default="keep",
+                    help="post_status after the write (default: keep the post's current status)")
     ap.add_argument("--execute", action="store_true")
     args = ap.parse_args()
 
@@ -100,6 +109,10 @@ echo "lang=".($ld && isset($ld["language_code"]) ? $ld["language_code"] : "")."\
     if d.get("lang") not in ("en", ""):
         die(f"target {post_id} WPML language is {d.get('lang')!r}, not 'en' — refusing "
             f"(this would be writing into the AR twin; never do that here)")
+    cur_status = d.get("status", "")
+    if not cur_status:
+        die(f"could not read the current post_status of {post_id}")
+    new_status = cur_status if args.status == "keep" else args.status
 
     # ── build image blocks from EXISTING media (reuse; no upload — repo is text-only) ──
     final = blocks
@@ -127,6 +140,8 @@ echo "lang=".($ld && isset($ld["language_code"]) ? $ld["language_code"] : "")."\
               f"Add `[[image:<stem>||descriptive alt]]`.")
     print(f"SEO    : rank_math_title {'-> set' if seo_title else '(unchanged, not in draft)'}, "
           f"rank_math_description {'-> set' if meta_desc else '(unchanged, not in draft)'}")
+    print(f"status : {cur_status} -> {new_status}"
+          + (" (kept)" if new_status == cur_status else "  ⚠ CHANGES visibility"))
     print("fence  : NONE — EN always stays indexable")
 
     # ── idempotency check: diff the new body against what's currently live ──
@@ -174,7 +189,7 @@ echo "lang=".($ld && isset($ld["language_code"]) ? $ld["language_code"] : "")."\
 $id = {post_id};
 if (get_post_type($id) !== 'guide_article') {{ echo "ERR=not a guide_article\\n"; exit; }}
 $r = wp_update_post(array(
-  'ID' => $id, 'post_status' => 'publish',
+  'ID' => $id, 'post_status' => {jx(new_status)},
   'post_title' => {jx(fm['title'])}, 'post_name' => {jx(fm['slug'])},
   'post_excerpt' => '',
   'post_content' => file_get_contents({jx(bodyfile)}),
@@ -196,7 +211,7 @@ echo "OK=".$id."\\n"; echo "URL=".get_permalink($id)."\\n"; echo "ST=".get_post_
         die(f"update failed. out={out} err={err}")
 
     # ── touch + flush (edge cache) ──
-    kit.ssh(host, f'wp post update {post_id} --post_status=publish >/dev/null 2>&1; '
+    kit.ssh(host, f'wp post update {post_id} --post_status={new_status} >/dev/null 2>&1; '
                   f'wp eval "if(function_exists(\\"rocket_clean_domain\\")){{rocket_clean_domain();}}" >/dev/null 2>&1')
     print("[3] cache  : touched + flushed")
 
@@ -205,6 +220,12 @@ echo "OK=".$id."\\n"; echo "URL=".get_permalink($id)."\\n"; echo "ST=".get_post_
     import urllib.request
     rc, url, _ = kit.ssh(host, f"wp post get {post_id} --field=guid 2>/dev/null")
     u = url.strip() or f"{cfg['SITE_URL'].rstrip('/')}/guide/{fm['slug']}/"
+    if new_status != "publish":
+        # A draft is 404 to an anonymous fetch, so there is nothing public to check.
+        print(f"    ({new_status} → not public; render check skipped. Preview while logged in: "
+              f"{cfg['SITE_URL'].rstrip('/')}/?post_type=guide_article&p={post_id}&preview=true)")
+        print(f"\n✅ RE-AUTHORED  post {post_id}  (status {new_status}, not published)\n")
+        return
     try:
         h = urllib.request.urlopen(u, timeout=25).read().decode("utf-8", "replace")
         title_ok = fm["title"][:10] in h
@@ -224,7 +245,7 @@ echo "OK=".$id."\\n"; echo "URL=".get_permalink($id)."\\n"; echo "ST=".get_post_
     except Exception as e:
         print(f"    ⚠ could not fetch {u}: {e}")
 
-    print(f"\n✅ RE-AUTHORED  {u}  (post {post_id}, publish, EN indexable)\n")
+    print(f"\n✅ RE-AUTHORED  {u}  (post {post_id}, {new_status}, EN indexable)\n")
 
 
 if __name__ == "__main__":
