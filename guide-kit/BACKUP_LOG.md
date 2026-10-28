@@ -110,3 +110,7 @@ is the same write-class as production, so the discipline applies now.
 | 20261026-015836 | EN draft 7753 `where-to-get-matcha-in-kuwait`: remove EQ (owner 04:56), 19→18 | `prod-20261026-015836-en-guide-where-to-get-matcha-in-kuwait-remove-eq.sql.gz` | 3840548 B | prod |
 | 20261026-015927 | populate AR twin `where-to-get-matcha-in-kuwait` (post 7755) | `prod-20261026-015927-ar-twin-where-to-get-matcha-in-kuwait.sql.gz` | 3843837 B | prod |
 | 20261026-020017 | pre-publish: guides 7753/7755 + 7760/7762 draft→publish (owner's word 04:5x) | `prod-20261026-020017-pre-publish-matcha-coffee-guides.sql.gz` | 3855235 B | prod |
+| 20261028-214743 | publish guide `ave-restaurant-kuwait` (created as DRAFT, EN 7776) | `prod-20261028-214743-guide-ave-restaurant-kuwait.sql.gz` | 3839711 B | prod |
+| 20261028-215150 | pre AR shell `ave-restaurant-kuwait` (twin of EN 7776) | `prod-20261028-215150-pre-ar-shell-ave-restaurant-kuwait.sql.gz` | 3847245 B | prod |
+| 20261028-215409 | populate AR twin `ave-restaurant-kuwait` (post 7778) | `prod-20261028-215409-ar-twin-ave-restaurant-kuwait.sql.gz` | 3849216 B | prod |
+| 20261028-215923 | pre-publish: AVE guides 7776/7778 draft→publish (owner's word) | `prod-20261028-215923-pre-publish-ave-restaurant-kuwait.sql.gz` | 3860503 B | prod |

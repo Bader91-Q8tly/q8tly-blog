@@ -1,4 +1,4 @@
-# POSTING: AVE (Salhiya) spotlight, EN + AR · READY TO POST (not on q8tly.com)
+# POSTING: AVE (Salhiya) spotlight, EN + AR · PUBLISHED 29 Oct 2026 (see the end of this file)
 
 **Gate:** create only after the Advisor's «window clear», and check `/tmp/q8tly-publish.lock` even then (one-writer rule).
 Both go in as **drafts** (WPML twins), the owner reads them on the site, and they **publish only on his word**.
@@ -75,3 +75,23 @@ The **Ramadan ghabga** section (§5, «غبقة رمضان» 70/mo) must be refr
 - No hours stored on 2666/2754 (the article says "open late", the owner's words, and "call ahead").
 - The "Calm & Quiet" tag conflicts with the owner's "sometimes loud".
 - The listing description's extras (cheesecake, polaroids, price) are not in the owner's review; the article leaves them out.
+
+## ✅ POSTED AS DRAFTS: 29 Oct 2026, 00:46–00:56 Kuwait (Advisor «window clear»; under /tmp/q8tly-publish.lock 21:46:09Z → 21:55:55Z)
+- EN **7776** (draft) · AR **7778** (draft) · trid **7185** · hero **7769** · inline-1…6 = **7770–7775** (shared by both).
+- WPML proven: 7776 → ar 7778, 7778 → en 7776; AR row status 10 / translator 0 / needs_update 0 / editor `wp` / translated 1,
+  same shape as matcha 7755; no NULL-element rows on trid 7185. Twin made without the "+"; zero raw `icl_*` writes.
+- AR content: Arabic clean (no mojibake), «اڤي» present, 6 images + hero, card 2666, `rank_math_robots` empty (not fenced).
+- Focus keywords set on both (values above). Both touched with status kept as draft; WP Rocket flushed.
+- Anonymous: `/guide/ave-restaurant-kuwait/`, `/ar/guide/ave-restaurant-kuwait/` and `?p=7776` all 404 (drafts not public).
+- Backups: `prod-20261028-214743-guide-…`, `prod-20261028-215150-pre-ar-shell-…`, `prod-20261028-215409-ar-twin-…` (BACKUP_LOG).
+- Owner preview (logged in): EN https://q8tly.com/?post_type=guide_article&p=7776&preview=true · AR https://q8tly.com/ar/?post_type=guide_article&p=7778&preview=true
+- **NOT published. Publish only on the owner's word** (step 8 above).
+
+## ✅ PUBLISHED: 29 Oct 2026, ~01:00 Kuwait (owner's word; under the lock 21:59:06Z → 22:00:42Z)
+- Backup `prod-20261028-215923-pre-publish-ave-restaurant-kuwait.sql.gz`, then EN 7776 → AR 7778 published, one Rocket flush; twins still linked.
+- Live: https://q8tly.com/guide/ave-restaurant-kuwait/ · https://q8tly.com/ar/guide/ave-restaurant-kuwait/
+- Anonymous proofs (one request at a time, 5 s apart): both 200; served <title> = seo_title; meta description = set (153 / 130);
+  canonical = URL; hreflang ar/en/x-default pair; og:image = hero (`guidekit-ave-restaurant-kuwait-hero.jpg` via i0.wp.com);
+  robots index,follow; 6 body images render, no raw shortcode; listing link per language (`/places/kuwait-city/ave/`,
+  `/ar/places/مدينة-الكويت/ave/`); both URLs in `guide_article-sitemap.xml`.
+- Next touch: the Ramadan §5 refresh by mid-January 2027.

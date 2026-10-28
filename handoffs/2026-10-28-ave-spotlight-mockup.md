@@ -31,3 +31,11 @@ Owner's choices: hero C (collage, D-180 override as for Bar Frès), portrait bod
 - Checked offline with the kit's own parser: required keys, images on disk, alt text, place card, no chrome, no
   lyrics/song titles, no estate wording, no listing extras, no hours. All six links 200.
 - Mock-up + `reinject_en.py` fix committed on branch `blog/ave-spotlight` (b49f065, 9ec9901).
+
+## Update 29 Oct 00:56 Kuwait: DRAFTS ON q8tly.com (not published)
+EN **7776** + AR **7778** (trid 7185), hero 7769, inline 7770–7775, focus keywords set, cache flushed, lock released.
+WPML shape = matcha 7755. Details + preview links in `guide-kit/guides/ave-restaurant-kuwait/POSTING.md`. Publish only on the owner's word.
+
+## ✅ PUBLISHED 29 Oct ~01:00 Kuwait (owner's word)
+EN 7776 + AR 7778 live, all proofs pass (200, title, description, canonical, hreflang, og:image, index, sitemap). Lock released 22:00:42Z.
+Open: Ramadan §5 refresh by mid-Jan 2027; listing flags (no hours, "Calm & Quiet" tag) with the Advisor.
