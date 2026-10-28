@@ -16,3 +16,10 @@ claims; photos from the listings' own galleries; no plugs).
 ## Route via Advisor (Pipeline)
 Espresso Lab's ambiguous Thu/Fri 00:00–01:00 hours slot; Wi-Fi not recorded for Secret Brunch, KODO, Espresso Lab; Maroon hours
 text vs stored; EQ address text vs street field; Altitude has no hours; five of the 8 carry the tag with no supporting text.
+
+## Update 29 Oct 02:08 Kuwait: DRAFTS ON q8tly.com (not published)
+EN **7807** + AR **7809** (trid 7194), hero 7806, focus keywords set, cache flushed, lock released 23:08:06Z.
+WPML shape = matcha 7755. Preview links in `POSTING.md`. Publish only on the owner's word.
+
+## ✅ PUBLISHED 29 Oct ~02:33 Kuwait (owner's word)
+EN 7807 + AR 7809 live, all proofs pass. Waited for the Pipeline's lock (P-415) before writing. Listing flags still with the Advisor.

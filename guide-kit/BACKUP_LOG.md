@@ -114,3 +114,7 @@ is the same write-class as production, so the discipline applies now.
 | 20261028-215150 | pre AR shell `ave-restaurant-kuwait` (twin of EN 7776) | `prod-20261028-215150-pre-ar-shell-ave-restaurant-kuwait.sql.gz` | 3847245 B | prod |
 | 20261028-215409 | populate AR twin `ave-restaurant-kuwait` (post 7778) | `prod-20261028-215409-ar-twin-ave-restaurant-kuwait.sql.gz` | 3849216 B | prod |
 | 20261028-215923 | pre-publish: AVE guides 7776/7778 draft→publish (owner's word) | `prod-20261028-215923-pre-publish-ave-restaurant-kuwait.sql.gz` | 3860503 B | prod |
+| 20261028-230411 | publish guide `laptop-friendly-cafes-kuwait` (created as DRAFT, EN 7807) | `prod-20261028-230411-guide-laptop-friendly-cafes-kuwait.sql.gz` | 3877688 B | prod |
+| 20261028-230528 | pre AR shell `laptop-friendly-cafes-kuwait` (twin of EN 7807) | `prod-20261028-230528-pre-ar-shell-laptop-friendly-cafes-kuwait.sql.gz` | 3884842 B | prod |
+| 20261028-230627 | populate AR twin `laptop-friendly-cafes-kuwait` (post 7809) | `prod-20261028-230627-ar-twin-laptop-friendly-cafes-kuwait.sql.gz` | 3886631 B | prod |
+| 20261028-233201 | pre-publish: laptop-cafés guides 7807/7809 draft→publish (owner's word) | `prod-20261028-233201-pre-publish-laptop-friendly-cafes-kuwait.sql.gz` | 3904462 B | prod |

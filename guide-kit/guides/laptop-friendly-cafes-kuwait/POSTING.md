@@ -1,4 +1,4 @@
-# POSTING: Laptop-friendly / study cafés in Kuwait, EN + AR · READY TO POST (not on q8tly.com)
+# POSTING: Laptop-friendly / study cafés in Kuwait, EN + AR · PUBLISHED 29 Oct 2026 (see the end of this file)
 
 **Gate:** create only after the Advisor's «window clear», and only under `/tmp/q8tly-publish.lock` (never while another lane
 holds it). Both go in as **drafts** (WPML twins), the owner reads them on the site, and they **publish only on his word**.
@@ -73,3 +73,24 @@ must change together.
 - Among the 8 in the closing line: **Maroon** text says 10 PM, stored hours say 11:59 PM; **EQ** text says Essa Tower, Salem
   Al-Mubarak St, street field says Arabian Gulf St; **Altitude Roasters** has no stored hours; **Toby's Jabriya, Maroon, Limu,
   Gathio, Altitude** carry the Laptop-Friendly tag but their text says nothing about laptop or study use.
+
+## ✅ POSTED AS DRAFTS: 29 Oct 2026, 01:59–02:08 Kuwait (Advisor «window clear»; under /tmp/q8tly-publish.lock 22:59:35Z → 23:08:06Z)
+- Lock was free when checked (the Pipeline had released it). All 36 links re-checked: 200, no redirects.
+- EN **7807** (draft) · AR **7809** (draft) · trid **7194** · hero attachment **7806** (shared). No body images.
+- WPML proven: 7807 → ar 7809, 7809 → en 7807; AR row status 10 / translator 0 / needs_update 0 / editor `wp` / translated 1,
+  same shape as matcha 7755; no NULL-element rows on trid 7194. Twin made without the "+"; zero raw `icl_*` writes.
+- EN: table + 10 H2 + 3 H3, SEO title/description set, no mojibake. AR: same structure, 31 links all `/ar/` (written absolute
+  by the AR tool), 0 bare `/places/`, Arabic clean, `rank_math_robots` empty (not fenced).
+- Focus keywords set on both. Both touched with status kept as draft; WP Rocket flushed. Anonymous: both public URLs 404.
+- Backups: `prod-20261028-230411-guide-…`, `prod-20261028-230528-pre-ar-shell-…`, `prod-20261028-230627-ar-twin-…` (BACKUP_LOG).
+- Owner preview (logged in): EN https://q8tly.com/?post_type=guide_article&p=7807&preview=true · AR https://q8tly.com/ar/?post_type=guide_article&p=7809&preview=true
+- **NOT published. Publish only on the owner's word** (step 8 above).
+
+## ✅ PUBLISHED: 29 Oct 2026, ~02:33 Kuwait (owner's word; under the lock 23:31:44Z → released after proofs)
+- The owner's word came while the Pipeline (P-415 photo-relink) held the lock; its holder pid was already gone, but the lock was
+  left alone until the Pipeline released it (23:31:38Z). Both drafts re-checked unchanged and linked, hero 7806 intact.
+- Backup `prod-20261028-233201-pre-publish-laptop-friendly-cafes-kuwait.sql.gz`, then EN 7807 → AR 7809 published, one Rocket flush.
+- Live: https://q8tly.com/guide/laptop-friendly-cafes-kuwait/ · https://q8tly.com/ar/guide/laptop-friendly-cafes-kuwait/
+- Anonymous proofs (one request at a time, 5 s apart): both 200; <title> = seo_title; meta description = set (123 / 115);
+  canonical = URL; hreflang ar/en/x-default pair; og:image = hero (via i0.wp.com); robots index,follow; table renders; no raw
+  shortcode; all 15 listings linked in the right language on each page; both URLs in `guide_article-sitemap.xml`.
