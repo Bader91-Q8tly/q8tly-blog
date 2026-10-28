@@ -19,3 +19,15 @@ Arabic name (stored "AVE" / sign «اڤي» / keyword «افي»); hero A or C; 
 
 ## Route via Advisor
 Listing has no hours; "Calm & Quiet" tag vs "sometimes loud"; the listing About carries facts not in the owner's review.
+
+## Update 28 Oct, after 23:40: approved → full articles written (READY TO POST, nothing on q8tly.com)
+Owner's choices: hero C (collage, D-180 override as for Bar Frès), portrait body set under the same override, #02 → #13,
+«افي» + AVE in titles and «اڤي» once in the text, Clean Up = people removed only, no listing extras, no hours.
+- EN → `guide-kit/guides/ave-restaurant-kuwait/article.md` (459 words) · AR → `drafts/ave-restaurant-kuwait_AR_2026-10-28.md`
+  (341 words, the owner's own words; D-145 sign-off = his read of the draft). Both `status: draft`, 6 sections + FAQ.
+- Images built in `guide-kit/guides/ave-restaurant-kuwait/images/` (hero 2336×1314 collage + inline-1…6), metadata-free, sRGB;
+  hashes and sources in that folder's `POSTING.md`, which is also the runbook (lock → kit → AR twin without "+" with
+  `--draft` → owner preview → publish on his word). Ramadan §5 refresh due mid-Jan 2027.
+- Checked offline with the kit's own parser: required keys, images on disk, alt text, place card, no chrome, no
+  lyrics/song titles, no estate wording, no listing extras, no hours. All six links 200.
+- Mock-up + `reinject_en.py` fix committed on branch `blog/ave-spotlight` (b49f065, 9ec9901).
