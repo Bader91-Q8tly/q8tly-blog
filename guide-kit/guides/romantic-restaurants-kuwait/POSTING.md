@@ -127,3 +127,39 @@ hand-patch would not last. **Fix = Builder** (q8tly-core): add `go/(book|call)` 
 Routed via the Advisor: `handoffs/2026-10-29-to-advisor-wpml-rewrites-go-book-links.md`.
 **Before step 8:** once the fix is on prod, re-run `populate_ar_twin.py … --draft` (dry-run, then `--execute`) on 7852, check it
 holds 7 `/go/book/` links with `rel="nofollow"`, then publish. After publishing, check the live AR HTML again (the publish is a save).
+
+## ✅ PUBLISHED: 29 Oct 2026, 19:10 Kuwait (owner + Advisor's word 19:10; under the lock 16:08:58Z → 16:15:48Z)
+- **Ruling (19:10):** publish both now. The site is frozen for code during the store review, so the booking links stay as WPML
+  renders them (the listing page, whose own Book button goes through `/go/book`: one extra tap, still counted).
+- Lock was free. Both drafts re-checked unchanged since 16:04 and paired. Backup `prod-20261029-160947-pre-publish-…`, then EN 7850
+  → AR 7852 published (16:10:05Z), one Rocket flush.
+- Live: https://q8tly.com/guide/romantic-restaurants-kuwait/ · https://q8tly.com/ar/guide/romantic-restaurants-kuwait/
+- Anonymous proofs (5 s apart), both pages: 200, no X-Robots-Tag; `<title>` = seo_title; meta + og:description = set (150 / 146);
+  canonical = URL; hreflang ar/en/x-default pair; og:image = hero 7842 (via i0.wp.com); robots index,follow; table renders; no raw
+  shortcode; 7 inline photos (7843–7849); all 7 listings linked in the page's language, 0 links to the other language's `/places/`;
+  no mojibake; schema description = the meta line; both URLs in `guide_article-sitemap.xml`.
+
+### Booking links as served (both languages)
+- **AR 7852:** stored and served as the AR listing URLs (`/ar/places/…/<slug>/?from=web&lang=ar`, `rel="nofollow"`), as WPML
+  rewrote them on save.
+- **EN 7850: the same on the page.** Stored content still holds the 7 `/go/book/<slug>?from=web&lang=en` links (and `the_content`
+  in WP-CLI keeps them), but the served HTML shows `/places/…/<slug>/?from=web&lang=en`: WPML converts the links again on
+  front-end requests. So on both pages "Book a table" opens the listing in that language, which matches the ruling.
+- **After q8tly-core 1.14.552** (Builder's `wpml_sl_blacklist_requests` exclusion for `go/book` + `go/call`), under the lock:
+  1. **EN:** no write needed. Flush, then check the served EN HTML has 7 `/go/book/…lang=en` links with `rel="nofollow"`.
+  2. **AR:** a plain re-save will NOT bring the links back (the stored AR content no longer holds `/go/book/`). Re-run
+     `populate_ar_twin.py drafts/romantic-restaurants-kuwait_AR_2026-10-29.md --en-id 7850 --media hero=7842,inline-1=7843,inline-2=7844,inline-3=7845,inline-4=7846,inline-5=7847,inline-6=7848,inline-7=7849`
+     (**no `--draft`**: the post is live; dry-run, then `--execute`, which backs up first). Check the stored AND served AR
+     HTML: 7 `/go/book/` links (as `/ar/go/book/…` or `/go/book/…?lang=ar`; both routes count), `rel="nofollow"`.
+  3. Record it here and in the calendar.
+
+## ✅ AVE guide AR meta swap: 29 Oct 2026, ~19:13 Kuwait (same lock; owner's instruction 18:40, confirmed 19:10)
+- Backup `prod-20261029-161227-pre-ave-ar-meta-7778.sql.gz`. AR post **7778** only; EN 7776 untouched.
+- `rank_math_description` 130 → 122 chars: «مطعم افي AVE بشارع الصالحية: عشا مع عرض حي، ثيمات الثمانينات، بكجات عيد ميلاد وعيد زواج، غبقات رمضان، ويفتح لين وقت متأخر.»
+- **`post_excerpt` set to the same line.** The kit writes the meta line into both fields, and the guide's Article schema
+  (q8tly-core `guide-single.php`) reads the excerpt, so the old «تدور مطاعم رومانسية في الكويت؟» was still in the AVE JSON-LD.
+  The deck (set) is what the page shows, so the excerpt isn't visible anywhere else.
+- Touched with status kept publish (`wp post update 7778 --post_status=publish`); AVE AR content byte-identical before/after
+  (md5 `ddf59843…`). Rocket flushed.
+- Anonymous: `/ar/guide/ave-restaurant-kuwait/` 200, title unchanged, robots index,follow, meta description + og:description +
+  schema description = the new line, «تدور مطاعم رومانسية» gone from the page. EN AVE unchanged.

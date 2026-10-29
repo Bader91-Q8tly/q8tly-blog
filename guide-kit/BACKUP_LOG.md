@@ -121,3 +121,5 @@ is the same write-class as production, so the discipline applies now.
 | 20261029-155106 | publish guide `romantic-restaurants-kuwait` | `prod-20261029-155106-guide-romantic-restaurants-kuwait.sql.gz` | 3898115 B | prod |
 | 20261029-155618 | pre AR shell `romantic-restaurants-kuwait` (twin of EN 7850) | `prod-20261029-155618-pre-ar-shell-romantic-restaurants-kuwait.sql.gz` | 3916422 B | prod |
 | 20261029-155859 | populate AR twin `romantic-restaurants-kuwait` (post 7852) | `prod-20261029-155859-ar-twin-romantic-restaurants-kuwait.sql.gz` | 3917855 B | prod |
+| 20261029-160947 | pre-publish: romantic-restaurants guides 7850/7852 draft→publish (owner's word) | `prod-20261029-160947-pre-publish-romantic-restaurants-kuwait.sql.gz` | 3950790 B | prod |
+| 20261029-161227 | pre AVE AR meta swap: rank_math_description of 7778 («مطعم افي…» line, owner's instruction) | `prod-20261029-161227-pre-ave-ar-meta-7778.sql.gz` | 3950923 B | prod |

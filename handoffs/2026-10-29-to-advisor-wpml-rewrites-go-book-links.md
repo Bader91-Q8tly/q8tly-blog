@@ -34,3 +34,12 @@ A direct DB patch of 7852 would be undone by the next save (the publish itself i
 - Both drafts exist (EN 7850 correct; AR 7852 correct except the 7 booking links). **AR publish is blocked on this fix.**
 - After the fix: Blog re-runs `populate_ar_twin.py` on 7852 (draft), verifies 7 `/go/book/` links, then publishes on the owner's word.
 - Scope: this is the first guide with `/go/` links in its body; no other live content is affected as far as Blog knows.
+
+## Update 29 Oct 19:15: published under the 19:10 ruling; the EN page is affected too
+- Both guides are live (EN 7850, AR 7852). Per the ruling, booking links stay as WPML renders them until 1.14.552.
+- **New finding:** the EN page shows the same listing URLs. Its stored content keeps the 7 `/go/book/` links, but WPML converts
+  them again on front-end requests (WP-CLI `the_content` keeps them; the served HTML doesn't). The same blacklist should cover
+  both, since both paths go through `AbsoluteLinks`, but **the 1.14.552 proof must check the served EN HTML too**, not only an AR save.
+- **AR after 1.14.552:** a plain re-save of 7852 won't bring the links back (its stored content no longer holds `/go/book/`).
+  Blog will re-run `populate_ar_twin.py` (live post, no `--draft`) and verify stored + served HTML. Steps in
+  `guide-kit/guides/romantic-restaurants-kuwait/POSTING.md`.

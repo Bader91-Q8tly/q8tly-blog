@@ -95,3 +95,10 @@ The **Ramadan ghabga** section (§5, «غبقة رمضان» 70/mo) must be refr
   robots index,follow; 6 body images render, no raw shortcode; listing link per language (`/places/kuwait-city/ave/`,
   `/ar/places/مدينة-الكويت/ave/`); both URLs in `guide_article-sitemap.xml`.
 - Next touch: the Ramadan §5 refresh by mid-January 2027.
+
+## AR meta description changed: 29 Oct 2026, ~19:13 Kuwait (owner's instruction; under the lock)
+The new romantic-restaurants guide (7850/7852) now owns «مطاعم رومانسية في الكويت», so the AVE AR description leads with «مطعم افي».
+- 7778 `rank_math_description` **and** `post_excerpt` (the schema reads the excerpt) → «مطعم افي AVE بشارع الصالحية: عشا مع عرض حي، ثيمات الثمانينات، بكجات عيد ميلاد وعيد زواج، غبقات رمضان، ويفتح لين وقت متأخر.» (122)
+- Was: «تدور مطاعم رومانسية في الكويت؟ مطعم افي AVE بشارع الصالحية: عشا مع عرض، ثيمات الثمانينات، بكجات عيد ميلاد وعيد زواج، وغبقات رمضان.» (130)
+- Backup `prod-20261029-161227-pre-ave-ar-meta-7778.sql.gz`. Content unchanged; EN 7776 untouched. Proof in
+  `guide-kit/guides/romantic-restaurants-kuwait/POSTING.md`.

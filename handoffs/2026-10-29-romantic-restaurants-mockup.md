@@ -34,3 +34,9 @@ Add "refresh by 7 Feb 2027" to the calendar when the guide is posted.
 - ⚠ WPML's "adjust links" rewrote the AR's 7 `/go/book/` links into AR listing links on save (EN fine). Every save re-runs it, so
   no Blog-side patch lasts. Fix = q8tly-core `wpml_sl_blacklist_requests` (Builder) → `handoffs/2026-10-29-to-advisor-wpml-rewrites-go-book-links.md`.
 - Next: owner previews; after the Builder fix → re-populate 7852 (draft) → verify → publish on the owner's word → AVE AR meta swap.
+
+## Update 29 Oct 19:15: PUBLISHED (EN 7850 + AR 7852) + AVE AR meta swapped · «publish complete»
+- Ruling 19:10: publish both; booking links stay as WPML renders them (code freeze). Lock 16:08:58Z–16:15:48Z; backup; EN → AR
+  published; all live proofs pass (see POSTING). EN page also shows listing URLs (WPML converts at display); recorded for 1.14.552.
+- AVE 7778: meta description **and** excerpt (schema reads it) now lead with «مطعم افي»; old phrase gone from the page; content unchanged.
+- Open: after q8tly-core 1.14.552 → EN served check + AR re-populate (no `--draft`) + verify + record.
