@@ -75,8 +75,16 @@ def md_inline(t):
     t = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", t)
     t = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", t)
     t = re.sub(r"_([^_]+)_", r"<em>\1</em>", t)
-    t = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', t)
+    t = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", md_link, t)
     return t
+
+
+def md_link(m):
+    # Booking hops (`/go/book/<slug>?…`) leave the site for the venue's own booking page,
+    # so they carry rel="nofollow" (Advisor brief, 29 Oct 2026). Every other link stays plain.
+    text, href = m.group(1), m.group(2)
+    rel = ' rel="nofollow"' if "/go/book/" in href else ""
+    return f'<a href="{href}"{rel}>{text}</a>'
 
 
 def image_block(stem, cap, alt, aid, url, fallback_alt=""):

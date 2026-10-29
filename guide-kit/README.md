@@ -45,6 +45,9 @@ guides/
   - `[[map]]` → `[q8tly_map ids=<map_ids>]` (numbered pin list with Directions
     links; interactive tiles are still deferred; max 1/article)
   - `[[image:STEM|Caption]]` → an inline photo from `images/STEM.*`
+- **Booking links:** any markdown link to `/go/book/<slug>?from=web&lang=<en|ar>`
+  is written with `rel="nofollow"` (all three tools share `md_inline()`). Other
+  links stay plain. First used by `romantic-restaurants-kuwait` (29 Oct 2026).
 - **Image slots are declared by filename:** `hero.*`, `og.*` (optional),
   `inline-*.*`. The hero is the Featured image + `hero_photo_id`.
 - **Or reuse an existing hero:** set `hero_id: <attachment ID>` in the frontmatter
