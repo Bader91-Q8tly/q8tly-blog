@@ -27,3 +27,10 @@ Add "refresh by 7 Feb 2027" to the calendar when the guide is posted.
 - All 60 links checked (20 unique per article): pages 200, booking 302 to the right venue.
 - Runbook, sha256s, AVE meta step and listing flags: `guide-kit/guides/romantic-restaurants-kuwait/POSTING.md`.
   Calendar: pipeline row + "refresh by 7 Feb 2027".
+
+## Update 29 Oct ~19:00: DRAFTS ON PROD (not published); AR booking links blocked on a Builder fix
+- Committed + pushed `46d6ba2`. Window clear → lock 15:50:11Z–16:04:52Z → EN **7850** + AR **7852** drafts (trid 7216), hero 7842,
+  photos 7843–7849; WPML pair proven; focus keywords set; flushed; both public URLs 404. Backups in BACKUP_LOG.
+- ⚠ WPML's "adjust links" rewrote the AR's 7 `/go/book/` links into AR listing links on save (EN fine). Every save re-runs it, so
+  no Blog-side patch lasts. Fix = q8tly-core `wpml_sl_blacklist_requests` (Builder) → `handoffs/2026-10-29-to-advisor-wpml-rewrites-go-book-links.md`.
+- Next: owner previews; after the Builder fix → re-populate 7852 (draft) → verify → publish on the owner's word → AVE AR meta swap.

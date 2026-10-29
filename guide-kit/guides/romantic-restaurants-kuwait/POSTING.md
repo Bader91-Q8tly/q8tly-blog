@@ -105,3 +105,25 @@ closure), update EN + AR together (table + blocks + FAQ), bump "Last updated". U
 - **Nōya (7386):** the title is «Nōya», the text says "Noya" (EN and AR).
 - **MizuMesa (2354):** city field Sharq, text "KIPCO area of Kuwait City" (both true; the guide says Sharq, as the URL does).
 - **Photos:** Roka's and Nōya's venue shots top out at 1034 / 941 px wide. Larger originals would remove the override.
+
+## ✅ POSTED AS DRAFTS: 29 Oct 2026, 18:50–19:04 Kuwait (Advisor «window clear»; under /tmp/q8tly-publish.lock 15:50:11Z → 16:04:52Z)
+- Lock was free when checked. Dry-run against prod clean (slug free, place 4025 resolves, 7 `rel="nofollow"` booking links).
+- EN **7850** (draft) · AR **7852** (draft) · trid **7216** · hero **7842** (shared) · inline-1…7 = **7843–7849** (shared).
+- WPML proven: 7850 → ar 7852, 7852 → en 7850; AR row status 10 / translator 0 / needs_update 0 / editor `wp` / translated 1,
+  same shape as laptop-cafés 7809; no NULL-element rows on trid 7216. Twin made without the "+"; zero raw `icl_*` writes.
+- EN: 7 `/go/book/` links with `rel="nofollow"` (survived the save), 7 photos, SEO title/description, topic, no mojibake.
+  AR: Arabic clean, 30 links all `/ar/`, 0 bare `/places/`, 7 photos, SEO title/description, `rank_math_robots` empty.
+- Focus keywords set on both. Both touched with status kept as draft; WP Rocket flushed. Anonymous: both public URLs 404.
+- Backups: `prod-20261029-155106-guide-…`, `prod-20261029-155618-pre-ar-shell-…`, `prod-20261029-155859-ar-twin-…` (BACKUP_LOG).
+- Owner preview (logged in): EN https://q8tly.com/?post_type=guide_article&p=7850&preview=true · AR https://q8tly.com/ar/?post_type=guide_article&p=7852&preview=true
+
+### ⚠ AR booking links: rewritten by WPML on save (publish BLOCKED until fixed)
+On the AR twin, WPML's "adjust links" step turned all 7 `https://q8tly.com/go/book/<slug>?from=web&lang=ar` links into the AR
+**listing** URLs (`https://q8tly.com/ar/places/مدينة-الكويت/noya/?from=web&lang=ar`, …), keeping `rel="nofollow"`. The EN original is
+untouched. Cause (read on prod, WPML 4.9.x): `AdjustLinks` → `WPML_Pro_Translation::fix_links_to_translated_content()` runs on every
+save of a translation; `/go/` has no rewrite rule (q8tly-core `go-counter.php` answers it at `do_parse_request`), so WPML resolves
+`go/book/noya` to the gd_place `noya` and writes its AR permalink. Any save re-runs it (populate, publish, a wp-admin edit), so a
+hand-patch would not last. **Fix = Builder** (q8tly-core): add `go/(book|call)` to WPML's `wpml_sl_blacklist_requests` filter.
+Routed via the Advisor: `handoffs/2026-10-29-to-advisor-wpml-rewrites-go-book-links.md`.
+**Before step 8:** once the fix is on prod, re-run `populate_ar_twin.py … --draft` (dry-run, then `--execute`) on 7852, check it
+holds 7 `/go/book/` links with `rel="nofollow"`, then publish. After publishing, check the live AR HTML again (the publish is a save).
