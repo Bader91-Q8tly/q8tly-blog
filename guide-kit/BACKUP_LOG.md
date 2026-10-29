@@ -123,3 +123,11 @@ is the same write-class as production, so the discipline applies now.
 | 20261029-155859 | populate AR twin `romantic-restaurants-kuwait` (post 7852) | `prod-20261029-155859-ar-twin-romantic-restaurants-kuwait.sql.gz` | 3917855 B | prod |
 | 20261029-160947 | pre-publish: romantic-restaurants guides 7850/7852 draft→publish (owner's word) | `prod-20261029-160947-pre-publish-romantic-restaurants-kuwait.sql.gz` | 3950790 B | prod |
 | 20261029-161227 | pre AVE AR meta swap: rank_math_description of 7778 («مطعم افي…» line, owner's instruction) | `prod-20261029-161227-pre-ave-ar-meta-7778.sql.gz` | 3950923 B | prod |
+| 20261029-211436 | publish guide `best-burgers-kuwait` | `prod-20261029-211436-guide-best-burgers-kuwait.sql.gz` | 3953406 B | prod |
+| 20261029-212029 | pre AR shell `best-burgers-kuwait` (twin of EN 7869) | `prod-20261029-212029-pre-ar-shell-best-burgers-kuwait.sql.gz` | 3950958 B | prod |
+| 20261029-212353 | populate AR twin `best-burgers-kuwait` (post 7871) | `prod-20261029-212353-ar-twin-best-burgers-kuwait.sql.gz` | 3970258 B | prod |
+| 20261029-221249 | EN re-author `best-burgers-kuwait` (post 7869) | `prod-20261029-221249-en-guide-best-burgers-kuwait.sql.gz` | 4011010 B | prod |
+| 20261029-221449 | populate AR twin `best-burgers-kuwait` (post 7871) | `prod-20261029-221449-ar-twin-best-burgers-kuwait.sql.gz` | 4013595 B | prod |
+| 20261029-222955 | pre-publish: burger guides 7869/7871 (title/slug switch, Savor+B+F cut) + Thinnies Instagram fix 4729/4736 (owner's word) | `prod-20261029-222955-pre-publish-best-burger-in-kuwait.sql.gz` | 3999176 B | prod |
+| 20261029-223228 | EN re-author `best-burger-in-kuwait` (post 7869) | `prod-20261029-223228-en-guide-best-burger-in-kuwait.sql.gz` | 4012144 B | prod |
+| 20261029-223440 | populate AR twin `best-burger-in-kuwait` (post 7871) | `prod-20261029-223440-ar-twin-best-burger-in-kuwait.sql.gz` | 4014040 B | prod |

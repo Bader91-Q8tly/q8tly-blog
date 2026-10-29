@@ -27,6 +27,11 @@ post_status=publish in both the update and the cache touch, so a body fix on a
 draft published it early (matcha 7753, 26 Oct, had to be done by hand).
 Publishing is now an explicit choice: --status publish.
 
+Excerpt: post_excerpt = the draft's meta_description (empty if it has none), the
+same as publish_guide.py and populate_ar_twin.py. q8tly-core's guide Article
+schema reads the excerpt, so blanking it left the schema description out of
+step with the meta description (fixed 2026-10-30, best-burgers 7869).
+
 Usage:
   python3 reinject_en.py <draft.md> <post_id> \
       --media inline-1=2359,inline-2=2360,inline-3=2361,hero=2358 \
@@ -191,7 +196,7 @@ if (get_post_type($id) !== 'guide_article') {{ echo "ERR=not a guide_article\\n"
 $r = wp_update_post(array(
   'ID' => $id, 'post_status' => {jx(new_status)},
   'post_title' => {jx(fm['title'])}, 'post_name' => {jx(fm['slug'])},
-  'post_excerpt' => '',
+  'post_excerpt' => {jx(meta_desc or '')},
   'post_content' => file_get_contents({jx(bodyfile)}),
 ), true);
 if (is_wp_error($r)) {{ echo "ERR=".$r->get_error_message()."\\n"; exit; }}
