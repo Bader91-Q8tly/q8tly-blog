@@ -200,3 +200,9 @@ and `inline-8=7867` in both tools' `--media`.
     7857 as og:image, no raw shortcodes, no mojibake, no Savor/B+F/Flag/Tiny Table left.
 - Still on the list for after 4 Nov: the AR Savor listing URL with a space; the noindex AR area hubs (and EN Keifan/Mahboula);
   the "Featured in" listing → guide link (template change). Unused media: 7867 (Flag Burger photo), kept for its return.
+
+## 🔗 30 Oct 2026 ~10:30 Kuwait: link to the new tourism guide (owner's decision, at its publish)
+- Added under "Burger spots by area", both languages: EN "Visiting Kuwait? See our guide to [things to do in Kuwait](/guide/things-to-do-in-kuwait/)."
+  · AR «زاير الكويت؟ شوف دليلنا [اماكن سياحية في الكويت](/ar/guide/things-to-do-in-kuwait/).»
+- Pushed with `reinject_en.py … 7869` (status kept; the diff against live was only that paragraph) and `populate_ar_twin.py … --en-id 7869`
+  (publish). Both pages 200 with the link (AR link on `/ar/`). Backups `prod-20261030-072932-en-guide-…`, `…-073130-ar-twin-…`.

@@ -143,6 +143,8 @@ Shuwaikh has the most burger spots on this list, with four: Supernova, Jimmy's, 
 
 To see more, browse every place with the [Burgers](/places/tags/burgers/) tag on Q8tly.
 
+Visiting Kuwait? See our guide to [things to do in Kuwait](/guide/things-to-do-in-kuwait/).
+
 ## Frequently asked questions
 
 ### What is the best burger in Kuwait?

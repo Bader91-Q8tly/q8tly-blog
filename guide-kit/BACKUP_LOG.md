@@ -131,3 +131,11 @@ is the same write-class as production, so the discipline applies now.
 | 20261029-222955 | pre-publish: burger guides 7869/7871 (title/slug switch, Savor+B+F cut) + Thinnies Instagram fix 4729/4736 (owner's word) | `prod-20261029-222955-pre-publish-best-burger-in-kuwait.sql.gz` | 3999176 B | prod |
 | 20261029-223228 | EN re-author `best-burger-in-kuwait` (post 7869) | `prod-20261029-223228-en-guide-best-burger-in-kuwait.sql.gz` | 4012144 B | prod |
 | 20261029-223440 | populate AR twin `best-burger-in-kuwait` (post 7871) | `prod-20261029-223440-ar-twin-best-burger-in-kuwait.sql.gz` | 4014040 B | prod |
+| 20261030-065911 | publish guide `things-to-do-in-kuwait` | `prod-20261030-065911-guide-things-to-do-in-kuwait.sql.gz` | 4018884 B | prod |
+| 20261030-070407 | pre AR shell `things-to-do-in-kuwait` (twin of EN 7891) | `prod-20261030-070407-pre-ar-shell-things-to-do-in-kuwait.sql.gz` | 4046226 B | prod |
+| 20261030-070633 | populate AR twin `things-to-do-in-kuwait` (post 7893) | `prod-20261030-070633-ar-twin-things-to-do-in-kuwait.sql.gz` | 4044557 B | prod |
+| 20261030-072248 | pre-publish: things-to-do guides 7891/7893 draft→publish (owner's word) + souq photo + burger 7869/7871 backlink | `prod-20261030-072248-pre-publish-things-to-do-in-kuwait.sql.gz` | 4082311 B | prod |
+| 20261030-072519 | EN re-author `things-to-do-in-kuwait` (post 7891) | `prod-20261030-072519-en-guide-things-to-do-in-kuwait.sql.gz` | 4082633 B | prod |
+| 20261030-072705 | populate AR twin `things-to-do-in-kuwait` (post 7893) | `prod-20261030-072705-ar-twin-things-to-do-in-kuwait.sql.gz` | 4088452 B | prod |
+| 20261030-072932 | EN re-author `best-burger-in-kuwait` (post 7869) | `prod-20261030-072932-en-guide-best-burger-in-kuwait.sql.gz` | 4124117 B | prod |
+| 20261030-073130 | populate AR twin `best-burger-in-kuwait` (post 7871) | `prod-20261030-073130-ar-twin-best-burger-in-kuwait.sql.gz` | 4127281 B | prod |

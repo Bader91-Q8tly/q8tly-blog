@@ -69,20 +69,34 @@ def parse_frontmatter(text):
 
 
 # ── markdown body → Gutenberg blocks (subset) + markers ──
-def md_inline(t):
-    t = html.escape(t)
+def md_emphasis(t):
     t = re.sub(r"`([^`]+)`", r"<code>\1</code>", t)
     t = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", t)
     t = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", t)
     t = re.sub(r"_([^_]+)_", r"<em>\1</em>", t)
-    t = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", md_link, t)
     return t
 
 
-def md_link(m):
+def md_inline(t):
+    # Links are set aside before emphasis runs, so an underscore or asterisk inside a URL
+    # (Wikimedia Commons file pages, instagram.com/anosha_salon/) can't turn into <em>.
+    # Found 30 Oct 2026 (things-to-do-in-kuwait photo credits). Link text still gets emphasis.
+    t = html.escape(t)
+    links = []
+
+    def stash(m):
+        links.append(md_link(m.group(1), m.group(2)))
+        return f"\x00{len(links) - 1}\x00"
+
+    t = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", lambda m: stash(m), t)
+    t = md_emphasis(t)
+    return re.sub(r"\x00(\d+)\x00", lambda m: links[int(m.group(1))], t)
+
+
+def md_link(text, href):
     # Booking hops (`/go/book/<slug>?…`) leave the site for the venue's own booking page,
     # so they carry rel="nofollow" (Advisor brief, 29 Oct 2026). Every other link stays plain.
-    text, href = m.group(1), m.group(2)
+    text = md_emphasis(text)
     rel = ' rel="nofollow"' if "/go/book/" in href else ""
     return f'<a href="{href}"{rel}>{text}</a>'
 
